@@ -1,0 +1,95 @@
+module vmemux(
+input [15:0] ADDR,
+input [15:0] DATA7C80,
+input [15:0] DATA7C82,
+input [15:0] DATA7C84,
+input [15:0] DATA7C86,
+input [15:0] DATA7C88,
+input [15:0] DATA7C8A,
+input [15:0] DATA7C8C,
+input [15:0] DATA7C8E,
+input [15:0] DATA7C90,
+input [15:0] DATA7C96,
+input [15:0] DATA7CA0,
+input [15:0] DATA7CA2,
+input [15:0] DATA7CA4,
+output reg [15:0] DOUT
+);
+
+always@*
+begin
+	case(ADDR) ///MUX needed !!!
+		
+		16'h7C80:
+		begin
+			DOUT <= DATA7C80;//16'hA800;
+		end
+
+		16'h7C82:
+		begin
+			DOUT <= DATA7C82;//16'hA800;
+		end
+
+		16'h7C84:
+		begin
+			DOUT <= DATA7C84;//16'hA800;
+		end
+
+		16'h7C86:
+		begin
+			DOUT <= DATA7C86;//16'hA800;
+		end
+
+		16'h7C88:
+		begin
+			DOUT <= DATA7C88;//16'hA800;
+		end
+
+		16'h7C8A:
+		begin
+			DOUT <= DATA7C8A;//16'hA800;
+		end
+
+		16'h7C8C:
+		begin
+			DOUT <= DATA7C8C;//16'hA800;
+		end
+
+		16'h7C8E:
+		begin
+			DOUT <= DATA7C8E;//16'hA800;
+		end
+
+		16'h7C90:
+		begin
+			DOUT <= DATA7C90;//16'hA800;
+		end
+
+		16'h7C96:
+		begin
+			DOUT <= DATA7C96;//16'hA800;
+		end
+		
+		16'h7CA0:
+		begin
+			DOUT <= DATA7CA0;//{R_STATUS[7:0],R_STATUS[15:8]};
+		end
+		
+		16'h7CA2:
+		begin
+			DOUT <= DATA7CA2;//16'hA800;
+		end
+				
+		16'h7CA4:
+		begin
+			DOUT <= DATA7CA4;//16'hA800;
+		end
+		
+		default:
+			DOUT <= 0;
+				
+	endcase
+end 
+
+
+endmodule 

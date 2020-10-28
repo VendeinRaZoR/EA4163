@@ -239,6 +239,23 @@ begin
 			addr7CA2 = 0;
 			addr7CA4 = 1;
 		end
+		
+		default:
+		begin
+			addr7C80 = 0;
+			addr7C82 = 0;
+			addr7C84 = 0;
+			addr7C86 = 0;
+			addr7C88 = 0;
+			addr7C8A = 0;
+			addr7C8C = 0;
+			addr7C8E = 0;
+			addr7C90 = 0;
+			addr7C96 = 0;
+			addr7CA0 = 0;
+			addr7CA2 = 0;
+			addr7CA4 = 0;
+		end
 				
 	endcase
 end
