@@ -1,0 +1,217 @@
+Analysis & Elaboration report for EA4163
+Wed Oct 28 11:05:21 2020
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Analysis & Elaboration Settings
+  4. Port Connectivity Checks: "vmeds:vmeds"
+  5. Analysis & Elaboration Messages
+  6. Analysis & Elaboration Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                               ;
++-------------------------------+----------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Wed Oct 28 11:05:21 2020        ;
+; Quartus II Version            ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
+; Revision Name                 ; EA4163                                       ;
+; Top-level Entity Name         ; EA4163                                       ;
+; Family                        ; FLEX10KE                                     ;
++-------------------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                  ;
++--------------------------------------------------------------+-------------------+---------------+
+; Option                                                       ; Setting           ; Default Value ;
++--------------------------------------------------------------+-------------------+---------------+
+; Device                                                       ; EPF10K200SRC240-1 ;               ;
+; Top-level entity name                                        ; EA4163            ; EA4163        ;
+; Family name                                                  ; FLEX10KE          ; Stratix II    ;
+; Optimization Technique                                       ; Speed             ; Area          ;
+; Type of Retiming Performed During Resynthesis                ; Full              ;               ;
+; Resynthesis Optimization Effort                              ; Normal            ;               ;
+; Physical Synthesis Level for Resynthesis                     ; Normal            ;               ;
+; Use Generated Physical Constraints File                      ; On                ;               ;
+; Use smart compilation                                        ; Off               ; Off           ;
+; Create Debugging Nodes for IP Cores                          ; Off               ; Off           ;
+; Preserve fewer node names                                    ; On                ; On            ;
+; Disable OpenCore Plus hardware evaluation                    ; Off               ; Off           ;
+; Verilog Version                                              ; Verilog_2001      ; Verilog_2001  ;
+; VHDL Version                                                 ; VHDL93            ; VHDL93        ;
+; State Machine Processing                                     ; Auto              ; Auto          ;
+; Safe State Machine                                           ; Off               ; Off           ;
+; Extract Verilog State Machines                               ; On                ; On            ;
+; Extract VHDL State Machines                                  ; On                ; On            ;
+; Ignore Verilog initial constructs                            ; Off               ; Off           ;
+; Iteration limit for constant Verilog loops                   ; 5000              ; 5000          ;
+; Iteration limit for non-constant Verilog loops               ; 250               ; 250           ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On                ; On            ;
+; Parallel Synthesis                                           ; Off               ; Off           ;
+; NOT Gate Push-Back                                           ; On                ; On            ;
+; Power-Up Don't Care                                          ; On                ; On            ;
+; Remove Redundant Logic Cells                                 ; Off               ; Off           ;
+; Remove Duplicate Registers                                   ; On                ; On            ;
+; Ignore CARRY Buffers                                         ; Off               ; Off           ;
+; Ignore CASCADE Buffers                                       ; Off               ; Off           ;
+; Ignore GLOBAL Buffers                                        ; Off               ; Off           ;
+; Ignore ROW GLOBAL Buffers                                    ; Off               ; Off           ;
+; Ignore LCELL Buffers                                         ; Off               ; Off           ;
+; Ignore SOFT Buffers                                          ; On                ; On            ;
+; Limit AHDL Integers to 32 Bits                               ; Off               ; Off           ;
+; Auto Implement in ROM                                        ; Off               ; Off           ;
+; Carry Chain Length                                           ; 32                ; 32            ;
+; Cascade Chain Length                                         ; 2                 ; 2             ;
+; Auto Carry Chains                                            ; On                ; On            ;
+; Auto Open-Drain Pins                                         ; On                ; On            ;
+; Auto ROM Replacement                                         ; On                ; On            ;
+; Auto RAM Replacement                                         ; On                ; On            ;
+; Auto Clock Enable Replacement                                ; On                ; On            ;
+; Strict RAM Replacement                                       ; Off               ; Off           ;
+; Auto Resource Sharing                                        ; Off               ; Off           ;
+; Allow Any RAM Size For Recognition                           ; Off               ; Off           ;
+; Allow Any ROM Size For Recognition                           ; Off               ; Off           ;
+; Use LogicLock Constraints during Resource Balancing          ; On                ; On            ;
+; Ignore translate_off and synthesis_off directives            ; Off               ; Off           ;
+; Show Parameter Settings Tables in Synthesis Report           ; On                ; On            ;
+; HDL message level                                            ; Level2            ; Level2        ;
+; Suppress Register Optimization Related Messages              ; Off               ; Off           ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100               ; 100           ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100               ; 100           ;
+; Block Design Naming                                          ; Auto              ; Auto          ;
+; Synthesis Effort                                             ; Auto              ; Auto          ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On                ; On            ;
+; Analysis & Synthesis Message Level                           ; Medium            ; Medium        ;
++--------------------------------------------------------------+-------------------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vmeds:vmeds"                                                                                                 ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; addr7C80 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; addr7C82 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; addr7C84 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; addr7C86 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; addr7C88 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; addr7C8A ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; addr7C8C ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; addr7C8E ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; addr7C90 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; addr7C96 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; addr7CA2 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Elaboration
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Wed Oct 28 11:05:20 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off EA4163 -c EA4163 --analysis_and_elaboration
+Info: Found 1 design units, including 1 entities, in source file EA4163.v
+    Info: Found entity 1: EA4163
+Info: Found 1 design units, including 1 entities, in source file VME/vmeds.v
+    Info: Found entity 1: vmeds
+Warning (10236): Verilog HDL Implicit Net warning at EA4163.v(120): created implicit net for "as"
+Info: Elaborating entity "EA4163" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at EA4163.v(113): object "DIN" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at EA4163.v(115): object "AMOD" assigned a value but never read
+Info (10264): Verilog HDL Case Statement information at EA4163.v(165): all case item expressions in this case statement are onehot
+Warning (10034): Output port "O_VME_DTACK_D" at EA4163.v(86) has no driver
+Warning (10034): Output port "O_VME_DTACK_EN" at EA4163.v(87) has no driver
+Warning (10034): Output port "O_OUT_CCH_3[23]" at EA4163.v(88) has no driver
+Warning (10034): Output port "O_OUT_CCH_3[22]" at EA4163.v(88) has no driver
+Warning (10034): Output port "O_OUT_CCH_3[21]" at EA4163.v(88) has no driver
+Warning (10034): Output port "O_OUT_CCH_3[20]" at EA4163.v(88) has no driver
+Warning (10034): Output port "O_OUT_CCH_3[19]" at EA4163.v(88) has no driver
+Warning (10034): Output port "O_OUT_CCH_3[18]" at EA4163.v(88) has no driver
+Warning (10034): Output port "O_OUT_CCH_3[17]" at EA4163.v(88) has no driver
+Warning (10034): Output port "O_OUT_CCH_3[16]" at EA4163.v(88) has no driver
+Warning (10034): Output port "O_OUT_CH_1[7]" at EA4163.v(89) has no driver
+Warning (10034): Output port "O_OUT_CH_1[6]" at EA4163.v(89) has no driver
+Warning (10034): Output port "O_OUT_CH_1[5]" at EA4163.v(89) has no driver
+Warning (10034): Output port "O_OUT_CH_1[4]" at EA4163.v(89) has no driver
+Warning (10034): Output port "O_OUT_CH_1[3]" at EA4163.v(89) has no driver
+Warning (10034): Output port "O_OUT_CH_1[2]" at EA4163.v(89) has no driver
+Warning (10034): Output port "O_OUT_CH_1[1]" at EA4163.v(89) has no driver
+Warning (10034): Output port "O_OUT_CH_1[0]" at EA4163.v(89) has no driver
+Warning (10034): Output port "O_OUT_CH_2[15]" at EA4163.v(90) has no driver
+Warning (10034): Output port "O_OUT_CH_2[14]" at EA4163.v(90) has no driver
+Warning (10034): Output port "O_OUT_CH_2[13]" at EA4163.v(90) has no driver
+Warning (10034): Output port "O_OUT_CH_2[12]" at EA4163.v(90) has no driver
+Warning (10034): Output port "O_OUT_CH_2[11]" at EA4163.v(90) has no driver
+Warning (10034): Output port "O_OUT_CH_2[10]" at EA4163.v(90) has no driver
+Warning (10034): Output port "O_OUT_CH_2[9]" at EA4163.v(90) has no driver
+Warning (10034): Output port "O_OUT_CH_2[8]" at EA4163.v(90) has no driver
+Info: Elaborating entity "vmeds" for hierarchy "vmeds:vmeds"
+Warning (10270): Verilog HDL Case Statement warning at vmeds.v(20): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at vmeds.v(20): inferring latch(es) for variable "addr7C80", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vmeds.v(20): inferring latch(es) for variable "addr7C82", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vmeds.v(20): inferring latch(es) for variable "addr7C84", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vmeds.v(20): inferring latch(es) for variable "addr7C86", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vmeds.v(20): inferring latch(es) for variable "addr7C88", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vmeds.v(20): inferring latch(es) for variable "addr7C8A", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vmeds.v(20): inferring latch(es) for variable "addr7C8C", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vmeds.v(20): inferring latch(es) for variable "addr7C8E", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vmeds.v(20): inferring latch(es) for variable "addr7C90", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vmeds.v(20): inferring latch(es) for variable "addr7C96", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vmeds.v(20): inferring latch(es) for variable "addr7CA0", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vmeds.v(20): inferring latch(es) for variable "addr7CA2", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at vmeds.v(20): inferring latch(es) for variable "addr7CA4", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "addr7CA4" at vmeds.v(20)
+Info (10041): Inferred latch for "addr7CA2" at vmeds.v(20)
+Info (10041): Inferred latch for "addr7CA0" at vmeds.v(20)
+Info (10041): Inferred latch for "addr7C96" at vmeds.v(20)
+Info (10041): Inferred latch for "addr7C90" at vmeds.v(20)
+Info (10041): Inferred latch for "addr7C8E" at vmeds.v(20)
+Info (10041): Inferred latch for "addr7C8C" at vmeds.v(20)
+Info (10041): Inferred latch for "addr7C8A" at vmeds.v(20)
+Info (10041): Inferred latch for "addr7C88" at vmeds.v(20)
+Info (10041): Inferred latch for "addr7C86" at vmeds.v(20)
+Info (10041): Inferred latch for "addr7C84" at vmeds.v(20)
+Info (10041): Inferred latch for "addr7C82" at vmeds.v(20)
+Info (10041): Inferred latch for "addr7C80" at vmeds.v(20)
+Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info: Generated suppressed messages file C:/Altera_PRJ/EA4163/EA4163.map.smsg
+Info: Quartus II Analysis & Elaboration was successful. 0 errors, 44 warnings
+    Info: Peak virtual memory: 219 megabytes
+    Info: Processing ended: Wed Oct 28 11:05:21 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in C:/Altera_PRJ/EA4163/EA4163.map.smsg.
+
+

@@ -1,0 +1,90 @@
+// Copyright (C) 1991-2009 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "10/28/2020 09:26:57"
+                                                                                
+// Verilog Test Bench template for design : EA4163
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 10 ns/ 1 ps
+module EA4163_vlg_tst();
+// constants                                           
+// general purpose registers
+reg eachvec;
+// test vector input registers
+reg I_CLK_32M;
+reg [15:1] I_VME_A;
+reg [5:0] I_VME_AM;
+reg I_VME_AS;
+reg I_VME_DS0;
+reg I_VME_DS1;
+reg I_VME_LWORD;
+reg I_VME_SYSRESET;
+reg I_VME_WR;
+reg [15:0] treg_VME_D;
+// wires                                               
+wire [23:16] O_OUT_CCH_3;
+wire [7:0] O_OUT_CH_1;
+wire [15:8] O_OUT_CH_2;
+wire O_VME_DTACK_D;
+wire O_VME_DTACK_EN;
+wire [15:0] VME_D;
+
+// assign statements (if any)                          
+assign VME_D = treg_VME_D;
+EA4163 i1 (
+// port map - connection between master ports and signals/registers   
+	.I_CLK_32M(I_CLK_32M),
+	.I_VME_A(I_VME_A),
+	.I_VME_AM(I_VME_AM),
+	.I_VME_AS(I_VME_AS),
+	.I_VME_DS0(I_VME_DS0),
+	.I_VME_DS1(I_VME_DS1),
+	.I_VME_LWORD(I_VME_LWORD),
+	.I_VME_SYSRESET(I_VME_SYSRESET),
+	.I_VME_WR(I_VME_WR),
+	.O_OUT_CCH_3(O_OUT_CCH_3),
+	.O_OUT_CH_1(O_OUT_CH_1),
+	.O_OUT_CH_2(O_OUT_CH_2),
+	.O_VME_DTACK_D(O_VME_DTACK_D),
+	.O_VME_DTACK_EN(O_VME_DTACK_EN),
+	.VME_D(VME_D)
+);
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+                                                       
+// --> end                                             
+$display("Running testbench");                       
+end                                                    
+always                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn)                  
+begin                                                  
+// code executes for every event on sensitivity list   
+// insert code here --> begin                          
+                                                       
+@eachvec;                                              
+// --> end                                             
+end                                                    
+endmodule
+

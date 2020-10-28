@@ -1,0 +1,1495 @@
+// Copyright (C) 1991-2009 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+
+// 
+// Device: Altera EPF10K200SRC240-1 Package RQFP240
+// 
+
+// 
+// This SDF file should be used for ModelSim-Altera (Verilog) only
+// 
+
+(DELAYFILE
+  (SDFVERSION "2.1")
+  (DESIGN "EA4163")
+  (DATE "10/28/2020 10:23:08")
+  (VENDOR "Altera")
+  (PROGRAM "Quartus II")
+  (VERSION "Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition")
+  (DIVIDER .)
+  (TIMESCALE 10 ns)
+
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_AS\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_DS1\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_DS0\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE always0\~2.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT datac (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT datad (0.4:0.4:0.4) (0.4:0.4:0.4))
+        (IOPATH datab combout (0.09:0.09:0.09) (0.09:0.09:0.09))
+        (IOPATH datac combout (0.09:0.09:0.09) (0.09:0.09:0.09))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[13\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.17:0.17:0.17) (0.17:0.17:0.17))
+        (PORT datad (0.31:0.31:0.31) (0.31:0.31:0.31))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[13\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.23:0.23:0.23) (0.23:0.23:0.23))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[10\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.17:0.17:0.17) (0.17:0.17:0.17))
+        (PORT datad (0.31:0.31:0.31) (0.31:0.31:0.31))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[10\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.23:0.23:0.23) (0.23:0.23:0.23))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[5\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.19:0.19:0.19) (0.19:0.19:0.19))
+        (PORT datad (0.33:0.33:0.33) (0.33:0.33:0.33))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[5\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.25:0.25:0.25) (0.25:0.25:0.25))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_A\[13\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_A\[10\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_A\[5\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_WR\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE VME_D\[0\]\~58.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE VME_D\[1\]\~59.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE VME_D\[2\]\~60.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE VME_D\[3\]\~61.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE VME_D\[4\]\~62.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE VME_D\[5\]\~63.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE VME_D\[6\]\~64.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE VME_D\[7\]\~65.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE VME_D\[8\]\~66.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE VME_D\[9\]\~67.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE VME_D\[10\]\~68.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_A\[11\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_CLK_32M\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_SYSRESET\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[11\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.17:0.17:0.17) (0.17:0.17:0.17))
+        (PORT datad (0.25:0.25:0.25) (0.25:0.25:0.25))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[11\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.23:0.23:0.23) (0.23:0.23:0.23))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_A\[12\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[12\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.17:0.17:0.17) (0.17:0.17:0.17))
+        (PORT datad (0.37:0.37:0.37) (0.37:0.37:0.37))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[12\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.23:0.23:0.23) (0.23:0.23:0.23))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_A\[9\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[9\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.17:0.17:0.17) (0.17:0.17:0.17))
+        (PORT datad (0.41:0.41:0.41) (0.41:0.41:0.41))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[9\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.23:0.23:0.23) (0.23:0.23:0.23))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_A\[14\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[14\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.17:0.17:0.17) (0.17:0.17:0.17))
+        (PORT datad (0.38:0.38:0.38) (0.38:0.38:0.38))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[14\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.23:0.23:0.23) (0.23:0.23:0.23))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_A\[15\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[15\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.19:0.19:0.19) (0.19:0.19:0.19))
+        (PORT datad (0.44:0.44:0.44) (0.44:0.44:0.44))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[15\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.25:0.25:0.25) (0.25:0.25:0.25))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_LWORD\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[0\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.19:0.19:0.19) (0.19:0.19:0.19))
+        (PORT datad (0.36:0.36:0.36) (0.36:0.36:0.36))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[0\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.25:0.25:0.25) (0.25:0.25:0.25))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE vmectrl\|Equal12\~10.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (PORT datab (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (PORT datac (0.1:0.1:0.1) (0.1:0.1:0.1))
+        (PORT datad (0.1:0.1:0.1) (0.1:0.1:0.1))
+        (IOPATH dataa cascout (0.07:0.07:0.07) (0.07:0.07:0.07))
+        (IOPATH datab cascout (0.06:0.06:0.06) (0.06:0.06:0.06))
+        (IOPATH datac cascout (0.06:0.06:0.06) (0.06:0.06:0.06))
+        (IOPATH datad cascout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE vmectrl\|Equal12\~14.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (PORT datab (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (PORT datac (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (PORT datad (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (PORT cascin (0:0:0) (0:0:0))
+        (IOPATH dataa combout (0.1:0.1:0.1) (0.1:0.1:0.1))
+        (IOPATH datab combout (0.09:0.09:0.09) (0.09:0.09:0.09))
+        (IOPATH datac combout (0.09:0.09:0.09) (0.09:0.09:0.09))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (IOPATH cascin combout (0.1:0.1:0.1) (0.1:0.1:0.1))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_A\[1\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[1\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.18:0.18:0.18) (0.18:0.18:0.18))
+        (PORT datad (0.31:0.31:0.31) (0.31:0.31:0.31))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[1\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.24:0.24:0.24) (0.24:0.24:0.24))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_A\[3\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[3\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.18:0.18:0.18) (0.18:0.18:0.18))
+        (PORT datad (0.32:0.32:0.32) (0.32:0.32:0.32))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[3\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.24:0.24:0.24) (0.24:0.24:0.24))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_A\[4\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[4\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.18:0.18:0.18) (0.18:0.18:0.18))
+        (PORT datad (0.34:0.34:0.34) (0.34:0.34:0.34))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[4\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.24:0.24:0.24) (0.24:0.24:0.24))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_A\[7\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[7\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.18:0.18:0.18) (0.18:0.18:0.18))
+        (PORT datad (0.37:0.37:0.37) (0.37:0.37:0.37))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[7\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.24:0.24:0.24) (0.24:0.24:0.24))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_A\[6\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[6\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.18:0.18:0.18) (0.18:0.18:0.18))
+        (PORT datad (0.41:0.41:0.41) (0.41:0.41:0.41))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[6\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.24:0.24:0.24) (0.24:0.24:0.24))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_A\[8\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.07:0.07:0.07) (0.07:0.07:0.07))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[8\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.18:0.18:0.18) (0.18:0.18:0.18))
+        (PORT datad (0.38:0.38:0.38) (0.38:0.38:0.38))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[8\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.24:0.24:0.24) (0.24:0.24:0.24))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE vmectrl\|Equal12\~12.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.12:0.12:0.12) (0.12:0.12:0.12))
+        (PORT datab (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (PORT datac (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (PORT datad (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (IOPATH dataa cascout (0.07:0.07:0.07) (0.07:0.07:0.07))
+        (IOPATH datab cascout (0.06:0.06:0.06) (0.06:0.06:0.06))
+        (IOPATH datac cascout (0.06:0.06:0.06) (0.06:0.06:0.06))
+        (IOPATH datad cascout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE vmectrl\|Equal12\~15.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (PORT datac (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (PORT datad (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (PORT cascin (0:0:0) (0:0:0))
+        (IOPATH datab combout (0.09:0.09:0.09) (0.09:0.09:0.09))
+        (IOPATH datac combout (0.09:0.09:0.09) (0.09:0.09:0.09))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (IOPATH cascin combout (0.1:0.1:0.1) (0.1:0.1:0.1))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE vmectrl\|Equal12\~3.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datac (0.11:0.11:0.11) (0.11:0.11:0.11))
+        (PORT datad (0.18:0.18:0.18) (0.18:0.18:0.18))
+        (IOPATH datac combout (0.09:0.09:0.09) (0.09:0.09:0.09))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE I_VME_A\[2\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE R_ADDR\[2\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.19:0.19:0.19) (0.19:0.19:0.19))
+        (PORT datad (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE R_ADDR\[2\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.25:0.25:0.25) (0.25:0.25:0.25))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE vmectrl\|DOUT\[11\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (PORT datad (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (IOPATH dataa regin (0.07:0.07:0.07) (0.07:0.07:0.07))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE vmectrl\|DOUT\[11\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.07:0.07:0.07) (0.07:0.07:0.07))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE VME_D\[12\]\~69.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE vmectrl\|DOUT\[13\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (PORT datad (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (IOPATH dataa regin (0.07:0.07:0.07) (0.07:0.07:0.07))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE vmectrl\|DOUT\[13\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.07:0.07:0.07) (0.07:0.07:0.07))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE VME_D\[14\]\~70.lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (IOPATH datad combout (0.08:0.08:0.08) (0.08:0.08:0.08))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_lcell")
+    (INSTANCE vmectrl\|DOUT\[15\].lecomb)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (PORT datad (0.01:0.01:0.01) (0.01:0.01:0.01))
+        (IOPATH dataa regin (0.07:0.07:0.07) (0.07:0.07:0.07))
+        (IOPATH datad regin (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_lcell_register")
+    (INSTANCE vmectrl\|DOUT\[15\].lereg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT clk (0.08:0.08:0.08) (0.08:0.08:0.08))
+        (PORT dataa (0.07:0.07:0.07) (0.07:0.07:0.07))
+        (IOPATH (posedge clk) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+        (IOPATH (posedge aclr) regout (0.05:0.05:0.05) (0.05:0.05:0.05))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (0.04:0.04:0.04))
+      (SETUP dataa (posedge clk) (0.04:0.04:0.04))
+      (HOLD datain (posedge clk) (0.1:0.1:0.1))
+      (HOLD dataa (posedge clk) (0.1:0.1:0.1))
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_VME_DTACK_D\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_VME_DTACK_EN\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CCH_3\[16\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CCH_3\[17\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CCH_3\[18\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CCH_3\[19\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CCH_3\[20\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CCH_3\[21\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CCH_3\[22\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CCH_3\[23\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_1\[0\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_1\[1\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_1\[2\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_1\[3\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_1\[4\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_1\[5\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_1\[6\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_1\[7\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_2\[8\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_2\[9\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_2\[10\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_2\[11\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_2\[12\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_2\[13\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_2\[14\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE O_OUT_CH_2\[15\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0:0:0) (0:0:0))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[0\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.09:0.09:0.09) (0.09:0.09:0.09))
+        (PORT oe (0:0:0) (0:0:0))
+        (IOPATH (posedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH (negedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[1\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.11:0.11:0.11) (0.11:0.11:0.11))
+        (PORT oe (0:0:0) (0:0:0))
+        (IOPATH (posedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH (negedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[2\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.21:0.21:0.21) (0.21:0.21:0.21))
+        (PORT oe (0:0:0) (0:0:0))
+        (IOPATH (posedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH (negedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[3\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.11:0.11:0.11) (0.11:0.11:0.11))
+        (PORT oe (0:0:0) (0:0:0))
+        (IOPATH (posedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH (negedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[4\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.2:0.2:0.2) (0.2:0.2:0.2))
+        (PORT oe (0:0:0) (0:0:0))
+        (IOPATH (posedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH (negedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[5\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.29:0.29:0.29) (0.29:0.29:0.29))
+        (PORT oe (0:0:0) (0:0:0))
+        (IOPATH (posedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH (negedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[6\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.1:0.1:0.1) (0.1:0.1:0.1))
+        (PORT oe (0:0:0) (0:0:0))
+        (IOPATH (posedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH (negedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[7\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.17:0.17:0.17) (0.17:0.17:0.17))
+        (PORT oe (0:0:0) (0:0:0))
+        (IOPATH (posedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH (negedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[8\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.09:0.09:0.09) (0.09:0.09:0.09))
+        (PORT oe (0:0:0) (0:0:0))
+        (IOPATH (posedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH (negedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[9\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.1:0.1:0.1) (0.1:0.1:0.1))
+        (PORT oe (0:0:0) (0:0:0))
+        (IOPATH (posedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH (negedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[10\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.28:0.28:0.28) (0.28:0.28:0.28))
+        (PORT oe (0:0:0) (0:0:0))
+        (IOPATH (posedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH (negedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[11\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.11:0.11:0.11) (0.11:0.11:0.11))
+        (PORT oe (0.25:0.25:0.25) (0.25:0.25:0.25))
+        (IOPATH (posedge oe) padio (0.53:0.53:0.53) (0.53:0.53:0.53))
+        (IOPATH (negedge oe) padio (0.53:0.53:0.53) (0.53:0.53:0.53))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[12\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.1:0.1:0.1) (0.1:0.1:0.1))
+        (PORT oe (0:0:0) (0:0:0))
+        (IOPATH (posedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH (negedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[13\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.17:0.17:0.17) (0.17:0.17:0.17))
+        (PORT oe (0.42:0.42:0.42) (0.42:0.42:0.42))
+        (IOPATH (posedge oe) padio (0.53:0.53:0.53) (0.53:0.53:0.53))
+        (IOPATH (negedge oe) padio (0.53:0.53:0.53) (0.53:0.53:0.53))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[14\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.35:0.35:0.35) (0.35:0.35:0.35))
+        (PORT oe (0:0:0) (0:0:0))
+        (IOPATH (posedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH (negedge oe) padio (0.61:0.61:0.61) (0.61:0.61:0.61))
+        (IOPATH datain padio (0.32:0.32:0.32) (0.32:0.32:0.32))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "flex10ke_asynch_io")
+    (INSTANCE VME_D\[15\]\~I.inst1)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain (0.24:0.24:0.24) (0.24:0.24:0.24))
+        (PORT oe (0.51:0.51:0.51) (0.51:0.51:0.51))
+        (IOPATH (posedge oe) padio (0.53:0.53:0.53) (0.53:0.53:0.53))
+        (IOPATH (negedge oe) padio (0.53:0.53:0.53) (0.53:0.53:0.53))
+        (IOPATH datain padio (0.34:0.34:0.34) (0.34:0.34:0.34))
+      )
+    )
+  )
+)

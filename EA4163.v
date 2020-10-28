@@ -95,8 +95,22 @@ wire sysres;
 wire ds0;
 wire ds1;
 wire wr;
+
+wire addr7C80;
+wire addr7C82;
+wire addr7C84;
+wire addr7C86;
+wire addr7C88;
+wire addr7C8A;
+wire addr7C8C;
+wire addr7C8E;
+wire addr7C90;
+wire addr7C96;
+wire addr7CA0;
+wire addr7CA2;
+wire addr7CA4;
+
 wire [15:0] DIN;
-wire [15:0] DOUT;
 wire [15:0] ADDR;
 wire [5:0] AMOD;
 
@@ -110,9 +124,13 @@ assign ADDR[15:0] = {I_VME_A[15:1],I_VME_LWORD};
 assign AMOD = I_VME_AM;
 
 assign DIN = VME_D;
-assign DOUT wr ?  : 16'hz;
+assign VME_D = wr ? DOUT : 16'hz;
 
 reg [15:0] R_ADDR;
+reg [15:0] DOUT;
+reg [15:0] R_STATUS; //Status register
+
+vmeds vmeds(.ADDR(R_ADDR),.addr7CA0(addr7CA0),.addr7CA4(addr7CA4)); 
 
 always@(posedge sysres or posedge sysclk)
 begin
@@ -125,5 +143,39 @@ begin
 	end
 end
 
+always@(posedge sysres or posedge sysclk)
+begin
+	if(sysres)
+	begin
+		R_STATUS <= 0;
+	end
+	else
+	begin
+		R_STATUS <= 0;///Aaeaa aoaao caiieiyouny cia?aiyie
+	end
+end
+
+//Aaoeo?aoi? aa?ana n ioeuoeieaeni?ii ?aaeno?ia eiio?ieea?a ia oeio VME
+always@(posedge sysres or posedge sysclk)
+begin
+	if(sysres)
+		DOUT <= 0;
+	else
+	begin
+		case({addr7CA0,addr7CA4}) ///MUX needed !!!
+			
+			2'b10:
+			begin
+				DOUT <= {R_STATUS[7:0],R_STATUS[15:8]};
+			end
+					
+			2'b01:
+			begin
+				DOUT <= 16'hA800;
+			end
+					
+		endcase
+	end
+end 
 
 endmodule 
