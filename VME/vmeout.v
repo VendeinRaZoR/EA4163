@@ -1,6 +1,0 @@
-module vmeout(
-
-);
-
-
-endmodule 
