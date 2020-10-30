@@ -15,7 +15,7 @@ module EA4163(
 	I_VME_A,
 	I_VME_AM,
 //	O_VME_IRQ,
-//	O_VME_IACK_OUT,
+//	O_VME_IACK_OUT,  
 //	O_VME_BERR,
 	/*KL_VME,
 	O_RD_BUF_EN,
@@ -134,7 +134,7 @@ assign STATUSID = 16'hA800; //STATUSID register value
 
 reg R_REXST; //part of BERR signal result
 
-wire [15:0] R_ADDR; //input ADDRESS LATCH
+reg [15:0] R_ADDR; //input ADDRESS LATCH
 reg [15:0] R_DOUT; //output DATA LATCH
 reg [15:0] R_STATUS; //Status register
 //VME ADDRESS DECODER
@@ -150,20 +150,17 @@ vmemux vmemux(
 	.DATA7CA0({R_STATUS[7:0],R_STATUS[15:8]}),
 	.DOUT(DOUT)
 );
-//VME input stage (address register latch etc)
-vmein vmein(
-.sysres(sysres),
-.sysclk(sysclk),
-.ds0(ds0),
-.ds1(ds1),
-.as(as),
-.R_ADDR(R_ADDR),
-.ADDR(ADDR)
-);
-//VME output stage (output register etc)
-vmeout vmeout(
-
-);
+//VME ADDRESS latch
+always@(posedge sysres or posedge sysclk)
+begin
+	if(sysres)
+		R_ADDR <= 0;
+	else
+	begin
+		if(!ds0 & !ds1 & !as)
+			R_ADDR <= ADDR;
+	end
+end
 
 always@(posedge sysres or posedge sysclk)
 begin
