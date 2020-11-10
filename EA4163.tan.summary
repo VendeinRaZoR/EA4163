@@ -5,19 +5,19 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 6.800 ns
+Actual Time    : 4.900 ns
 From           : I_VME_DS0
-To             : R_ADDR[5]
+To             : R_ADDR[11]
 From Clock     : --
-To Clock       : I_VME_SYSRESET
+To Clock       : I_CLK_32M
 Failed Paths   : 0
 
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 7.900 ns
-From           : vmectrl:vmectrl|DOUT[15]
-To             : VME_D[15]
+Actual Time    : 20.800 ns
+From           : R_REXST
+To             : VME_D[13]
 From Clock     : I_CLK_32M
 To Clock       : --
 Failed Paths   : 0
@@ -25,9 +25,9 @@ Failed Paths   : 0
 Type           : Worst-case tpd
 Slack          : N/A
 Required Time  : None
-Actual Time    : 11.200 ns
+Actual Time    : 16.900 ns
 From           : I_VME_WR
-To             : VME_D[15]
+To             : VME_D[13]
 From Clock     : --
 To Clock       : --
 Failed Paths   : 0
@@ -35,11 +35,21 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : -0.800 ns
-From           : I_VME_A[2]
-To             : R_ADDR[2]
+Actual Time    : -0.400 ns
+From           : I_VME_A[10]
+To             : R_ADDR[10]
 From Clock     : --
-To Clock       : I_VME_SYSRESET
+To Clock       : I_CLK_32M
+Failed Paths   : 0
+
+Type           : Clock Setup: 'I_CLK_32M'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 222.22 MHz ( period = 4.500 ns )
+From           : R_ADDR[4]
+To             : R_DOUT[15]
+From Clock     : I_CLK_32M
+To Clock       : I_CLK_32M
 Failed Paths   : 0
 
 Type           : Total number of failed paths

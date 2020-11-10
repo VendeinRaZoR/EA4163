@@ -1,5 +1,5 @@
 Assembler report for EA4163
-Wed Oct 28 10:23:05 2020
+Sat Oct 31 02:34:58 2020
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -39,7 +39,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Oct 28 10:23:05 2020 ;
+; Assembler Status      ; Successful - Sat Oct 31 02:34:58 2020 ;
 ; Revision Name         ; EA4163                                ;
 ; Top-level Entity Name ; EA4163                                ;
 ; Family                ; FLEX10KE                              ;
@@ -96,7 +96,7 @@ applicable agreement for further details.
 +----------------+------------------------------------------+
 ; Device         ; EPF10K200SRC240-1                        ;
 ; JTAG usercode  ; 0x0000007F                               ;
-; Checksum       ; 0x00037FC6                               ;
+; Checksum       ; 0x00038D38                               ;
 +----------------+------------------------------------------+
 
 
@@ -107,7 +107,7 @@ applicable agreement for further details.
 +--------------------+--------------------------------------+
 ; Device             ; EPC2                                 ;
 ; JTAG usercode      ; 0x00000000                           ;
-; Checksum           ; 0x00110FFB                           ;
+; Checksum           ; 0x001111C8                           ;
 ; Compression Ratio  ; 1                                    ;
 +--------------------+--------------------------------------+
 
@@ -119,7 +119,7 @@ applicable agreement for further details.
 +--------------------+----------------------------------------+
 ; Device             ; EPC2                                   ;
 ; JTAG usercode      ; 0x00000000                             ;
-; Checksum           ; 0x013EBB69                             ;
+; Checksum           ; 0x013EBF7B                             ;
 ; Compression Ratio  ; 1                                      ;
 +--------------------+----------------------------------------+
 
@@ -130,13 +130,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Oct 28 10:23:04 2020
+    Info: Processing started: Sat Oct 31 02:34:58 2020
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off EA4163 -c EA4163
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 235 megabytes
-    Info: Processing ended: Wed Oct 28 10:23:05 2020
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Sat Oct 31 02:34:58 2020
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 

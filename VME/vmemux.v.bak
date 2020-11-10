@@ -1,0 +1,59 @@
+module vmemux(
+input addr7C80,
+input addr7C82,
+input addr7C84,
+input addr7C86,
+input addr7C88,
+input addr7C8A,  
+input addr7C8C,  
+input addr7C8E,  
+input addr7C90,  
+input addr7C94,
+input addr7C96,  
+input addr7CA0,  
+input addr7CA2,  
+input addr7CA4,  
+input addr7CA6,
+input [15:0] DATA7C80,
+input [15:0] DATA7C82,
+input [15:0] DATA7C84,
+input [15:0] DATA7C86,
+input [15:0] DATA7C88,
+input [15:0] DATA7C8A,
+input [15:0] DATA7C8C,
+input [15:0] DATA7C8E,
+input [15:0] DATA7C90,
+input [15:0] DATA7C96,
+input [15:0] DATA7CA0,
+input [15:0] DATA7CA2,
+input [15:0] DATA7CA4,
+output reg [15:0] DOUT
+); 
+
+always@*
+begin
+	case({addr7C80,addr7C82,addr7C84,addr7C86,
+	addr7C88,addr7C8A,addr7C8C,addr7C8E,addr7C90,
+	addr7C96,addr7CA0,addr7CA2,addr7CA4}) ///MUX needed !!! 
+		
+		13'b1000000000000: DOUT[0] <= DATA7C80[0];
+		13'b0100000000000: DOUT[0] <= DATA7C82[0];
+		13'b0010000000000: DOUT[0] <= DATA7C84[0];
+		13'b0001000000000: DOUT[0] <= DATA7C86[0];
+		13'b0000100000000: DOUT[0] <= DATA7C88[0];
+		13'b0000010000000: DOUT[0] <= DATA7C8A[0];
+		13'b0000001000000: DOUT[0] <= DATA7C8C[0];
+		13'b0000000100000: DOUT[0] <= DATA7C8E[0];
+		13'b0000000010000: DOUT[0] <= DATA7C90[0];
+		13'b0000000001000: DOUT[0] <= DATA7C96[0];
+		13'b0000000000100: DOUT[0] <= DATA7CA0[0];
+		13'b0000000000010: DOUT[0] <= DATA7CA2[0];
+		13'b0000000000001: DOUT[0] <= DATA7CA4[0];
+		
+		default: DOUT[0] <= 0;
+		
+	endcase
+end 
+
+
+endmodule 

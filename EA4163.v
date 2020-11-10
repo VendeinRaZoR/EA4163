@@ -97,6 +97,7 @@ wire ds1;//local VME DS1
 wire as;
 wire wr;//local VME WRITE
 
+wire addr7C;
 wire addr7C80; //FORMAT 1-8 CHANNELS INPUT REGISTER ADDRESS
 wire addr7C82; //FORMAT 9-16 CHANNELS INPUT REGISTER ADDRESS
 wire addr7C84; //FORMAT 17-24 CHANNELS INPUT REGISTER ADDRESS 
@@ -106,10 +107,16 @@ wire addr7C8A; //FORMAT 9-16 CHANNELS OUTPUT REGISTER ADDRESS
 wire addr7C8C; //1-16 CHANNELS BLOCKED OUTPUT REGISTER ADDRESS
 wire addr7C8E; //17-32 CHANNELS BLOCKED OUTPUT REGISTER ADDRESS
 wire addr7C90; //1-16 CHANNELS BLOCKED OUTPUT REGISTER ADDRESS
+wire addr7C94; //COMMAND REGISTER 1 ADDRESS
 wire addr7C96; //TYPES OF INTERRUPT REGISTER ADDRESS
 wire addr7CA0; //STATUS REGISTER DS ADDRESS
 wire addr7CA2; //SELFTEST REGISTER ADDRESS
 wire addr7CA4; //STATUSID REGISTER ADDRESS
+wire addr7CA6; //COMMAND REGISTER 2 ADDRESS
+
+wire eareset; //EA4163 program reset
+wire outchen;//output channels enable
+wire inchen;//input channels enable
 
 wire [15:0] DIN; //local VME data input from VME_D
 wire [15:0] ADDR;//local VME address 15:1 + LOWORD
@@ -119,7 +126,7 @@ wire [15:0] STATUSID; //STATUSID register
 wire [15:0] DOUT; //local VME data output to VME_D
 //Assign input global signals to local
 assign sysclk = I_CLK_32M; 
-assign sysres = I_VME_SYSRESET;
+assign sysres = I_VME_SYSRESET | eareset;
 assign wr = I_VME_WR;
 assign as = I_VME_AS;
 assign ds0 = I_VME_DS0;
@@ -128,7 +135,7 @@ assign ADDR[15:0] = {I_VME_A[15:1],I_VME_LWORD};
 assign AMOD = I_VME_AM;
 
 assign DIN = VME_D;
-assign VME_D = (wr & R_REXST) ? R_DOUT : 16'hz;
+assign VME_D = (wr & R_REXST & !ds0 & !ds1 & !as & addr7C) ? R_DOUT : 16'hz;
 
 assign STATUSID = 16'hA800; //STATUSID register value
 
@@ -137,20 +144,36 @@ reg R_REXST; //part of BERR signal result
 reg [15:0] R_ADDR; //input ADDRESS LATCH
 reg [15:0] R_DOUT; //output DATA LATCH
 reg [15:0] R_STATUS; //Status register
+reg [15:0] R_CMD;
 //VME ADDRESS DECODER
 vmeds vmeds(
 	.ADDR(R_ADDR),
+	.addr7C94(addr7C94),
 	.addr7CA0(addr7CA0),
-	.addr7CA4(addr7CA4)
+	.addr7CA4(addr7CA4),
+	.addr7CA6(addr7CA6),
+	.addr7C(addr7C)
 ); 
 //VME ADDRESS MULTIPLEXER on output
 vmemux vmemux(
 	.ADDR(R_ADDR),
 	.DATA7CA4(16'hA800),
 	.DATA7CA0({R_STATUS[7:0],R_STATUS[15:8]}),
+	//.DATA7CA6()
+	//.DATA7C94()
 	.DOUT(DOUT)
 );
-//VME ADDRESS latch
+///EA4163 CMD DECODER
+eacmdds eacmdds(
+	.addr7CA6(addr7CA6),
+	.addr7C94(addr7C94),
+	.cmd(R_CMD),
+	.eareset(eareset),
+	.outchen(outchen), 
+	.inchen(inchen)
+);
+
+//VME ADDRESS LATCH
 always@(posedge sysres or posedge sysclk)
 begin
 	if(sysres)
@@ -161,7 +184,7 @@ begin
 			R_ADDR <= ADDR;
 	end
 end
-
+///ADDRESS existance LATCH
 always@(posedge sysres or posedge sysclk)
 begin
 	if(sysres)
@@ -170,19 +193,32 @@ begin
 	begin
 		if(!ds0 & !ds1 & !as)
 			R_REXST <= addr7C80 | addr7C82 | addr7C84 | addr7C86 
-			| addr7C88 | addr7C8A | addr7C8C | addr7C8E | addr7C90 
-			| addr7C96 | addr7CA0 | addr7CA2 | addr7CA4;
+			| addr7C88 | addr7C8A | addr7C8C | addr7C8E | addr7C90 | addr7C94
+			| addr7C96 | addr7CA0 | addr7CA2 | addr7CA4 | addr7CA6;
 	end
 end
-
+///DOUT LATCH
 always@(posedge sysres or posedge sysclk)
 begin
 	if(sysres)
 		R_DOUT <= 0;
 	else
 	begin
-		if(R_REXST)
+		if(R_REXST & wr & !ds0 & !ds1 & !as & addr7C)
 			R_DOUT <= DOUT;
+	end
+end
+///CMD LATCH
+always@(posedge sysres or posedge sysclk)
+begin
+	if(sysres)
+	begin
+		R_CMD <= 0;
+	end
+	else
+	begin
+		if((addr7CA6 | addr7C94) & R_REXST & !wr & !ds0 & !ds1 & !as)
+			R_CMD <= DIN;
 	end
 end
 

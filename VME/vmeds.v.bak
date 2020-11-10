@@ -19,6 +19,8 @@ output addr7CA6,
 output addr7C
 );
 
+wire addr7C;
+
 reg [255:0] addrds;
 
 assign addr7C = ADDR[15:8] == 8'h7C;

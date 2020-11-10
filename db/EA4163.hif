@@ -30,7 +30,7 @@ ON
 # case_sensitive
 # source_file
 EA4163.v
-a66c8b98e782ff9461665511fc85e376
+52bab3e134f6e92ce83481576c61182d
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -66,7 +66,7 @@ ON
 # case_sensitive
 # source_file
 VME|vmeds.v
-d23996a49d2a8cd426eb3fd9b06d471c
+88a9aa4f52a863491cba3522ea9f8
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -86,6 +86,42 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 vmeds:vmeds
+}
+# macro_sequence
+
+# end
+# entity
+vmemux
+# storage
+db|EA4163.(2).cnf
+db|EA4163.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+VME|vmemux.v
+20e68f2a33c6c875cc48d8a599f38dd
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+vmemux:vmemux
 }
 # macro_sequence
 

@@ -49,6 +49,7 @@ set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id e
 set_global_assignment -name FLEX10K_OPTIMIZATION_TECHNIQUE SPEED
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name VERILOG_FILE VME/vmemux.v
 set_global_assignment -name VERILOG_TEST_BENCH_FILE simulation/modelsim/EA4163.vt
 set_global_assignment -name VERILOG_FILE EA4163.v
 set_global_assignment -name VERILOG_FILE VME/vmeds.v
