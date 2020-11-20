@@ -1,5 +1,5 @@
-Analysis & Synthesis report for EA4163
-Sat Oct 31 02:34:52 2020
+Analysis & Elaboration report for EA4163
+Sat Nov 21 01:36:54 2020
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -7,18 +7,14 @@ Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Analysis & Synthesis Source Files Read
-  5. Analysis & Synthesis Resource Usage Summary
-  6. Analysis & Synthesis Resource Utilization by Entity
-  7. Registers Removed During Synthesis
-  8. Removed Registers Triggering Further Register Optimizations
-  9. General Register Statistics
- 10. Port Connectivity Checks: "vmemux:vmemux"
- 11. Port Connectivity Checks: "vmeds:vmeds"
- 12. Analysis & Synthesis Messages
- 13. Analysis & Synthesis Suppressed Messages
+  2. Analysis & Elaboration Summary
+  3. Analysis & Elaboration Settings
+  4. Port Connectivity Checks: "eafmtds:eafmtdsin_25_32"
+  5. Port Connectivity Checks: "eacmdds:eacmdds"
+  6. Port Connectivity Checks: "vmemux:vmemux"
+  7. Port Connectivity Checks: "vmeds:vmeds"
+  8. Analysis & Elaboration Messages
+  9. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -41,23 +37,19 @@ applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                               ;
-+-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat Oct 31 02:34:52 2020        ;
-; Quartus II Version          ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
-; Revision Name               ; EA4163                                       ;
-; Top-level Entity Name       ; EA4163                                       ;
-; Family                      ; FLEX10KE                                     ;
-; Total logic elements        ; 26                                           ;
-; Total pins                  ; 70                                           ;
-; Total memory bits           ; 0                                            ;
-; Total PLLs                  ; 0                                            ;
-+-----------------------------+----------------------------------------------+
++------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                               ;
++-------------------------------+----------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Sat Nov 21 01:36:54 2020        ;
+; Quartus II Version            ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
+; Revision Name                 ; EA4163                                       ;
+; Top-level Entity Name         ; EA4163                                       ;
+; Family                        ; FLEX10KE                                     ;
++-------------------------------+----------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                    ;
+; Analysis & Elaboration Settings                                                                  ;
 +--------------------------------------------------------------+-------------------+---------------+
 ; Option                                                       ; Setting           ; Default Value ;
 +--------------------------------------------------------------+-------------------+---------------+
@@ -122,106 +114,21 @@ applicable agreement for further details.
 
 
 +-----------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                          ;
-+----------------------------------+-----------------+------------------------+-----------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path      ;
-+----------------------------------+-----------------+------------------------+-----------------------------------+
-; VME/vmemux.v                     ; yes             ; User Verilog HDL File  ; C:/Altera_PRJ/EA4163/VME/vmemux.v ;
-; EA4163.v                         ; yes             ; User Verilog HDL File  ; C:/Altera_PRJ/EA4163/EA4163.v     ;
-; VME/vmeds.v                      ; yes             ; User Verilog HDL File  ; C:/Altera_PRJ/EA4163/VME/vmeds.v  ;
-+----------------------------------+-----------------+------------------------+-----------------------------------+
+; Port Connectivity Checks: "eafmtds:eafmtdsin_25_32"                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; FMTCH ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary ;
-+--------------------------------+------------+
-; Resource                       ; Usage      ;
-+--------------------------------+------------+
-; Total logic elements           ; 26         ;
-; Total combinational functions  ; 10         ;
-;     -- Total 4-input functions ; 3          ;
-;     -- Total 3-input functions ; 2          ;
-;     -- Total 2-input functions ; 5          ;
-;     -- Total 1-input functions ; 0          ;
-;     -- Total 0-input functions ; 0          ;
-; Total registers                ; 20         ;
-; I/O pins                       ; 70         ;
-; Maximum fan-out node           ; I_CLK_32M  ;
-; Maximum fan-out                ; 20         ;
-; Total fan-out                  ; 125        ;
-; Average fan-out                ; 1.30       ;
-+--------------------------------+------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                    ;
-+----------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-; |EA4163                    ; 26 (24)     ; 20           ; 0           ; 70   ; 6 (4)        ; 16 (16)           ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |EA4163             ; work         ;
-;    |vmeds:vmeds|           ; 2 (2)       ; 0            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EA4163|vmeds:vmeds ; work         ;
-+----------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; R_STATUS[0..15]                        ; Stuck at GND due to stuck port data_in ;
-; R_DOUT[0..10,12,14]                    ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 29 ;                                        ;
-+----------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                        ;
-+---------------+---------------------------+----------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
-+---------------+---------------------------+----------------------------------------+
-; R_STATUS[0]   ; Stuck at GND              ; R_DOUT[8]                              ;
-;               ; due to stuck port data_in ;                                        ;
-; R_STATUS[15]  ; Stuck at GND              ; R_DOUT[7]                              ;
-;               ; due to stuck port data_in ;                                        ;
-; R_STATUS[14]  ; Stuck at GND              ; R_DOUT[6]                              ;
-;               ; due to stuck port data_in ;                                        ;
-; R_STATUS[13]  ; Stuck at GND              ; R_DOUT[5]                              ;
-;               ; due to stuck port data_in ;                                        ;
-; R_STATUS[12]  ; Stuck at GND              ; R_DOUT[4]                              ;
-;               ; due to stuck port data_in ;                                        ;
-; R_STATUS[11]  ; Stuck at GND              ; R_DOUT[3]                              ;
-;               ; due to stuck port data_in ;                                        ;
-; R_STATUS[10]  ; Stuck at GND              ; R_DOUT[2]                              ;
-;               ; due to stuck port data_in ;                                        ;
-; R_STATUS[9]   ; Stuck at GND              ; R_DOUT[1]                              ;
-;               ; due to stuck port data_in ;                                        ;
-; R_STATUS[8]   ; Stuck at GND              ; R_DOUT[0]                              ;
-;               ; due to stuck port data_in ;                                        ;
-; R_STATUS[6]   ; Stuck at GND              ; R_DOUT[14]                             ;
-;               ; due to stuck port data_in ;                                        ;
-; R_STATUS[4]   ; Stuck at GND              ; R_DOUT[12]                             ;
-;               ; due to stuck port data_in ;                                        ;
-; R_STATUS[2]   ; Stuck at GND              ; R_DOUT[10]                             ;
-;               ; due to stuck port data_in ;                                        ;
-; R_STATUS[1]   ; Stuck at GND              ; R_DOUT[9]                              ;
-;               ; due to stuck port data_in ;                                        ;
-+---------------+---------------------------+----------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 20    ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 20    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 20    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "eacmdds:eacmdds"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; inchen ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -235,16 +142,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DATA7CA4[13]    ; Input ; Info     ; Stuck at VCC                                                                                                                                 ;
 ; DATA7CA4[12]    ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
 ; DATA7CA4[11]    ; Input ; Info     ; Stuck at VCC                                                                                                                                 ;
-; DATA7C80        ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; DATA7C82        ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; DATA7C84        ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; DATA7C86        ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; DATA7C88        ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; DATA7C8A        ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; DATA7C8C        ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; DATA7C8E        ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; DATA7C90        ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; DATA7C96        ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 ; DATA7CA2        ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 +-----------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -254,139 +151,223 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+--------+----------+----------------------------------------------------------------------------------------------------------+
 ; Port     ; Type   ; Severity ; Details                                                                                                  ;
 +----------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; addr7C80 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; addr7C82 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; addr7C84 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; addr7C86 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; addr7C88 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; addr7C8A ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 ; addr7C8C ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 ; addr7C8E ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 ; addr7C90 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; addr7C96 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; addr7CA2 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 +----------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II Analysis & Synthesis
+Info: Running Quartus II Analysis & Elaboration
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat Oct 31 02:34:50 2020
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off EA4163 -c EA4163
+    Info: Processing started: Sat Nov 21 01:36:53 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off EA4163 -c EA4163 --analysis_and_elaboration
 Info: Found 1 design units, including 1 entities, in source file VME/vmemux.v
     Info: Found entity 1: vmemux
+Warning (10275): Verilog HDL Module Instantiation warning at EA4163.v(288): ignored dangling comma in List of Port Connections
 Info: Found 1 design units, including 1 entities, in source file EA4163.v
     Info: Found entity 1: EA4163
 Info: Found 1 design units, including 1 entities, in source file VME/vmeds.v
     Info: Found entity 1: vmeds
+Info: Found 1 design units, including 1 entities, in source file EA4163/eacmdds.v
+    Info: Found entity 1: eacmdds
+Info: Found 1 design units, including 1 entities, in source file EA4163/eafmtds.v
+    Info: Found entity 1: eafmtds
+Warning (10236): Verilog HDL Implicit Net warning at EA4163.v(141): created implicit net for "KL_VME"
+Warning (10236): Verilog HDL Implicit Net warning at EA4163.v(142): created implicit net for "OUTPUTS_EN"
+Warning (10236): Verilog HDL Implicit Net warning at EA4163.v(144): created implicit net for "LED_DISABLE"
 Info: Elaborating entity "EA4163" for the top level hierarchy
-Warning (10858): Verilog HDL warning at EA4163.v(100): object addr7C80 used but never assigned
-Warning (10858): Verilog HDL warning at EA4163.v(101): object addr7C82 used but never assigned
-Warning (10858): Verilog HDL warning at EA4163.v(102): object addr7C84 used but never assigned
-Warning (10858): Verilog HDL warning at EA4163.v(103): object addr7C86 used but never assigned
-Warning (10858): Verilog HDL warning at EA4163.v(104): object addr7C88 used but never assigned
-Warning (10858): Verilog HDL warning at EA4163.v(105): object addr7C8A used but never assigned
-Warning (10858): Verilog HDL warning at EA4163.v(106): object addr7C8C used but never assigned
-Warning (10858): Verilog HDL warning at EA4163.v(107): object addr7C8E used but never assigned
-Warning (10858): Verilog HDL warning at EA4163.v(108): object addr7C90 used but never assigned
-Warning (10858): Verilog HDL warning at EA4163.v(109): object addr7C96 used but never assigned
-Warning (10858): Verilog HDL warning at EA4163.v(111): object addr7CA2 used but never assigned
-Warning (10036): Verilog HDL or VHDL warning at EA4163.v(114): object "DIN" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at EA4163.v(116): object "AMOD" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at EA4163.v(118): object "STATUSID" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at EA4163.v(141): object "KL_VME" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at EA4163.v(142): object "OUTPUTS_EN" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at EA4163.v(144): object "LED_DISABLE" assigned a value but never read
+Warning (10858): Verilog HDL warning at EA4163.v(107): object addr7C8C used but never assigned
+Warning (10858): Verilog HDL warning at EA4163.v(108): object addr7C8E used but never assigned
+Warning (10858): Verilog HDL warning at EA4163.v(109): object addr7C90 used but never assigned
+Warning (10036): Verilog HDL or VHDL warning at EA4163.v(135): object "AMOD" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at EA4163.v(137): object "STATUSID" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at EA4163.v(207): object "R_SLFTST" assigned a value but never read
+Warning (10034): Output port "O_VME_IRQ" at EA4163.v(63) has no driver
+Warning (10034): Output port "O_VME_IACK_OUT" at EA4163.v(64) has no driver
+Warning (10034): Output port "O_VME_BERR" at EA4163.v(65) has no driver
+Warning (10034): Output port "O_KL_VME" at EA4163.v(66) has no driver
+Warning (10034): Output port "O_RD_BUF_EN" at EA4163.v(67) has no driver
+Warning (10034): Output port "O_WR_BUF_EN" at EA4163.v(68) has no driver
+Warning (10034): Output port "O_LED_DISABLE" at EA4163.v(69) has no driver
+Warning (10034): Output port "O_OUTPUTS_EN" at EA4163.v(70) has no driver
+Warning (10034): Output port "O_MUX_1_8_EN" at EA4163.v(74) has no driver
+Warning (10034): Output port "O_MUX_9_16_EN" at EA4163.v(75) has no driver
+Warning (10034): Output port "O_MUX_17_24_EN" at EA4163.v(76) has no driver
+Warning (10034): Output port "O_MUX_A_0" at EA4163.v(77) has no driver
+Warning (10034): Output port "O_MUX_A_1" at EA4163.v(78) has no driver
+Warning (10034): Output port "O_MUX_A_2" at EA4163.v(79) has no driver
 Warning (10034): Output port "O_VME_DTACK_D" at EA4163.v(86) has no driver
 Warning (10034): Output port "O_VME_DTACK_EN" at EA4163.v(87) has no driver
-Warning (10034): Output port "O_OUT_CCH_3[23]" at EA4163.v(88) has no driver
-Warning (10034): Output port "O_OUT_CCH_3[22]" at EA4163.v(88) has no driver
-Warning (10034): Output port "O_OUT_CCH_3[21]" at EA4163.v(88) has no driver
-Warning (10034): Output port "O_OUT_CCH_3[20]" at EA4163.v(88) has no driver
-Warning (10034): Output port "O_OUT_CCH_3[19]" at EA4163.v(88) has no driver
-Warning (10034): Output port "O_OUT_CCH_3[18]" at EA4163.v(88) has no driver
-Warning (10034): Output port "O_OUT_CCH_3[17]" at EA4163.v(88) has no driver
-Warning (10034): Output port "O_OUT_CCH_3[16]" at EA4163.v(88) has no driver
-Warning (10034): Output port "O_OUT_CH_1[7]" at EA4163.v(89) has no driver
-Warning (10034): Output port "O_OUT_CH_1[6]" at EA4163.v(89) has no driver
-Warning (10034): Output port "O_OUT_CH_1[5]" at EA4163.v(89) has no driver
-Warning (10034): Output port "O_OUT_CH_1[4]" at EA4163.v(89) has no driver
-Warning (10034): Output port "O_OUT_CH_1[3]" at EA4163.v(89) has no driver
-Warning (10034): Output port "O_OUT_CH_1[2]" at EA4163.v(89) has no driver
-Warning (10034): Output port "O_OUT_CH_1[1]" at EA4163.v(89) has no driver
-Warning (10034): Output port "O_OUT_CH_1[0]" at EA4163.v(89) has no driver
-Warning (10034): Output port "O_OUT_CH_2[15]" at EA4163.v(90) has no driver
-Warning (10034): Output port "O_OUT_CH_2[14]" at EA4163.v(90) has no driver
-Warning (10034): Output port "O_OUT_CH_2[13]" at EA4163.v(90) has no driver
-Warning (10034): Output port "O_OUT_CH_2[12]" at EA4163.v(90) has no driver
-Warning (10034): Output port "O_OUT_CH_2[11]" at EA4163.v(90) has no driver
-Warning (10034): Output port "O_OUT_CH_2[10]" at EA4163.v(90) has no driver
-Warning (10034): Output port "O_OUT_CH_2[9]" at EA4163.v(90) has no driver
-Warning (10034): Output port "O_OUT_CH_2[8]" at EA4163.v(90) has no driver
-Warning (10030): Net "addr7C80" at EA4163.v(100) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "addr7C82" at EA4163.v(101) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "addr7C84" at EA4163.v(102) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "addr7C86" at EA4163.v(103) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "addr7C88" at EA4163.v(104) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "addr7C8A" at EA4163.v(105) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "addr7C8C" at EA4163.v(106) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "addr7C8E" at EA4163.v(107) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "addr7C90" at EA4163.v(108) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "addr7C96" at EA4163.v(109) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "addr7CA2" at EA4163.v(111) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "addr7C8C" at EA4163.v(107) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "addr7C8E" at EA4163.v(108) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "addr7C90" at EA4163.v(109) has no driver or initial value, using a default initial value '0'
 Info: Elaborating entity "vmeds" for hierarchy "vmeds:vmeds"
 Info: Elaborating entity "vmemux" for hierarchy "vmemux:vmemux"
+Info: Elaborating entity "eacmdds" for hierarchy "eacmdds:eacmdds"
+Info: Elaborating entity "eafmtds" for hierarchy "eafmtds:eafmtdsin_1_8"
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "muxa0" is missing source, defaulting to GND
+    Warning (12110): Net "muxa1" is missing source, defaulting to GND
+    Warning (12110): Net "muxa2" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "muxa0" is missing source, defaulting to GND
+    Warning (12110): Net "muxa1" is missing source, defaulting to GND
+    Warning (12110): Net "muxa2" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "muxa0" is missing source, defaulting to GND
+    Warning (12110): Net "muxa1" is missing source, defaulting to GND
+    Warning (12110): Net "muxa2" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[15]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[14]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[13]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[12]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[11]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[10]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[9]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[8]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[7]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[6]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[5]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[4]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[3]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[2]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[1]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[0]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[15]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[14]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[13]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[12]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[11]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[10]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[9]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[8]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[7]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[6]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[5]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[4]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[3]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[2]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[1]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[0]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[15]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[14]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[13]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[12]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[11]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[10]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[9]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[8]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[7]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[6]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[5]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[4]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[3]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[2]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[1]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[0]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[15]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[14]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[13]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[12]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[11]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[10]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[9]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[8]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[7]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[6]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[5]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[4]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[3]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[2]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[1]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[0]" is missing source, defaulting to GND
+Warning: Net is missing source, defaulting to GND
+    Warning (12110): Net "muxa0" is missing source, defaulting to GND
+    Warning (12110): Net "muxa1" is missing source, defaulting to GND
+    Warning (12110): Net "muxa2" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[15]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[14]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[13]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[12]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[11]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[10]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[9]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[8]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[7]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[6]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[5]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[4]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[3]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[2]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[1]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_1_8[0]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[15]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[14]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[13]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[12]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[11]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[10]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[9]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[8]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[7]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[6]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[5]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[4]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[3]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[2]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[1]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_9_16[0]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[15]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[14]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[13]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[12]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[11]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[10]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[9]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[8]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[7]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[6]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[5]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[4]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[3]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[2]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[1]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_17_24[0]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[15]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[14]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[13]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[12]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[11]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[10]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[9]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[8]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[7]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[6]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[5]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[4]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[3]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[2]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[1]" is missing source, defaulting to GND
+    Warning (12110): Net "R_FMTIN_25_32[0]" is missing source, defaulting to GND
 Warning: 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "O_VME_DTACK_D" is stuck at GND
-    Warning (13410): Pin "O_VME_DTACK_EN" is stuck at GND
-    Warning (13410): Pin "O_OUT_CCH_3[16]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CCH_3[17]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CCH_3[18]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CCH_3[19]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CCH_3[20]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CCH_3[21]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CCH_3[22]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CCH_3[23]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_1[0]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_1[1]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_1[2]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_1[3]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_1[4]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_1[5]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_1[6]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_1[7]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_2[8]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_2[9]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_2[10]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_2[11]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_2[12]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_2[13]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_2[14]" is stuck at GND
-    Warning (13410): Pin "O_OUT_CH_2[15]" is stuck at GND
-Warning: Design contains 6 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "I_VME_AM[0]"
-    Warning (15610): No output dependent on input pin "I_VME_AM[1]"
-    Warning (15610): No output dependent on input pin "I_VME_AM[2]"
-    Warning (15610): No output dependent on input pin "I_VME_AM[3]"
-    Warning (15610): No output dependent on input pin "I_VME_AM[4]"
-    Warning (15610): No output dependent on input pin "I_VME_AM[5]"
-Info: Implemented 96 device resources after synthesis - the final resource count might be different
-    Info: Implemented 28 input pins
-    Info: Implemented 26 output pins
-    Info: Implemented 16 bidirectional pins
-    Info: Implemented 26 logic cells
 Info: Generated suppressed messages file C:/Altera_PRJ/EA4163/EA4163.map.smsg
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 86 warnings
-    Info: Peak virtual memory: 227 megabytes
-    Info: Processing ended: Sat Oct 31 02:34:52 2020
-    Info: Elapsed time: 00:00:02
+Info: Quartus II Analysis & Elaboration was successful. 0 errors, 177 warnings
+    Info: Peak virtual memory: 220 megabytes
+    Info: Processing ended: Sat Nov 21 01:36:54 2020
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
 The suppressed messages can be found in C:/Altera_PRJ/EA4163/EA4163.map.smsg.
 
 

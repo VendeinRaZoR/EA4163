@@ -53,3 +53,5 @@ set_global_assignment -name VERILOG_FILE VME/vmemux.v
 set_global_assignment -name VERILOG_TEST_BENCH_FILE simulation/modelsim/EA4163.vt
 set_global_assignment -name VERILOG_FILE EA4163.v
 set_global_assignment -name VERILOG_FILE VME/vmeds.v
+set_global_assignment -name VERILOG_FILE EA4163/eacmdds.v
+set_global_assignment -name VERILOG_FILE EA4163/eafmtds.v

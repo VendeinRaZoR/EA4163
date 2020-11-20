@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II"
 // VERSION "Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition"
 
-// DATE "10/31/2020 02:35:01"
+// DATE "11/21/2020 01:35:27"
 
 // 
 // Device: Altera EPF10K200SRC240-1 Package RQFP240
@@ -33,11 +33,40 @@ module EA4163 (
 	I_VME_DS0,
 	I_VME_DS1,
 	I_VME_WR,
+	I_VME_IACK,
+	I_VME_IACK_IN,
 	I_VME_LWORD,
 	I_CLK_32M,
 	I_VME_SYSRESET,
+	I_ADAPTER_NO,
+	I_M_17_24_IN,
+	I_M_9_16_IN,
+	I_M_1_8_IN,
 	I_VME_A,
 	I_VME_AM,
+	O_VME_IRQ,
+	O_VME_IACK_OUT,
+	O_VME_BERR,
+	O_KL_VME,
+	O_RD_BUF_EN,
+	O_WR_BUF_EN,
+	O_LED_DISABLE,
+	O_OUTPUTS_EN,
+	O_F_17_24_TTL,
+	O_F_17_24_KP,
+	O_F_17_24_27B,
+	O_MUX_1_8_EN,
+	O_MUX_9_16_EN,
+	O_MUX_17_24_EN,
+	O_MUX_A_0,
+	O_MUX_A_1,
+	O_MUX_A_2,
+	O_F_1_8_TTL,
+	O_F_1_8_KP,
+	O_F_1_8_27B,
+	O_F_9_16_TTL,
+	O_F_9_16_KP,
+	O_F_9_16_27B,
 	O_VME_DTACK_D,
 	O_VME_DTACK_EN,
 	O_OUT_CCH_3,
@@ -48,16 +77,45 @@ input 	I_VME_AS;
 input 	I_VME_DS0;
 input 	I_VME_DS1;
 input 	I_VME_WR;
+input 	I_VME_IACK;
+input 	I_VME_IACK_IN;
 input 	I_VME_LWORD;
 input 	I_CLK_32M;
 input 	I_VME_SYSRESET;
+input 	I_ADAPTER_NO;
+input 	I_M_17_24_IN;
+input 	I_M_9_16_IN;
+input 	I_M_1_8_IN;
 input 	[15:1] I_VME_A;
 input 	[5:0] I_VME_AM;
+output 	O_VME_IRQ;
+output 	O_VME_IACK_OUT;
+output 	O_VME_BERR;
+output 	O_KL_VME;
+output 	O_RD_BUF_EN;
+output 	O_WR_BUF_EN;
+output 	O_LED_DISABLE;
+output 	O_OUTPUTS_EN;
+output 	O_F_17_24_TTL;
+output 	O_F_17_24_KP;
+output 	O_F_17_24_27B;
+output 	O_MUX_1_8_EN;
+output 	O_MUX_9_16_EN;
+output 	O_MUX_17_24_EN;
+output 	O_MUX_A_0;
+output 	O_MUX_A_1;
+output 	O_MUX_A_2;
+output 	O_F_1_8_TTL;
+output 	O_F_1_8_KP;
+output 	O_F_1_8_27B;
+output 	O_F_9_16_TTL;
+output 	O_F_9_16_KP;
+output 	O_F_9_16_27B;
 output 	O_VME_DTACK_D;
 output 	O_VME_DTACK_EN;
 output 	[23:16] O_OUT_CCH_3;
 output 	[7:0] O_OUT_CH_1;
-output 	[15:8] O_OUT_CH_2;
+output 	[7:0] O_OUT_CH_2;
 inout 	[15:0] VME_D;
 
 wire gnd = 1'b0;
@@ -70,131 +128,94 @@ tri1 devoe;
 initial $sdf_annotate("EA4163_v.sdo");
 // synopsys translate_on
 
-wire \always0~3_combout ;
+wire \eacmdds|eareset~5_combout ;
 wire \vmeds|Ram0~266_combout ;
-wire \R_REXST~8_combout ;
-wire \I_VME_AS~dataout ;
-wire \I_VME_DS1~dataout ;
-wire \I_VME_DS0~dataout ;
+wire \always3~8_combout ;
+wire \always4~9 ;
+wire \always4~8_combout ;
+wire \vmeds|Equal0~3_combout ;
+wire \eacmdds|eareset~13_combout ;
+wire \always4~5_combout ;
+wire \always0~7_combout ;
 wire \I_VME_WR~dataout ;
+wire \VME_D[0]~31 ;
+wire \VME_D[1]~30 ;
+wire \VME_D[2]~29 ;
+wire \VME_D[3]~28 ;
+wire \VME_D[4]~27 ;
+wire \VME_D[5]~26 ;
+wire \VME_D[6]~25 ;
+wire \VME_D[7]~24 ;
+wire \VME_D[8]~23 ;
+wire \VME_D[9]~22 ;
+wire \VME_D[10]~21 ;
+wire \VME_D[11]~20 ;
+wire \VME_D[12]~19 ;
+wire \VME_D[13]~18 ;
+wire \VME_D[14]~17 ;
+wire \VME_D[15]~16 ;
 wire \I_VME_SYSRESET~dataout ;
 wire \I_CLK_32M~dataout ;
-wire \R_REXST~15 ;
-wire \R_REXST~11_combout ;
+wire \vmeds|Equal0~8 ;
+wire \vmeds|Equal0~5_combout ;
+wire \eacmdds|eareset~25 ;
+wire \eacmdds|eareset~16_combout ;
+wire \eacmdds|eareset~8_combout ;
+wire \vmeds|Ram0~264_combout ;
+wire \eacmdds|eareset~4_combout ;
+wire \eacmdds|eareset~21 ;
+wire \eacmdds|eareset~15_combout ;
+wire \sysres~combout ;
+wire \I_VME_DS0~dataout ;
+wire \I_VME_DS1~dataout ;
+wire \I_VME_AS~dataout ;
+wire \always0~12 ;
+wire \always0~9_combout ;
 wire \I_VME_LWORD~dataout ;
-wire \vmeds|Ram0~271 ;
-wire \vmeds|Ram0~268_combout ;
+wire \R_REXST~14_combout ;
+wire \R_REXST~15_combout ;
+wire \R_REXST~16_combout ;
+wire \R_REXST~17_combout ;
 wire \R_REXST~regout ;
-wire \VME_D~32_combout ;
-wire \VME_D~60_combout ;
-wire \VME_D~61_combout ;
-wire \VME_D~62_combout ;
-wire \VME_D~63_combout ;
-wire \VME_D~64_combout ;
-wire \VME_D~65_combout ;
-wire \VME_D~66_combout ;
-wire \VME_D~67_combout ;
-wire \VME_D~68_combout ;
-wire \VME_D~69_combout ;
-wire \VME_D~70_combout ;
-wire \VME_D~71_combout ;
+wire \VME_D~37_combout ;
+wire \vmeds|Ram0~263_combout ;
+wire \vmeds|Ram0~265_combout ;
+wire \vmemux|Selector15~1_combout ;
+wire \vmemux|Selector14~1_combout ;
+wire \vmemux|Selector13~1_combout ;
+wire \vmemux|Selector12~1_combout ;
+wire \vmemux|Selector11~1_combout ;
+wire \vmemux|Selector10~1_combout ;
+wire \vmemux|Selector9~1_combout ;
+wire \vmemux|Selector8~1_combout ;
+wire \vmemux|Selector7~1_combout ;
+wire \vmemux|Selector6~1_combout ;
+wire \vmemux|Selector5~1_combout ;
+wire \vmemux|Selector4~0_combout ;
+wire \vmemux|Selector3~1_combout ;
+wire \vmemux|Selector2~0_combout ;
+wire \vmemux|Selector1~1_combout ;
+wire \vmemux|Selector0~0_combout ;
+wire [2:0] \eafmtdsin_1_8|R_FMTCH0 ;
 wire [15:1] \I_VME_A~dataout ;
+wire [5:0] \I_VME_AM~dataout ;
 wire [15:0] R_ADDR;
+wire [15:0] R_CMD;
 wire [15:0] R_DOUT;
+wire [15:0] R_INTMSK;
+wire [2:0] \eafmtdsin_9_16|R_FMTCH0 ;
 
 
-// atom is at PIN_92
-flex10ke_io \I_VME_AS~I (
-	.datain(gnd),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(gnd),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(\I_VME_AS~dataout ),
-	.padio(I_VME_AS));
-// synopsys translate_off
-defparam \I_VME_AS~I .feedback_mode = "from_pin";
-defparam \I_VME_AS~I .operation_mode = "input";
-defparam \I_VME_AS~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_211
-flex10ke_io \I_VME_DS1~I (
-	.datain(gnd),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(gnd),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(\I_VME_DS1~dataout ),
-	.padio(I_VME_DS1));
-// synopsys translate_off
-defparam \I_VME_DS1~I .feedback_mode = "from_pin";
-defparam \I_VME_DS1~I .operation_mode = "input";
-defparam \I_VME_DS1~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_188
-flex10ke_io \I_VME_DS0~I (
-	.datain(gnd),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(gnd),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(\I_VME_DS0~dataout ),
-	.padio(I_VME_DS0));
-// synopsys translate_off
-defparam \I_VME_DS0~I .feedback_mode = "from_pin";
-defparam \I_VME_DS0~I .operation_mode = "input";
-defparam \I_VME_DS0~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at LC6_J1
-flex10ke_lcell \always0~3 (
+// atom is at LC2_F39
+flex10ke_lcell \R_CMD[12] (
 // Equation(s):
-// \always0~3_combout  = !\I_VME_AS~dataout  & !\I_VME_DS1~dataout  & !\I_VME_DS0~dataout 
+// R_CMD[12] = DFFEA(\VME_D[12]~19 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
 
-	.dataa(vcc),
-	.datab(\I_VME_AS~dataout ),
-	.datac(\I_VME_DS1~dataout ),
-	.datad(\I_VME_DS0~dataout ),
-	.aclr(gnd),
-	.aload(gnd),
-	.clk(gnd),
-	.cin(gnd),
-	.cascin(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.combout(\always0~3_combout ),
-	.regout(),
-	.cout(),
-	.cascout());
-// synopsys translate_off
-defparam \always0~3 .clock_enable_mode = "false";
-defparam \always0~3 .lut_mask = "0003";
-defparam \always0~3 .operation_mode = "normal";
-defparam \always0~3 .output_mode = "comb_only";
-defparam \always0~3 .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at LC1_J2
-flex10ke_lcell \R_ADDR[5] (
-// Equation(s):
-// R_ADDR[5] = DFFEA(\I_VME_A~dataout [5], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
-
-	.dataa(\always0~3_combout ),
+	.dataa(\always3~8_combout ),
 	.datab(vcc),
 	.datac(vcc),
-	.datad(\I_VME_A~dataout [5]),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.datad(\VME_D[12]~19 ),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -202,27 +223,27 @@ flex10ke_lcell \R_ADDR[5] (
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.combout(),
-	.regout(R_ADDR[5]),
+	.regout(R_CMD[12]),
 	.cout(),
 	.cascout());
 // synopsys translate_off
-defparam \R_ADDR[5] .clock_enable_mode = "true";
-defparam \R_ADDR[5] .lut_mask = "ff00";
-defparam \R_ADDR[5] .operation_mode = "normal";
-defparam \R_ADDR[5] .output_mode = "reg_only";
-defparam \R_ADDR[5] .packed_mode = "false";
+defparam \R_CMD[12] .clock_enable_mode = "true";
+defparam \R_CMD[12] .lut_mask = "ff00";
+defparam \R_CMD[12] .operation_mode = "normal";
+defparam \R_CMD[12] .output_mode = "reg_only";
+defparam \R_CMD[12] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at LC1_J3
-flex10ke_lcell \R_ADDR[12] (
+// atom is at LC3_F33
+flex10ke_lcell \R_CMD[0] (
 // Equation(s):
-// R_ADDR[12] = DFFEA(\I_VME_A~dataout [12], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
+// R_CMD[0] = DFFEA(\VME_D[0]~31 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
 
-	.dataa(\always0~3_combout ),
+	.dataa(\always3~8_combout ),
 	.datab(vcc),
 	.datac(vcc),
-	.datad(\I_VME_A~dataout [12]),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.datad(\VME_D[0]~31 ),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -230,97 +251,15 @@ flex10ke_lcell \R_ADDR[12] (
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.combout(),
-	.regout(R_ADDR[12]),
+	.regout(R_CMD[0]),
 	.cout(),
 	.cascout());
 // synopsys translate_off
-defparam \R_ADDR[12] .clock_enable_mode = "true";
-defparam \R_ADDR[12] .lut_mask = "ff00";
-defparam \R_ADDR[12] .operation_mode = "normal";
-defparam \R_ADDR[12] .output_mode = "reg_only";
-defparam \R_ADDR[12] .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at LC4_J1
-flex10ke_lcell \R_ADDR[10] (
-// Equation(s):
-// R_ADDR[10] = DFFEA(\I_VME_A~dataout [10], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
-
-	.dataa(\always0~3_combout ),
-	.datab(vcc),
-	.datac(vcc),
-	.datad(\I_VME_A~dataout [10]),
-	.aclr(\I_VME_SYSRESET~dataout ),
-	.aload(gnd),
-	.clk(\I_CLK_32M~dataout ),
-	.cin(gnd),
-	.cascin(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.combout(),
-	.regout(R_ADDR[10]),
-	.cout(),
-	.cascout());
-// synopsys translate_off
-defparam \R_ADDR[10] .clock_enable_mode = "true";
-defparam \R_ADDR[10] .lut_mask = "ff00";
-defparam \R_ADDR[10] .operation_mode = "normal";
-defparam \R_ADDR[10] .output_mode = "reg_only";
-defparam \R_ADDR[10] .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at PIN_182
-flex10ke_io \I_VME_A[5]~I (
-	.datain(gnd),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(gnd),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(\I_VME_A~dataout [5]),
-	.padio(I_VME_A[5]));
-// synopsys translate_off
-defparam \I_VME_A[5]~I .feedback_mode = "from_pin";
-defparam \I_VME_A[5]~I .operation_mode = "input";
-defparam \I_VME_A[5]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_193
-flex10ke_io \I_VME_A[12]~I (
-	.datain(gnd),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(gnd),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(\I_VME_A~dataout [12]),
-	.padio(I_VME_A[12]));
-// synopsys translate_off
-defparam \I_VME_A[12]~I .feedback_mode = "from_pin";
-defparam \I_VME_A[12]~I .operation_mode = "input";
-defparam \I_VME_A[12]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_156
-flex10ke_io \I_VME_A[10]~I (
-	.datain(gnd),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(gnd),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(\I_VME_A~dataout [10]),
-	.padio(I_VME_A[10]));
-// synopsys translate_off
-defparam \I_VME_A[10]~I .feedback_mode = "from_pin";
-defparam \I_VME_A[10]~I .operation_mode = "input";
-defparam \I_VME_A[10]~I .reg_source_mode = "none";
+defparam \R_CMD[0] .clock_enable_mode = "true";
+defparam \R_CMD[0] .lut_mask = "ff00";
+defparam \R_CMD[0] .operation_mode = "normal";
+defparam \R_CMD[0] .output_mode = "reg_only";
+defparam \R_CMD[0] .packed_mode = "false";
 // synopsys translate_on
 
 // atom is at PIN_210
@@ -341,8 +280,681 @@ defparam \I_VME_WR~I .operation_mode = "input";
 defparam \I_VME_WR~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_208
-flex10ke_io \I_VME_A[11]~I (
+// atom is at LC7_F31
+flex10ke_lcell \R_INTMSK[8] (
+// Equation(s):
+// R_INTMSK[8] = DFFEA(\VME_D[8]~23 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[8]~23 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[8]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[8] .clock_enable_mode = "true";
+defparam \R_INTMSK[8] .lut_mask = "ff00";
+defparam \R_INTMSK[8] .operation_mode = "normal";
+defparam \R_INTMSK[8] .output_mode = "reg_only";
+defparam \R_INTMSK[8] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC1_F29
+flex10ke_lcell \R_INTMSK[9] (
+// Equation(s):
+// R_INTMSK[9] = DFFEA(\VME_D[9]~22 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[9]~22 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[9]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[9] .clock_enable_mode = "true";
+defparam \R_INTMSK[9] .lut_mask = "ff00";
+defparam \R_INTMSK[9] .operation_mode = "normal";
+defparam \R_INTMSK[9] .output_mode = "reg_only";
+defparam \R_INTMSK[9] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC4_F29
+flex10ke_lcell \R_INTMSK[10] (
+// Equation(s):
+// R_INTMSK[10] = DFFEA(\VME_D[10]~21 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[10]~21 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[10]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[10] .clock_enable_mode = "true";
+defparam \R_INTMSK[10] .lut_mask = "ff00";
+defparam \R_INTMSK[10] .operation_mode = "normal";
+defparam \R_INTMSK[10] .output_mode = "reg_only";
+defparam \R_INTMSK[10] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC1_F27
+flex10ke_lcell \R_INTMSK[11] (
+// Equation(s):
+// R_INTMSK[11] = DFFEA(\VME_D[11]~20 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[11]~20 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[11]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[11] .clock_enable_mode = "true";
+defparam \R_INTMSK[11] .lut_mask = "ff00";
+defparam \R_INTMSK[11] .operation_mode = "normal";
+defparam \R_INTMSK[11] .output_mode = "reg_only";
+defparam \R_INTMSK[11] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC2_F28
+flex10ke_lcell \R_INTMSK[12] (
+// Equation(s):
+// R_INTMSK[12] = DFFEA(\VME_D[12]~19 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[12]~19 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[12]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[12] .clock_enable_mode = "true";
+defparam \R_INTMSK[12] .lut_mask = "ff00";
+defparam \R_INTMSK[12] .operation_mode = "normal";
+defparam \R_INTMSK[12] .output_mode = "reg_only";
+defparam \R_INTMSK[12] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC2_F31
+flex10ke_lcell \R_INTMSK[13] (
+// Equation(s):
+// R_INTMSK[13] = DFFEA(\VME_D[13]~18 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[13]~18 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[13]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[13] .clock_enable_mode = "true";
+defparam \R_INTMSK[13] .lut_mask = "ff00";
+defparam \R_INTMSK[13] .operation_mode = "normal";
+defparam \R_INTMSK[13] .output_mode = "reg_only";
+defparam \R_INTMSK[13] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC3_F27
+flex10ke_lcell \R_INTMSK[14] (
+// Equation(s):
+// R_INTMSK[14] = DFFEA(\VME_D[14]~17 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[14]~17 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[14]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[14] .clock_enable_mode = "true";
+defparam \R_INTMSK[14] .lut_mask = "ff00";
+defparam \R_INTMSK[14] .operation_mode = "normal";
+defparam \R_INTMSK[14] .output_mode = "reg_only";
+defparam \R_INTMSK[14] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC5_F28
+flex10ke_lcell \R_INTMSK[15] (
+// Equation(s):
+// R_INTMSK[15] = DFFEA(\VME_D[15]~16 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[15]~16 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[15]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[15] .clock_enable_mode = "true";
+defparam \R_INTMSK[15] .lut_mask = "ff00";
+defparam \R_INTMSK[15] .operation_mode = "normal";
+defparam \R_INTMSK[15] .output_mode = "reg_only";
+defparam \R_INTMSK[15] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC4_F30
+flex10ke_lcell \R_INTMSK[0] (
+// Equation(s):
+// R_INTMSK[0] = DFFEA(\VME_D[0]~31 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[0]~31 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[0]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[0] .clock_enable_mode = "true";
+defparam \R_INTMSK[0] .lut_mask = "ff00";
+defparam \R_INTMSK[0] .operation_mode = "normal";
+defparam \R_INTMSK[0] .output_mode = "reg_only";
+defparam \R_INTMSK[0] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC6_F30
+flex10ke_lcell \R_INTMSK[1] (
+// Equation(s):
+// R_INTMSK[1] = DFFEA(\VME_D[1]~30 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[1]~30 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[1]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[1] .clock_enable_mode = "true";
+defparam \R_INTMSK[1] .lut_mask = "ff00";
+defparam \R_INTMSK[1] .operation_mode = "normal";
+defparam \R_INTMSK[1] .output_mode = "reg_only";
+defparam \R_INTMSK[1] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC6_F31
+flex10ke_lcell \R_INTMSK[2] (
+// Equation(s):
+// R_INTMSK[2] = DFFEA(\VME_D[2]~29 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[2]~29 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[2]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[2] .clock_enable_mode = "true";
+defparam \R_INTMSK[2] .lut_mask = "ff00";
+defparam \R_INTMSK[2] .operation_mode = "normal";
+defparam \R_INTMSK[2] .output_mode = "reg_only";
+defparam \R_INTMSK[2] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC2_F32
+flex10ke_lcell \R_INTMSK[3] (
+// Equation(s):
+// R_INTMSK[3] = DFFEA(\VME_D[3]~28 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[3]~28 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[3]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[3] .clock_enable_mode = "true";
+defparam \R_INTMSK[3] .lut_mask = "ff00";
+defparam \R_INTMSK[3] .operation_mode = "normal";
+defparam \R_INTMSK[3] .output_mode = "reg_only";
+defparam \R_INTMSK[3] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC4_F31
+flex10ke_lcell \R_INTMSK[4] (
+// Equation(s):
+// R_INTMSK[4] = DFFEA(\VME_D[4]~27 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[4]~27 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[4]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[4] .clock_enable_mode = "true";
+defparam \R_INTMSK[4] .lut_mask = "ff00";
+defparam \R_INTMSK[4] .operation_mode = "normal";
+defparam \R_INTMSK[4] .output_mode = "reg_only";
+defparam \R_INTMSK[4] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC4_F32
+flex10ke_lcell \R_INTMSK[5] (
+// Equation(s):
+// R_INTMSK[5] = DFFEA(\VME_D[5]~26 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[5]~26 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[5]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[5] .clock_enable_mode = "true";
+defparam \R_INTMSK[5] .lut_mask = "ff00";
+defparam \R_INTMSK[5] .operation_mode = "normal";
+defparam \R_INTMSK[5] .output_mode = "reg_only";
+defparam \R_INTMSK[5] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC1_F31
+flex10ke_lcell \R_INTMSK[6] (
+// Equation(s):
+// R_INTMSK[6] = DFFEA(\VME_D[6]~25 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[6]~25 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[6]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[6] .clock_enable_mode = "true";
+defparam \R_INTMSK[6] .lut_mask = "ff00";
+defparam \R_INTMSK[6] .operation_mode = "normal";
+defparam \R_INTMSK[6] .output_mode = "reg_only";
+defparam \R_INTMSK[6] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC5_F32
+flex10ke_lcell \R_INTMSK[7] (
+// Equation(s):
+// R_INTMSK[7] = DFFEA(\VME_D[7]~24 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always4~5_combout , , )
+
+	.dataa(\always4~5_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[7]~24 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_INTMSK[7]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_INTMSK[7] .clock_enable_mode = "true";
+defparam \R_INTMSK[7] .lut_mask = "ff00";
+defparam \R_INTMSK[7] .operation_mode = "normal";
+defparam \R_INTMSK[7] .output_mode = "reg_only";
+defparam \R_INTMSK[7] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC4_F44
+flex10ke_lcell \vmeds|Ram0~266 (
+// Equation(s):
+// \vmeds|Ram0~266_combout  = R_ADDR[4] & !R_ADDR[5] & !R_ADDR[1]
+
+	.dataa(vcc),
+	.datab(R_ADDR[4]),
+	.datac(R_ADDR[5]),
+	.datad(R_ADDR[1]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmeds|Ram0~266_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmeds|Ram0~266 .clock_enable_mode = "false";
+defparam \vmeds|Ram0~266 .lut_mask = "000c";
+defparam \vmeds|Ram0~266 .operation_mode = "normal";
+defparam \vmeds|Ram0~266 .output_mode = "comb_only";
+defparam \vmeds|Ram0~266 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC7_F33
+flex10ke_lcell \always3~8 (
+// Equation(s):
+// \always3~8_combout  = (\vmeds|Ram0~263_combout  & !R_ADDR[3] & (\vmeds|Ram0~264_combout  # \vmeds|Ram0~266_combout )) & CASCADE(\always4~9 )
+
+	.dataa(\vmeds|Ram0~263_combout ),
+	.datab(\vmeds|Ram0~264_combout ),
+	.datac(\vmeds|Ram0~266_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(\always4~9 ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\always3~8_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \always3~8 .clock_enable_mode = "false";
+defparam \always3~8 .lut_mask = "00a8";
+defparam \always3~8 .operation_mode = "normal";
+defparam \always3~8 .output_mode = "comb_only";
+defparam \always3~8 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC6_F33
+flex10ke_lcell \always4~8 (
+// Equation(s):
+// \always4~8_combout  = \always0~9_combout  & \R_REXST~regout  & \vmeds|Equal0~5_combout  & !\I_VME_WR~dataout 
+// \always4~9  = \always0~9_combout  & \R_REXST~regout  & \vmeds|Equal0~5_combout  & !\I_VME_WR~dataout 
+
+	.dataa(\always0~9_combout ),
+	.datab(\R_REXST~regout ),
+	.datac(\vmeds|Equal0~5_combout ),
+	.datad(\I_VME_WR~dataout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\always4~8_combout ),
+	.regout(),
+	.cout(),
+	.cascout(\always4~9 ));
+// synopsys translate_off
+defparam \always4~8 .clock_enable_mode = "false";
+defparam \always4~8 .lut_mask = "0080";
+defparam \always4~8 .operation_mode = "normal";
+defparam \always4~8 .output_mode = "comb_only";
+defparam \always4~8 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC1_F34
+flex10ke_lcell \R_ADDR[12] (
+// Equation(s):
+// R_ADDR[12] = DFFEA(\I_VME_A~dataout [12], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
+
+	.dataa(\always0~9_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\I_VME_A~dataout [12]),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_ADDR[12]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_ADDR[12] .clock_enable_mode = "true";
+defparam \R_ADDR[12] .lut_mask = "ff00";
+defparam \R_ADDR[12] .operation_mode = "normal";
+defparam \R_ADDR[12] .output_mode = "reg_only";
+defparam \R_ADDR[12] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC7_F34
+flex10ke_lcell \R_ADDR[10] (
+// Equation(s):
+// R_ADDR[10] = DFFEA(\I_VME_A~dataout [10], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
+
+	.dataa(\always0~9_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\I_VME_A~dataout [10]),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_ADDR[10]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_ADDR[10] .clock_enable_mode = "true";
+defparam \R_ADDR[10] .lut_mask = "ff00";
+defparam \R_ADDR[10] .operation_mode = "normal";
+defparam \R_ADDR[10] .output_mode = "reg_only";
+defparam \R_ADDR[10] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC1_F38
+flex10ke_lcell \R_CMD[8] (
+// Equation(s):
+// R_CMD[8] = DFFEA(\VME_D[8]~23 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
+
+	.dataa(\always3~8_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[8]~23 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_CMD[8]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_CMD[8] .clock_enable_mode = "true";
+defparam \R_CMD[8] .lut_mask = "ff00";
+defparam \R_CMD[8] .operation_mode = "normal";
+defparam \R_CMD[8] .output_mode = "reg_only";
+defparam \R_CMD[8] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC3_F38
+flex10ke_lcell \R_CMD[4] (
+// Equation(s):
+// R_CMD[4] = DFFEA(\VME_D[4]~27 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
+
+	.dataa(\always3~8_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[4]~27 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_CMD[4]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_CMD[4] .clock_enable_mode = "true";
+defparam \R_CMD[4] .lut_mask = "ff00";
+defparam \R_CMD[4] .operation_mode = "normal";
+defparam \R_CMD[4] .output_mode = "reg_only";
+defparam \R_CMD[4] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC4_F33
+flex10ke_lcell \always4~5 (
+// Equation(s):
+// \always4~5_combout  = \vmeds|Ram0~263_combout  & \always4~8_combout  & \vmeds|Ram0~265_combout  & !R_ADDR[3]
+
+	.dataa(\vmeds|Ram0~263_combout ),
+	.datab(\always4~8_combout ),
+	.datac(\vmeds|Ram0~265_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\always4~5_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \always4~5 .clock_enable_mode = "false";
+defparam \always4~5 .lut_mask = "0080";
+defparam \always4~5 .operation_mode = "normal";
+defparam \always4~5 .output_mode = "comb_only";
+defparam \always4~5 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at PIN_35
+flex10ke_io \I_VME_AM[5]~I (
 	.datain(gnd),
 	.clk(gnd),
 	.ena(vcc),
@@ -351,15 +963,357 @@ flex10ke_io \I_VME_A[11]~I (
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.devoe(devoe),
-	.dataout(\I_VME_A~dataout [11]),
-	.padio(I_VME_A[11]));
+	.dataout(\I_VME_AM~dataout [5]),
+	.padio(I_VME_AM[5]));
 // synopsys translate_off
-defparam \I_VME_A[11]~I .feedback_mode = "from_pin";
-defparam \I_VME_A[11]~I .operation_mode = "input";
-defparam \I_VME_A[11]~I .reg_source_mode = "none";
+defparam \I_VME_AM[5]~I .feedback_mode = "from_pin";
+defparam \I_VME_AM[5]~I .operation_mode = "input";
+defparam \I_VME_AM[5]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_212
+// atom is at PIN_61
+flex10ke_io \I_VME_AM[0]~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\I_VME_AM~dataout [0]),
+	.padio(I_VME_AM[0]));
+// synopsys translate_off
+defparam \I_VME_AM[0]~I .feedback_mode = "from_pin";
+defparam \I_VME_AM[0]~I .operation_mode = "input";
+defparam \I_VME_AM[0]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_72
+flex10ke_io \I_VME_A[12]~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\I_VME_A~dataout [12]),
+	.padio(I_VME_A[12]));
+// synopsys translate_off
+defparam \I_VME_A[12]~I .feedback_mode = "from_pin";
+defparam \I_VME_A[12]~I .operation_mode = "input";
+defparam \I_VME_A[12]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_234
+flex10ke_io \I_VME_A[10]~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\I_VME_A~dataout [10]),
+	.padio(I_VME_A[10]));
+// synopsys translate_off
+defparam \I_VME_A[10]~I .feedback_mode = "from_pin";
+defparam \I_VME_A[10]~I .operation_mode = "input";
+defparam \I_VME_A[10]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_81
+flex10ke_io \VME_D[0]~I (
+	.datain(R_DOUT[0]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[0]~31 ),
+	.padio(VME_D[0]));
+// synopsys translate_off
+defparam \VME_D[0]~I .feedback_mode = "from_pin";
+defparam \VME_D[0]~I .operation_mode = "bidir";
+defparam \VME_D[0]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_18
+flex10ke_io \VME_D[1]~I (
+	.datain(R_DOUT[1]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[1]~30 ),
+	.padio(VME_D[1]));
+// synopsys translate_off
+defparam \VME_D[1]~I .feedback_mode = "from_pin";
+defparam \VME_D[1]~I .operation_mode = "bidir";
+defparam \VME_D[1]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_43
+flex10ke_io \VME_D[2]~I (
+	.datain(R_DOUT[2]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[2]~29 ),
+	.padio(VME_D[2]));
+// synopsys translate_off
+defparam \VME_D[2]~I .feedback_mode = "from_pin";
+defparam \VME_D[2]~I .operation_mode = "bidir";
+defparam \VME_D[2]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_19
+flex10ke_io \VME_D[3]~I (
+	.datain(R_DOUT[3]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[3]~28 ),
+	.padio(VME_D[3]));
+// synopsys translate_off
+defparam \VME_D[3]~I .feedback_mode = "from_pin";
+defparam \VME_D[3]~I .operation_mode = "bidir";
+defparam \VME_D[3]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_213
+flex10ke_io \VME_D[4]~I (
+	.datain(R_DOUT[4]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[4]~27 ),
+	.padio(VME_D[4]));
+// synopsys translate_off
+defparam \VME_D[4]~I .feedback_mode = "from_pin";
+defparam \VME_D[4]~I .operation_mode = "bidir";
+defparam \VME_D[4]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_214
+flex10ke_io \VME_D[5]~I (
+	.datain(R_DOUT[5]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[5]~26 ),
+	.padio(VME_D[5]));
+// synopsys translate_off
+defparam \VME_D[5]~I .feedback_mode = "from_pin";
+defparam \VME_D[5]~I .operation_mode = "bidir";
+defparam \VME_D[5]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_88
+flex10ke_io \VME_D[6]~I (
+	.datain(R_DOUT[6]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[6]~25 ),
+	.padio(VME_D[6]));
+// synopsys translate_off
+defparam \VME_D[6]~I .feedback_mode = "from_pin";
+defparam \VME_D[6]~I .operation_mode = "bidir";
+defparam \VME_D[6]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_86
+flex10ke_io \VME_D[7]~I (
+	.datain(R_DOUT[7]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[7]~24 ),
+	.padio(VME_D[7]));
+// synopsys translate_off
+defparam \VME_D[7]~I .feedback_mode = "from_pin";
+defparam \VME_D[7]~I .operation_mode = "bidir";
+defparam \VME_D[7]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_84
+flex10ke_io \VME_D[8]~I (
+	.datain(R_DOUT[8]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[8]~23 ),
+	.padio(VME_D[8]));
+// synopsys translate_off
+defparam \VME_D[8]~I .feedback_mode = "from_pin";
+defparam \VME_D[8]~I .operation_mode = "bidir";
+defparam \VME_D[8]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_82
+flex10ke_io \VME_D[9]~I (
+	.datain(R_DOUT[9]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[9]~22 ),
+	.padio(VME_D[9]));
+// synopsys translate_off
+defparam \VME_D[9]~I .feedback_mode = "from_pin";
+defparam \VME_D[9]~I .operation_mode = "bidir";
+defparam \VME_D[9]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_83
+flex10ke_io \VME_D[10]~I (
+	.datain(R_DOUT[10]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[10]~21 ),
+	.padio(VME_D[10]));
+// synopsys translate_off
+defparam \VME_D[10]~I .feedback_mode = "from_pin";
+defparam \VME_D[10]~I .operation_mode = "bidir";
+defparam \VME_D[10]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_217
+flex10ke_io \VME_D[11]~I (
+	.datain(R_DOUT[11]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[11]~20 ),
+	.padio(VME_D[11]));
+// synopsys translate_off
+defparam \VME_D[11]~I .feedback_mode = "from_pin";
+defparam \VME_D[11]~I .operation_mode = "bidir";
+defparam \VME_D[11]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_74
+flex10ke_io \VME_D[12]~I (
+	.datain(R_DOUT[12]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[12]~19 ),
+	.padio(VME_D[12]));
+// synopsys translate_off
+defparam \VME_D[12]~I .feedback_mode = "from_pin";
+defparam \VME_D[12]~I .operation_mode = "bidir";
+defparam \VME_D[12]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_220
+flex10ke_io \VME_D[13]~I (
+	.datain(R_DOUT[13]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[13]~18 ),
+	.padio(VME_D[13]));
+// synopsys translate_off
+defparam \VME_D[13]~I .feedback_mode = "from_pin";
+defparam \VME_D[13]~I .operation_mode = "bidir";
+defparam \VME_D[13]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_221
+flex10ke_io \VME_D[14]~I (
+	.datain(R_DOUT[14]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[14]~17 ),
+	.padio(VME_D[14]));
+// synopsys translate_off
+defparam \VME_D[14]~I .feedback_mode = "from_pin";
+defparam \VME_D[14]~I .operation_mode = "bidir";
+defparam \VME_D[14]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_215
+flex10ke_io \VME_D[15]~I (
+	.datain(R_DOUT[15]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(\VME_D~37_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\VME_D[15]~16 ),
+	.padio(VME_D[15]));
+// synopsys translate_off
+defparam \VME_D[15]~I .feedback_mode = "from_pin";
+defparam \VME_D[15]~I .operation_mode = "bidir";
+defparam \VME_D[15]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_90
 flex10ke_io \I_VME_SYSRESET~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -375,6 +1329,24 @@ flex10ke_io \I_VME_SYSRESET~I (
 defparam \I_VME_SYSRESET~I .feedback_mode = "from_pin";
 defparam \I_VME_SYSRESET~I .operation_mode = "input";
 defparam \I_VME_SYSRESET~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_63
+flex10ke_io \I_VME_A[11]~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\I_VME_A~dataout [11]),
+	.padio(I_VME_A[11]));
+// synopsys translate_off
+defparam \I_VME_A[11]~I .feedback_mode = "from_pin";
+defparam \I_VME_A[11]~I .operation_mode = "input";
+defparam \I_VME_A[11]~I .reg_source_mode = "none";
 // synopsys translate_on
 
 // atom is at PIN_91
@@ -395,16 +1367,16 @@ defparam \I_CLK_32M~I .operation_mode = "input";
 defparam \I_CLK_32M~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at LC1_J5
+// atom is at LC8_F34
 flex10ke_lcell \R_ADDR[11] (
 // Equation(s):
-// R_ADDR[11] = DFFEA(\I_VME_A~dataout [11], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
+// R_ADDR[11] = DFFEA(\I_VME_A~dataout [11], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
 
-	.dataa(\always0~3_combout ),
+	.dataa(\always0~9_combout ),
 	.datab(vcc),
 	.datac(vcc),
 	.datad(\I_VME_A~dataout [11]),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -423,7 +1395,7 @@ defparam \R_ADDR[11] .output_mode = "reg_only";
 defparam \R_ADDR[11] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at PIN_103
+// atom is at PIN_235
 flex10ke_io \I_VME_A[8]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -441,16 +1413,16 @@ defparam \I_VME_A[8]~I .operation_mode = "input";
 defparam \I_VME_A[8]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at LC7_J3
+// atom is at LC2_F35
 flex10ke_lcell \R_ADDR[8] (
 // Equation(s):
-// R_ADDR[8] = DFFEA(\I_VME_A~dataout [8], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
+// R_ADDR[8] = DFFEA(\I_VME_A~dataout [8], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
 
-	.dataa(\always0~3_combout ),
+	.dataa(\always0~9_combout ),
 	.datab(vcc),
 	.datac(vcc),
 	.datad(\I_VME_A~dataout [8]),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -469,7 +1441,7 @@ defparam \R_ADDR[8] .output_mode = "reg_only";
 defparam \R_ADDR[8] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at PIN_107
+// atom is at PIN_73
 flex10ke_io \I_VME_A[9]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -487,16 +1459,16 @@ defparam \I_VME_A[9]~I .operation_mode = "input";
 defparam \I_VME_A[9]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at LC8_J3
+// atom is at LC3_F35
 flex10ke_lcell \R_ADDR[9] (
 // Equation(s):
-// R_ADDR[9] = DFFEA(\I_VME_A~dataout [9], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
+// R_ADDR[9] = DFFEA(\I_VME_A~dataout [9], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
 
-	.dataa(\always0~3_combout ),
+	.dataa(\always0~9_combout ),
 	.datab(vcc),
 	.datac(vcc),
 	.datad(\I_VME_A~dataout [9]),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -515,7 +1487,7 @@ defparam \R_ADDR[9] .output_mode = "reg_only";
 defparam \R_ADDR[9] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at PIN_100
+// atom is at PIN_233
 flex10ke_io \I_VME_A[13]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -533,16 +1505,16 @@ defparam \I_VME_A[13]~I .operation_mode = "input";
 defparam \I_VME_A[13]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at LC2_J3
+// atom is at LC4_F34
 flex10ke_lcell \R_ADDR[13] (
 // Equation(s):
-// R_ADDR[13] = DFFEA(\I_VME_A~dataout [13], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
+// R_ADDR[13] = DFFEA(\I_VME_A~dataout [13], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
 
-	.dataa(\always0~3_combout ),
+	.dataa(\always0~9_combout ),
 	.datab(vcc),
 	.datac(vcc),
 	.datad(\I_VME_A~dataout [13]),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -561,7 +1533,7 @@ defparam \R_ADDR[13] .output_mode = "reg_only";
 defparam \R_ADDR[13] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at PIN_94
+// atom is at PIN_75
 flex10ke_io \I_VME_A[14]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -579,16 +1551,16 @@ defparam \I_VME_A[14]~I .operation_mode = "input";
 defparam \I_VME_A[14]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at LC5_J3
+// atom is at LC5_F34
 flex10ke_lcell \R_ADDR[14] (
 // Equation(s):
-// R_ADDR[14] = DFFEA(\I_VME_A~dataout [14], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
+// R_ADDR[14] = DFFEA(\I_VME_A~dataout [14], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
 
-	.dataa(\always0~3_combout ),
+	.dataa(\always0~9_combout ),
 	.datab(vcc),
 	.datac(vcc),
 	.datad(\I_VME_A~dataout [14]),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -607,7 +1579,7 @@ defparam \R_ADDR[14] .output_mode = "reg_only";
 defparam \R_ADDR[14] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at PIN_98
+// atom is at PIN_239
 flex10ke_io \I_VME_A[15]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -625,16 +1597,16 @@ defparam \I_VME_A[15]~I .operation_mode = "input";
 defparam \I_VME_A[15]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at LC2_J1
+// atom is at LC6_F34
 flex10ke_lcell \R_ADDR[15] (
 // Equation(s):
-// R_ADDR[15] = DFFEA(\I_VME_A~dataout [15], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
+// R_ADDR[15] = DFFEA(\I_VME_A~dataout [15], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
 
-	.dataa(\always0~3_combout ),
+	.dataa(\always0~9_combout ),
 	.datab(vcc),
 	.datac(vcc),
 	.datad(\I_VME_A~dataout [15]),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -653,10 +1625,10 @@ defparam \R_ADDR[15] .output_mode = "reg_only";
 defparam \R_ADDR[15] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at LC3_J3
-flex10ke_lcell \R_REXST~8 (
+// atom is at LC2_F34
+flex10ke_lcell \vmeds|Equal0~3 (
 // Equation(s):
-// \R_REXST~15  = R_ADDR[12] & R_ADDR[13] & R_ADDR[14] & !R_ADDR[15]
+// \vmeds|Equal0~8  = R_ADDR[12] & R_ADDR[13] & R_ADDR[14] & !R_ADDR[15]
 
 	.dataa(R_ADDR[12]),
 	.datab(R_ADDR[13]),
@@ -669,22 +1641,22 @@ flex10ke_lcell \R_REXST~8 (
 	.cascin(vcc),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.combout(\R_REXST~8_combout ),
+	.combout(\vmeds|Equal0~3_combout ),
 	.regout(),
 	.cout(),
-	.cascout(\R_REXST~15 ));
+	.cascout(\vmeds|Equal0~8 ));
 // synopsys translate_off
-defparam \R_REXST~8 .clock_enable_mode = "false";
-defparam \R_REXST~8 .lut_mask = "0080";
-defparam \R_REXST~8 .operation_mode = "normal";
-defparam \R_REXST~8 .output_mode = "none";
-defparam \R_REXST~8 .packed_mode = "false";
+defparam \vmeds|Equal0~3 .clock_enable_mode = "false";
+defparam \vmeds|Equal0~3 .lut_mask = "0080";
+defparam \vmeds|Equal0~3 .operation_mode = "normal";
+defparam \vmeds|Equal0~3 .output_mode = "none";
+defparam \vmeds|Equal0~3 .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at LC4_J3
-flex10ke_lcell \R_REXST~11 (
+// atom is at LC3_F34
+flex10ke_lcell \vmeds|Equal0~5 (
 // Equation(s):
-// \R_REXST~11_combout  = (R_ADDR[10] & R_ADDR[11] & !R_ADDR[8] & !R_ADDR[9]) & CASCADE(\R_REXST~15 )
+// \vmeds|Equal0~5_combout  = (R_ADDR[10] & R_ADDR[11] & !R_ADDR[8] & !R_ADDR[9]) & CASCADE(\vmeds|Equal0~8 )
 
 	.dataa(R_ADDR[10]),
 	.datab(R_ADDR[11]),
@@ -694,23 +1666,359 @@ flex10ke_lcell \R_REXST~11 (
 	.aload(gnd),
 	.clk(gnd),
 	.cin(gnd),
-	.cascin(\R_REXST~15 ),
+	.cascin(\vmeds|Equal0~8 ),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.combout(\R_REXST~11_combout ),
+	.combout(\vmeds|Equal0~5_combout ),
 	.regout(),
 	.cout(),
 	.cascout());
 // synopsys translate_off
-defparam \R_REXST~11 .clock_enable_mode = "false";
-defparam \R_REXST~11 .lut_mask = "0008";
-defparam \R_REXST~11 .operation_mode = "normal";
-defparam \R_REXST~11 .output_mode = "comb_only";
-defparam \R_REXST~11 .packed_mode = "false";
+defparam \vmeds|Equal0~5 .clock_enable_mode = "false";
+defparam \vmeds|Equal0~5 .lut_mask = "0008";
+defparam \vmeds|Equal0~5 .operation_mode = "normal";
+defparam \vmeds|Equal0~5 .output_mode = "comb_only";
+defparam \vmeds|Equal0~5 .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at PIN_26
-flex10ke_io \I_VME_LWORD~I (
+// atom is at LC4_F38
+flex10ke_lcell \R_CMD[5] (
+// Equation(s):
+// R_CMD[5] = DFFEA(\VME_D[5]~26 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
+
+	.dataa(\always3~8_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[5]~26 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_CMD[5]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_CMD[5] .clock_enable_mode = "true";
+defparam \R_CMD[5] .lut_mask = "ff00";
+defparam \R_CMD[5] .operation_mode = "normal";
+defparam \R_CMD[5] .output_mode = "reg_only";
+defparam \R_CMD[5] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC5_F38
+flex10ke_lcell \R_CMD[6] (
+// Equation(s):
+// R_CMD[6] = DFFEA(\VME_D[6]~25 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
+
+	.dataa(\always3~8_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[6]~25 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_CMD[6]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_CMD[6] .clock_enable_mode = "true";
+defparam \R_CMD[6] .lut_mask = "ff00";
+defparam \R_CMD[6] .operation_mode = "normal";
+defparam \R_CMD[6] .output_mode = "reg_only";
+defparam \R_CMD[6] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC6_F38
+flex10ke_lcell \R_CMD[7] (
+// Equation(s):
+// R_CMD[7] = DFFEA(\VME_D[7]~24 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
+
+	.dataa(\always3~8_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[7]~24 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_CMD[7]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_CMD[7] .clock_enable_mode = "true";
+defparam \R_CMD[7] .lut_mask = "ff00";
+defparam \R_CMD[7] .operation_mode = "normal";
+defparam \R_CMD[7] .output_mode = "reg_only";
+defparam \R_CMD[7] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC2_F36
+flex10ke_lcell \R_CMD[9] (
+// Equation(s):
+// R_CMD[9] = DFFEA(\VME_D[9]~22 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
+
+	.dataa(\always3~8_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[9]~22 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_CMD[9]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_CMD[9] .clock_enable_mode = "true";
+defparam \R_CMD[9] .lut_mask = "ff00";
+defparam \R_CMD[9] .operation_mode = "normal";
+defparam \R_CMD[9] .output_mode = "reg_only";
+defparam \R_CMD[9] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC2_F38
+flex10ke_lcell \R_CMD[10] (
+// Equation(s):
+// R_CMD[10] = DFFEA(\VME_D[10]~21 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
+
+	.dataa(\always3~8_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[10]~21 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_CMD[10]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_CMD[10] .clock_enable_mode = "true";
+defparam \R_CMD[10] .lut_mask = "ff00";
+defparam \R_CMD[10] .operation_mode = "normal";
+defparam \R_CMD[10] .output_mode = "reg_only";
+defparam \R_CMD[10] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC1_F33
+flex10ke_lcell \R_CMD[11] (
+// Equation(s):
+// R_CMD[11] = DFFEA(\VME_D[11]~20 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
+
+	.dataa(\always3~8_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[11]~20 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_CMD[11]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_CMD[11] .clock_enable_mode = "true";
+defparam \R_CMD[11] .lut_mask = "ff00";
+defparam \R_CMD[11] .operation_mode = "normal";
+defparam \R_CMD[11] .output_mode = "reg_only";
+defparam \R_CMD[11] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC7_F38
+flex10ke_lcell \eacmdds|eareset~13 (
+// Equation(s):
+// \eacmdds|eareset~25  = !R_CMD[8] & !R_CMD[9] & !R_CMD[10] & !R_CMD[11]
+
+	.dataa(R_CMD[8]),
+	.datab(R_CMD[9]),
+	.datac(R_CMD[10]),
+	.datad(R_CMD[11]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\eacmdds|eareset~13_combout ),
+	.regout(),
+	.cout(),
+	.cascout(\eacmdds|eareset~25 ));
+// synopsys translate_off
+defparam \eacmdds|eareset~13 .clock_enable_mode = "false";
+defparam \eacmdds|eareset~13 .lut_mask = "0001";
+defparam \eacmdds|eareset~13 .operation_mode = "normal";
+defparam \eacmdds|eareset~13 .output_mode = "none";
+defparam \eacmdds|eareset~13 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC8_F38
+flex10ke_lcell \eacmdds|eareset~16 (
+// Equation(s):
+// \eacmdds|eareset~16_combout  = (!R_CMD[4] & !R_CMD[5] & !R_CMD[6] & !R_CMD[7]) & CASCADE(\eacmdds|eareset~25 )
+
+	.dataa(R_CMD[4]),
+	.datab(R_CMD[5]),
+	.datac(R_CMD[6]),
+	.datad(R_CMD[7]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(\eacmdds|eareset~25 ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\eacmdds|eareset~16_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \eacmdds|eareset~16 .clock_enable_mode = "false";
+defparam \eacmdds|eareset~16 .lut_mask = "0001";
+defparam \eacmdds|eareset~16 .operation_mode = "normal";
+defparam \eacmdds|eareset~16 .output_mode = "comb_only";
+defparam \eacmdds|eareset~16 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC5_F33
+flex10ke_lcell \R_CMD[1] (
+// Equation(s):
+// R_CMD[1] = DFFEA(\VME_D[1]~30 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
+
+	.dataa(\always3~8_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[1]~30 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_CMD[1]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_CMD[1] .clock_enable_mode = "true";
+defparam \R_CMD[1] .lut_mask = "ff00";
+defparam \R_CMD[1] .operation_mode = "normal";
+defparam \R_CMD[1] .output_mode = "reg_only";
+defparam \R_CMD[1] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC3_F31
+flex10ke_lcell \R_CMD[2] (
+// Equation(s):
+// R_CMD[2] = DFFEA(\VME_D[2]~29 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
+
+	.dataa(\always3~8_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[2]~29 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_CMD[2]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_CMD[2] .clock_enable_mode = "true";
+defparam \R_CMD[2] .lut_mask = "ff00";
+defparam \R_CMD[2] .operation_mode = "normal";
+defparam \R_CMD[2] .output_mode = "reg_only";
+defparam \R_CMD[2] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC8_F33
+flex10ke_lcell \R_CMD[3] (
+// Equation(s):
+// R_CMD[3] = DFFEA(\VME_D[3]~28 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
+
+	.dataa(\always3~8_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[3]~28 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_CMD[3]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_CMD[3] .clock_enable_mode = "true";
+defparam \R_CMD[3] .lut_mask = "ff00";
+defparam \R_CMD[3] .operation_mode = "normal";
+defparam \R_CMD[3] .output_mode = "reg_only";
+defparam \R_CMD[3] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC2_F33
+flex10ke_lcell \eacmdds|eareset~8 (
+// Equation(s):
+// \eacmdds|eareset~8_combout  = R_CMD[0] & !R_CMD[1] & !R_CMD[2] & !R_CMD[3]
+
+	.dataa(R_CMD[0]),
+	.datab(R_CMD[1]),
+	.datac(R_CMD[2]),
+	.datad(R_CMD[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\eacmdds|eareset~8_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \eacmdds|eareset~8 .clock_enable_mode = "false";
+defparam \eacmdds|eareset~8 .lut_mask = "0002";
+defparam \eacmdds|eareset~8 .operation_mode = "normal";
+defparam \eacmdds|eareset~8 .output_mode = "comb_only";
+defparam \eacmdds|eareset~8 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at PIN_166
+flex10ke_io \I_VME_A[5]~I (
 	.datain(gnd),
 	.clk(gnd),
 	.ena(vcc),
@@ -719,24 +2027,24 @@ flex10ke_io \I_VME_LWORD~I (
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.devoe(devoe),
-	.dataout(\I_VME_LWORD~dataout ),
-	.padio(I_VME_LWORD));
+	.dataout(\I_VME_A~dataout [5]),
+	.padio(I_VME_A[5]));
 // synopsys translate_off
-defparam \I_VME_LWORD~I .feedback_mode = "from_pin";
-defparam \I_VME_LWORD~I .operation_mode = "input";
-defparam \I_VME_LWORD~I .reg_source_mode = "none";
+defparam \I_VME_A[5]~I .feedback_mode = "from_pin";
+defparam \I_VME_A[5]~I .operation_mode = "input";
+defparam \I_VME_A[5]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at LC6_J2
-flex10ke_lcell \R_ADDR[0] (
+// atom is at LC8_F44
+flex10ke_lcell \R_ADDR[5] (
 // Equation(s):
-// R_ADDR[0] = DFFEA(\I_VME_LWORD~dataout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
+// R_ADDR[5] = DFFEA(\I_VME_A~dataout [5], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
 
-	.dataa(\always0~3_combout ),
+	.dataa(\always0~9_combout ),
 	.datab(vcc),
 	.datac(vcc),
-	.datad(\I_VME_LWORD~dataout ),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.datad(\I_VME_A~dataout [5]),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -744,18 +2052,18 @@ flex10ke_lcell \R_ADDR[0] (
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.combout(),
-	.regout(R_ADDR[0]),
+	.regout(R_ADDR[5]),
 	.cout(),
 	.cascout());
 // synopsys translate_off
-defparam \R_ADDR[0] .clock_enable_mode = "true";
-defparam \R_ADDR[0] .lut_mask = "ff00";
-defparam \R_ADDR[0] .operation_mode = "normal";
-defparam \R_ADDR[0] .output_mode = "reg_only";
-defparam \R_ADDR[0] .packed_mode = "false";
+defparam \R_ADDR[5] .clock_enable_mode = "true";
+defparam \R_ADDR[5] .lut_mask = "ff00";
+defparam \R_ADDR[5] .operation_mode = "normal";
+defparam \R_ADDR[5] .output_mode = "reg_only";
+defparam \R_ADDR[5] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at PIN_184
+// atom is at PIN_228
 flex10ke_io \I_VME_A[1]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -773,16 +2081,16 @@ defparam \I_VME_A[1]~I .operation_mode = "input";
 defparam \I_VME_A[1]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at LC7_J2
+// atom is at LC6_F44
 flex10ke_lcell \R_ADDR[1] (
 // Equation(s):
-// R_ADDR[1] = DFFEA(\I_VME_A~dataout [1], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
+// R_ADDR[1] = DFFEA(\I_VME_A~dataout [1], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
 
-	.dataa(\always0~3_combout ),
+	.dataa(\always0~9_combout ),
 	.datab(vcc),
 	.datac(vcc),
 	.datad(\I_VME_A~dataout [1]),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -801,99 +2109,7 @@ defparam \R_ADDR[1] .output_mode = "reg_only";
 defparam \R_ADDR[1] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at PIN_109
-flex10ke_io \I_VME_A[3]~I (
-	.datain(gnd),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(gnd),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(\I_VME_A~dataout [3]),
-	.padio(I_VME_A[3]));
-// synopsys translate_off
-defparam \I_VME_A[3]~I .feedback_mode = "from_pin";
-defparam \I_VME_A[3]~I .operation_mode = "input";
-defparam \I_VME_A[3]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at LC8_J2
-flex10ke_lcell \R_ADDR[3] (
-// Equation(s):
-// R_ADDR[3] = DFFEA(\I_VME_A~dataout [3], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
-
-	.dataa(\always0~3_combout ),
-	.datab(vcc),
-	.datac(vcc),
-	.datad(\I_VME_A~dataout [3]),
-	.aclr(\I_VME_SYSRESET~dataout ),
-	.aload(gnd),
-	.clk(\I_CLK_32M~dataout ),
-	.cin(gnd),
-	.cascin(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.combout(),
-	.regout(R_ADDR[3]),
-	.cout(),
-	.cascout());
-// synopsys translate_off
-defparam \R_ADDR[3] .clock_enable_mode = "true";
-defparam \R_ADDR[3] .lut_mask = "ff00";
-defparam \R_ADDR[3] .operation_mode = "normal";
-defparam \R_ADDR[3] .output_mode = "reg_only";
-defparam \R_ADDR[3] .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at PIN_97
-flex10ke_io \I_VME_A[7]~I (
-	.datain(gnd),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(gnd),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(\I_VME_A~dataout [7]),
-	.padio(I_VME_A[7]));
-// synopsys translate_off
-defparam \I_VME_A[7]~I .feedback_mode = "from_pin";
-defparam \I_VME_A[7]~I .operation_mode = "input";
-defparam \I_VME_A[7]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at LC2_J2
-flex10ke_lcell \R_ADDR[7] (
-// Equation(s):
-// R_ADDR[7] = DFFEA(\I_VME_A~dataout [7], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
-
-	.dataa(\always0~3_combout ),
-	.datab(vcc),
-	.datac(vcc),
-	.datad(\I_VME_A~dataout [7]),
-	.aclr(\I_VME_SYSRESET~dataout ),
-	.aload(gnd),
-	.clk(\I_CLK_32M~dataout ),
-	.cin(gnd),
-	.cascin(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.combout(),
-	.regout(R_ADDR[7]),
-	.cout(),
-	.cascout());
-// synopsys translate_off
-defparam \R_ADDR[7] .clock_enable_mode = "true";
-defparam \R_ADDR[7] .lut_mask = "ff00";
-defparam \R_ADDR[7] .operation_mode = "normal";
-defparam \R_ADDR[7] .output_mode = "reg_only";
-defparam \R_ADDR[7] .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at PIN_108
+// atom is at PIN_240
 flex10ke_io \I_VME_A[4]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -911,16 +2127,16 @@ defparam \I_VME_A[4]~I .operation_mode = "input";
 defparam \I_VME_A[4]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at LC1_J1
+// atom is at LC7_F44
 flex10ke_lcell \R_ADDR[4] (
 // Equation(s):
-// R_ADDR[4] = DFFEA(\I_VME_A~dataout [4], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
+// R_ADDR[4] = DFFEA(\I_VME_A~dataout [4], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
 
-	.dataa(\always0~3_combout ),
+	.dataa(\always0~9_combout ),
 	.datab(vcc),
 	.datac(vcc),
 	.datad(\I_VME_A~dataout [4]),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -939,7 +2155,543 @@ defparam \R_ADDR[4] .output_mode = "reg_only";
 defparam \R_ADDR[4] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at PIN_101
+// atom is at LC3_F44
+flex10ke_lcell \vmeds|Ram0~264 (
+// Equation(s):
+// \vmeds|Ram0~264_combout  = R_ADDR[5] & R_ADDR[1] & !R_ADDR[4]
+
+	.dataa(vcc),
+	.datab(R_ADDR[5]),
+	.datac(R_ADDR[1]),
+	.datad(R_ADDR[4]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmeds|Ram0~264_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmeds|Ram0~264 .clock_enable_mode = "false";
+defparam \vmeds|Ram0~264 .lut_mask = "00c0";
+defparam \vmeds|Ram0~264 .operation_mode = "normal";
+defparam \vmeds|Ram0~264 .output_mode = "comb_only";
+defparam \vmeds|Ram0~264 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC5_F39
+flex10ke_lcell \R_CMD[13] (
+// Equation(s):
+// R_CMD[13] = DFFEA(\VME_D[13]~18 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
+
+	.dataa(\always3~8_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[13]~18 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_CMD[13]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_CMD[13] .clock_enable_mode = "true";
+defparam \R_CMD[13] .lut_mask = "ff00";
+defparam \R_CMD[13] .operation_mode = "normal";
+defparam \R_CMD[13] .output_mode = "reg_only";
+defparam \R_CMD[13] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC6_F39
+flex10ke_lcell \R_CMD[14] (
+// Equation(s):
+// R_CMD[14] = DFFEA(\VME_D[14]~17 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
+
+	.dataa(\always3~8_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[14]~17 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_CMD[14]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_CMD[14] .clock_enable_mode = "true";
+defparam \R_CMD[14] .lut_mask = "ff00";
+defparam \R_CMD[14] .operation_mode = "normal";
+defparam \R_CMD[14] .output_mode = "reg_only";
+defparam \R_CMD[14] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC7_F39
+flex10ke_lcell \R_CMD[15] (
+// Equation(s):
+// R_CMD[15] = DFFEA(\VME_D[15]~16 , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always3~8_combout , , )
+
+	.dataa(\always3~8_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\VME_D[15]~16 ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_CMD[15]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_CMD[15] .clock_enable_mode = "true";
+defparam \R_CMD[15] .lut_mask = "ff00";
+defparam \R_CMD[15] .operation_mode = "normal";
+defparam \R_CMD[15] .output_mode = "reg_only";
+defparam \R_CMD[15] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC8_F39
+flex10ke_lcell \eacmdds|eareset~4 (
+// Equation(s):
+// \eacmdds|eareset~4_combout  = !R_CMD[12] & !R_CMD[13] & !R_CMD[14] & !R_CMD[15]
+
+	.dataa(R_CMD[12]),
+	.datab(R_CMD[13]),
+	.datac(R_CMD[14]),
+	.datad(R_CMD[15]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\eacmdds|eareset~4_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \eacmdds|eareset~4 .clock_enable_mode = "false";
+defparam \eacmdds|eareset~4 .lut_mask = "0001";
+defparam \eacmdds|eareset~4 .operation_mode = "normal";
+defparam \eacmdds|eareset~4 .output_mode = "comb_only";
+defparam \eacmdds|eareset~4 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at PIN_223
+flex10ke_io \I_VME_A[3]~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\I_VME_A~dataout [3]),
+	.padio(I_VME_A[3]));
+// synopsys translate_off
+defparam \I_VME_A[3]~I .feedback_mode = "from_pin";
+defparam \I_VME_A[3]~I .operation_mode = "input";
+defparam \I_VME_A[3]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at LC4_F27
+flex10ke_lcell \R_ADDR[3] (
+// Equation(s):
+// R_ADDR[3] = DFFEA(\I_VME_A~dataout [3], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
+
+	.dataa(\always0~9_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\I_VME_A~dataout [3]),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_ADDR[3]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_ADDR[3] .clock_enable_mode = "true";
+defparam \R_ADDR[3] .lut_mask = "ff00";
+defparam \R_ADDR[3] .operation_mode = "normal";
+defparam \R_ADDR[3] .output_mode = "reg_only";
+defparam \R_ADDR[3] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC3_F39
+flex10ke_lcell \eacmdds|eareset~5 (
+// Equation(s):
+// \eacmdds|eareset~21  = \vmeds|Ram0~263_combout  & \vmeds|Ram0~264_combout  & \eacmdds|eareset~4_combout  & !R_ADDR[3]
+
+	.dataa(\vmeds|Ram0~263_combout ),
+	.datab(\vmeds|Ram0~264_combout ),
+	.datac(\eacmdds|eareset~4_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\eacmdds|eareset~5_combout ),
+	.regout(),
+	.cout(),
+	.cascout(\eacmdds|eareset~21 ));
+// synopsys translate_off
+defparam \eacmdds|eareset~5 .clock_enable_mode = "false";
+defparam \eacmdds|eareset~5 .lut_mask = "0080";
+defparam \eacmdds|eareset~5 .operation_mode = "normal";
+defparam \eacmdds|eareset~5 .output_mode = "none";
+defparam \eacmdds|eareset~5 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC4_F39
+flex10ke_lcell \eacmdds|eareset~15 (
+// Equation(s):
+// \eacmdds|eareset~15_combout  = (\vmeds|Equal0~5_combout  & \eacmdds|eareset~16_combout  & \eacmdds|eareset~8_combout ) & CASCADE(\eacmdds|eareset~21 )
+
+	.dataa(vcc),
+	.datab(\vmeds|Equal0~5_combout ),
+	.datac(\eacmdds|eareset~16_combout ),
+	.datad(\eacmdds|eareset~8_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(\eacmdds|eareset~21 ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\eacmdds|eareset~15_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \eacmdds|eareset~15 .clock_enable_mode = "false";
+defparam \eacmdds|eareset~15 .lut_mask = "c000";
+defparam \eacmdds|eareset~15 .operation_mode = "normal";
+defparam \eacmdds|eareset~15 .output_mode = "comb_only";
+defparam \eacmdds|eareset~15 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC1_F39
+flex10ke_lcell sysres(
+// Equation(s):
+// \sysres~combout  = \I_VME_SYSRESET~dataout  # \eacmdds|eareset~15_combout 
+
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\I_VME_SYSRESET~dataout ),
+	.datad(\eacmdds|eareset~15_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\sysres~combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam sysres.clock_enable_mode = "false";
+defparam sysres.lut_mask = "fff0";
+defparam sysres.operation_mode = "normal";
+defparam sysres.output_mode = "comb_only";
+defparam sysres.packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC2_U10
+flex10ke_lcell \eafmtdsin_1_8|R_FMTCH0[1] (
+// Equation(s):
+// \eafmtdsin_1_8|R_FMTCH0 [1] = DFFEA(VCC, GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , , , )
+
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\eafmtdsin_1_8|R_FMTCH0 [1]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \eafmtdsin_1_8|R_FMTCH0[1] .clock_enable_mode = "false";
+defparam \eafmtdsin_1_8|R_FMTCH0[1] .lut_mask = "ffff";
+defparam \eafmtdsin_1_8|R_FMTCH0[1] .operation_mode = "normal";
+defparam \eafmtdsin_1_8|R_FMTCH0[1] .output_mode = "reg_only";
+defparam \eafmtdsin_1_8|R_FMTCH0[1] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC2_L44
+flex10ke_lcell \eafmtdsin_9_16|R_FMTCH0[1] (
+// Equation(s):
+// \eafmtdsin_9_16|R_FMTCH0 [1] = DFFEA(VCC, GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , , , )
+
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\eafmtdsin_9_16|R_FMTCH0 [1]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \eafmtdsin_9_16|R_FMTCH0[1] .clock_enable_mode = "false";
+defparam \eafmtdsin_9_16|R_FMTCH0[1] .lut_mask = "ffff";
+defparam \eafmtdsin_9_16|R_FMTCH0[1] .operation_mode = "normal";
+defparam \eafmtdsin_9_16|R_FMTCH0[1] .output_mode = "reg_only";
+defparam \eafmtdsin_9_16|R_FMTCH0[1] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at PIN_79
+flex10ke_io \I_VME_AM[1]~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\I_VME_AM~dataout [1]),
+	.padio(I_VME_AM[1]));
+// synopsys translate_off
+defparam \I_VME_AM[1]~I .feedback_mode = "from_pin";
+defparam \I_VME_AM[1]~I .operation_mode = "input";
+defparam \I_VME_AM[1]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_36
+flex10ke_io \I_VME_AM[4]~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\I_VME_AM~dataout [4]),
+	.padio(I_VME_AM[4]));
+// synopsys translate_off
+defparam \I_VME_AM[4]~I .feedback_mode = "from_pin";
+defparam \I_VME_AM[4]~I .operation_mode = "input";
+defparam \I_VME_AM[4]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_148
+flex10ke_io \I_VME_DS0~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\I_VME_DS0~dataout ),
+	.padio(I_VME_DS0));
+// synopsys translate_off
+defparam \I_VME_DS0~I .feedback_mode = "from_pin";
+defparam \I_VME_DS0~I .operation_mode = "input";
+defparam \I_VME_DS0~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_149
+flex10ke_io \I_VME_AM[3]~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\I_VME_AM~dataout [3]),
+	.padio(I_VME_AM[3]));
+// synopsys translate_off
+defparam \I_VME_AM[3]~I .feedback_mode = "from_pin";
+defparam \I_VME_AM[3]~I .operation_mode = "input";
+defparam \I_VME_AM[3]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_64
+flex10ke_io \I_VME_DS1~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\I_VME_DS1~dataout ),
+	.padio(I_VME_DS1));
+// synopsys translate_off
+defparam \I_VME_DS1~I .feedback_mode = "from_pin";
+defparam \I_VME_DS1~I .operation_mode = "input";
+defparam \I_VME_DS1~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_65
+flex10ke_io \I_VME_AS~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\I_VME_AS~dataout ),
+	.padio(I_VME_AS));
+// synopsys translate_off
+defparam \I_VME_AS~I .feedback_mode = "from_pin";
+defparam \I_VME_AS~I .operation_mode = "input";
+defparam \I_VME_AS~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at LC4_N50
+flex10ke_lcell \always0~7 (
+// Equation(s):
+// \always0~12  = \I_VME_AM~dataout [5] & \I_VME_AM~dataout [3] & !\I_VME_DS1~dataout  & !\I_VME_AS~dataout 
+
+	.dataa(\I_VME_AM~dataout [5]),
+	.datab(\I_VME_AM~dataout [3]),
+	.datac(\I_VME_DS1~dataout ),
+	.datad(\I_VME_AS~dataout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\always0~7_combout ),
+	.regout(),
+	.cout(),
+	.cascout(\always0~12 ));
+// synopsys translate_off
+defparam \always0~7 .clock_enable_mode = "false";
+defparam \always0~7 .lut_mask = "0008";
+defparam \always0~7 .operation_mode = "normal";
+defparam \always0~7 .output_mode = "none";
+defparam \always0~7 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC5_N50
+flex10ke_lcell \always0~9 (
+// Equation(s):
+// \always0~9_combout  = (\I_VME_AM~dataout [0] & !\I_VME_AM~dataout [1] & !\I_VME_AM~dataout [4] & !\I_VME_DS0~dataout ) & CASCADE(\always0~12 )
+
+	.dataa(\I_VME_AM~dataout [0]),
+	.datab(\I_VME_AM~dataout [1]),
+	.datac(\I_VME_AM~dataout [4]),
+	.datad(\I_VME_DS0~dataout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(\always0~12 ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\always0~9_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \always0~9 .clock_enable_mode = "false";
+defparam \always0~9 .lut_mask = "0002";
+defparam \always0~9 .operation_mode = "normal";
+defparam \always0~9 .output_mode = "comb_only";
+defparam \always0~9 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at PIN_92
+flex10ke_io \I_VME_A[7]~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(\I_VME_A~dataout [7]),
+	.padio(I_VME_A[7]));
+// synopsys translate_off
+defparam \I_VME_A[7]~I .feedback_mode = "from_pin";
+defparam \I_VME_A[7]~I .operation_mode = "input";
+defparam \I_VME_A[7]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at LC1_F41
+flex10ke_lcell \R_ADDR[7] (
+// Equation(s):
+// R_ADDR[7] = DFFEA(\I_VME_A~dataout [7], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
+
+	.dataa(\always0~9_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\I_VME_A~dataout [7]),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_ADDR[7]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_ADDR[7] .clock_enable_mode = "true";
+defparam \R_ADDR[7] .lut_mask = "ff00";
+defparam \R_ADDR[7] .operation_mode = "normal";
+defparam \R_ADDR[7] .output_mode = "reg_only";
+defparam \R_ADDR[7] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at PIN_78
 flex10ke_io \I_VME_A[6]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -957,16 +2709,16 @@ defparam \I_VME_A[6]~I .operation_mode = "input";
 defparam \I_VME_A[6]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at LC5_J2
+// atom is at LC5_F41
 flex10ke_lcell \R_ADDR[6] (
 // Equation(s):
-// R_ADDR[6] = DFFEA(\I_VME_A~dataout [6], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
+// R_ADDR[6] = DFFEA(\I_VME_A~dataout [6], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
 
-	.dataa(\always0~3_combout ),
+	.dataa(\always0~9_combout ),
 	.datab(vcc),
 	.datac(vcc),
 	.datad(\I_VME_A~dataout [6]),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -985,72 +2737,34 @@ defparam \R_ADDR[6] .output_mode = "reg_only";
 defparam \R_ADDR[6] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at LC3_J2
-flex10ke_lcell \vmeds|Ram0~266 (
-// Equation(s):
-// \vmeds|Ram0~271  = R_ADDR[5] & R_ADDR[7] & !R_ADDR[4] & !R_ADDR[6]
-
-	.dataa(R_ADDR[5]),
-	.datab(R_ADDR[7]),
-	.datac(R_ADDR[4]),
-	.datad(R_ADDR[6]),
-	.aclr(gnd),
-	.aload(gnd),
+// atom is at PIN_87
+flex10ke_io \I_VME_LWORD~I (
+	.datain(gnd),
 	.clk(gnd),
-	.cin(gnd),
-	.cascin(vcc),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(gnd),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.combout(\vmeds|Ram0~266_combout ),
-	.regout(),
-	.cout(),
-	.cascout(\vmeds|Ram0~271 ));
+	.devoe(devoe),
+	.dataout(\I_VME_LWORD~dataout ),
+	.padio(I_VME_LWORD));
 // synopsys translate_off
-defparam \vmeds|Ram0~266 .clock_enable_mode = "false";
-defparam \vmeds|Ram0~266 .lut_mask = "0008";
-defparam \vmeds|Ram0~266 .operation_mode = "normal";
-defparam \vmeds|Ram0~266 .output_mode = "none";
-defparam \vmeds|Ram0~266 .packed_mode = "false";
+defparam \I_VME_LWORD~I .feedback_mode = "from_pin";
+defparam \I_VME_LWORD~I .operation_mode = "input";
+defparam \I_VME_LWORD~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at LC4_J2
-flex10ke_lcell \vmeds|Ram0~268 (
+// atom is at LC6_F41
+flex10ke_lcell \R_ADDR[0] (
 // Equation(s):
-// \vmeds|Ram0~268_combout  = (!R_ADDR[0] & !R_ADDR[1] & !R_ADDR[3]) & CASCADE(\vmeds|Ram0~271 )
+// R_ADDR[0] = DFFEA(\I_VME_LWORD~dataout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
 
-	.dataa(vcc),
-	.datab(R_ADDR[0]),
-	.datac(R_ADDR[1]),
-	.datad(R_ADDR[3]),
-	.aclr(gnd),
-	.aload(gnd),
-	.clk(gnd),
-	.cin(gnd),
-	.cascin(\vmeds|Ram0~271 ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.combout(\vmeds|Ram0~268_combout ),
-	.regout(),
-	.cout(),
-	.cascout());
-// synopsys translate_off
-defparam \vmeds|Ram0~268 .clock_enable_mode = "false";
-defparam \vmeds|Ram0~268 .lut_mask = "0003";
-defparam \vmeds|Ram0~268 .operation_mode = "normal";
-defparam \vmeds|Ram0~268 .output_mode = "comb_only";
-defparam \vmeds|Ram0~268 .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at LC6_J3
-flex10ke_lcell R_REXST(
-// Equation(s):
-// \R_REXST~regout  = DFFEA(\R_REXST~11_combout  & \vmeds|Ram0~268_combout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
-
-	.dataa(\always0~3_combout ),
+	.dataa(\always0~9_combout ),
 	.datab(vcc),
-	.datac(\R_REXST~11_combout ),
-	.datad(\vmeds|Ram0~268_combout ),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.datac(vcc),
+	.datad(\I_VME_LWORD~dataout ),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -1058,26 +2772,26 @@ flex10ke_lcell R_REXST(
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.combout(),
-	.regout(\R_REXST~regout ),
+	.regout(R_ADDR[0]),
 	.cout(),
 	.cascout());
 // synopsys translate_off
-defparam R_REXST.clock_enable_mode = "true";
-defparam R_REXST.lut_mask = "f000";
-defparam R_REXST.operation_mode = "normal";
-defparam R_REXST.output_mode = "reg_only";
-defparam R_REXST.packed_mode = "false";
+defparam \R_ADDR[0] .clock_enable_mode = "true";
+defparam \R_ADDR[0] .lut_mask = "ff00";
+defparam \R_ADDR[0] .operation_mode = "normal";
+defparam \R_ADDR[0] .output_mode = "reg_only";
+defparam \R_ADDR[0] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at LC1_U44
-flex10ke_lcell \VME_D~32 (
+// atom is at LC7_F41
+flex10ke_lcell \R_REXST~14 (
 // Equation(s):
-// \VME_D~32_combout  = !\R_REXST~regout  # !\I_VME_WR~dataout 
+// \R_REXST~14_combout  = R_ADDR[7] & !R_ADDR[6] & !R_ADDR[0]
 
 	.dataa(vcc),
-	.datab(vcc),
-	.datac(\I_VME_WR~dataout ),
-	.datad(\R_REXST~regout ),
+	.datab(R_ADDR[7]),
+	.datac(R_ADDR[6]),
+	.datad(R_ADDR[0]),
 	.aclr(gnd),
 	.aload(gnd),
 	.clk(gnd),
@@ -1085,299 +2799,19 @@ flex10ke_lcell \VME_D~32 (
 	.cascin(vcc),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.combout(\VME_D~32_combout ),
+	.combout(\R_REXST~14_combout ),
 	.regout(),
 	.cout(),
 	.cascout());
 // synopsys translate_off
-defparam \VME_D~32 .clock_enable_mode = "false";
-defparam \VME_D~32 .lut_mask = "0fff";
-defparam \VME_D~32 .operation_mode = "normal";
-defparam \VME_D~32 .output_mode = "comb_only";
-defparam \VME_D~32 .packed_mode = "false";
+defparam \R_REXST~14 .clock_enable_mode = "false";
+defparam \R_REXST~14 .lut_mask = "000c";
+defparam \R_REXST~14 .operation_mode = "normal";
+defparam \R_REXST~14 .output_mode = "comb_only";
+defparam \R_REXST~14 .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at LC2_A47
-flex10ke_lcell \VME_D~60 (
-// Equation(s):
-// \VME_D~60_combout  = !\R_REXST~regout  # !\I_VME_WR~dataout 
-
-	.dataa(vcc),
-	.datab(vcc),
-	.datac(\I_VME_WR~dataout ),
-	.datad(\R_REXST~regout ),
-	.aclr(gnd),
-	.aload(gnd),
-	.clk(gnd),
-	.cin(gnd),
-	.cascin(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.combout(\VME_D~60_combout ),
-	.regout(),
-	.cout(),
-	.cascout());
-// synopsys translate_off
-defparam \VME_D~60 .clock_enable_mode = "false";
-defparam \VME_D~60 .lut_mask = "0fff";
-defparam \VME_D~60 .operation_mode = "normal";
-defparam \VME_D~60 .output_mode = "comb_only";
-defparam \VME_D~60 .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at LC2_U44
-flex10ke_lcell \VME_D~61 (
-// Equation(s):
-// \VME_D~61_combout  = !\R_REXST~regout  # !\I_VME_WR~dataout 
-
-	.dataa(vcc),
-	.datab(vcc),
-	.datac(\I_VME_WR~dataout ),
-	.datad(\R_REXST~regout ),
-	.aclr(gnd),
-	.aload(gnd),
-	.clk(gnd),
-	.cin(gnd),
-	.cascin(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.combout(\VME_D~61_combout ),
-	.regout(),
-	.cout(),
-	.cascout());
-// synopsys translate_off
-defparam \VME_D~61 .clock_enable_mode = "false";
-defparam \VME_D~61 .lut_mask = "0fff";
-defparam \VME_D~61 .operation_mode = "normal";
-defparam \VME_D~61 .output_mode = "comb_only";
-defparam \VME_D~61 .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at LC5_A50
-flex10ke_lcell \VME_D~62 (
-// Equation(s):
-// \VME_D~62_combout  = !\R_REXST~regout  # !\I_VME_WR~dataout 
-
-	.dataa(vcc),
-	.datab(vcc),
-	.datac(\I_VME_WR~dataout ),
-	.datad(\R_REXST~regout ),
-	.aclr(gnd),
-	.aload(gnd),
-	.clk(gnd),
-	.cin(gnd),
-	.cascin(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.combout(\VME_D~62_combout ),
-	.regout(),
-	.cout(),
-	.cascout());
-// synopsys translate_off
-defparam \VME_D~62 .clock_enable_mode = "false";
-defparam \VME_D~62 .lut_mask = "0fff";
-defparam \VME_D~62 .operation_mode = "normal";
-defparam \VME_D~62 .output_mode = "comb_only";
-defparam \VME_D~62 .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at LC4_U41
-flex10ke_lcell \VME_D~63 (
-// Equation(s):
-// \VME_D~63_combout  = !\R_REXST~regout  # !\I_VME_WR~dataout 
-
-	.dataa(vcc),
-	.datab(vcc),
-	.datac(\I_VME_WR~dataout ),
-	.datad(\R_REXST~regout ),
-	.aclr(gnd),
-	.aload(gnd),
-	.clk(gnd),
-	.cin(gnd),
-	.cascin(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.combout(\VME_D~63_combout ),
-	.regout(),
-	.cout(),
-	.cascout());
-// synopsys translate_off
-defparam \VME_D~63 .clock_enable_mode = "false";
-defparam \VME_D~63 .lut_mask = "0fff";
-defparam \VME_D~63 .operation_mode = "normal";
-defparam \VME_D~63 .output_mode = "comb_only";
-defparam \VME_D~63 .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at LC6_U44
-flex10ke_lcell \VME_D~64 (
-// Equation(s):
-// \VME_D~64_combout  = !\R_REXST~regout  # !\I_VME_WR~dataout 
-
-	.dataa(vcc),
-	.datab(vcc),
-	.datac(\I_VME_WR~dataout ),
-	.datad(\R_REXST~regout ),
-	.aclr(gnd),
-	.aload(gnd),
-	.clk(gnd),
-	.cin(gnd),
-	.cascin(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.combout(\VME_D~64_combout ),
-	.regout(),
-	.cout(),
-	.cascout());
-// synopsys translate_off
-defparam \VME_D~64 .clock_enable_mode = "false";
-defparam \VME_D~64 .lut_mask = "0fff";
-defparam \VME_D~64 .operation_mode = "normal";
-defparam \VME_D~64 .output_mode = "comb_only";
-defparam \VME_D~64 .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at LC4_A43
-flex10ke_lcell \VME_D~65 (
-// Equation(s):
-// \VME_D~65_combout  = !\R_REXST~regout  # !\I_VME_WR~dataout 
-
-	.dataa(vcc),
-	.datab(vcc),
-	.datac(\I_VME_WR~dataout ),
-	.datad(\R_REXST~regout ),
-	.aclr(gnd),
-	.aload(gnd),
-	.clk(gnd),
-	.cin(gnd),
-	.cascin(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.combout(\VME_D~65_combout ),
-	.regout(),
-	.cout(),
-	.cascout());
-// synopsys translate_off
-defparam \VME_D~65 .clock_enable_mode = "false";
-defparam \VME_D~65 .lut_mask = "0fff";
-defparam \VME_D~65 .operation_mode = "normal";
-defparam \VME_D~65 .output_mode = "comb_only";
-defparam \VME_D~65 .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at LC1_A47
-flex10ke_lcell \VME_D~66 (
-// Equation(s):
-// \VME_D~66_combout  = !\R_REXST~regout  # !\I_VME_WR~dataout 
-
-	.dataa(vcc),
-	.datab(vcc),
-	.datac(\I_VME_WR~dataout ),
-	.datad(\R_REXST~regout ),
-	.aclr(gnd),
-	.aload(gnd),
-	.clk(gnd),
-	.cin(gnd),
-	.cascin(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.combout(\VME_D~66_combout ),
-	.regout(),
-	.cout(),
-	.cascout());
-// synopsys translate_off
-defparam \VME_D~66 .clock_enable_mode = "false";
-defparam \VME_D~66 .lut_mask = "0fff";
-defparam \VME_D~66 .operation_mode = "normal";
-defparam \VME_D~66 .output_mode = "comb_only";
-defparam \VME_D~66 .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at LC4_U44
-flex10ke_lcell \VME_D~67 (
-// Equation(s):
-// \VME_D~67_combout  = !\R_REXST~regout  # !\I_VME_WR~dataout 
-
-	.dataa(vcc),
-	.datab(vcc),
-	.datac(\I_VME_WR~dataout ),
-	.datad(\R_REXST~regout ),
-	.aclr(gnd),
-	.aload(gnd),
-	.clk(gnd),
-	.cin(gnd),
-	.cascin(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.combout(\VME_D~67_combout ),
-	.regout(),
-	.cout(),
-	.cascout());
-// synopsys translate_off
-defparam \VME_D~67 .clock_enable_mode = "false";
-defparam \VME_D~67 .lut_mask = "0fff";
-defparam \VME_D~67 .operation_mode = "normal";
-defparam \VME_D~67 .output_mode = "comb_only";
-defparam \VME_D~67 .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at LC7_U44
-flex10ke_lcell \VME_D~68 (
-// Equation(s):
-// \VME_D~68_combout  = !\R_REXST~regout  # !\I_VME_WR~dataout 
-
-	.dataa(vcc),
-	.datab(vcc),
-	.datac(\I_VME_WR~dataout ),
-	.datad(\R_REXST~regout ),
-	.aclr(gnd),
-	.aload(gnd),
-	.clk(gnd),
-	.cin(gnd),
-	.cascin(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.combout(\VME_D~68_combout ),
-	.regout(),
-	.cout(),
-	.cascout());
-// synopsys translate_off
-defparam \VME_D~68 .clock_enable_mode = "false";
-defparam \VME_D~68 .lut_mask = "0fff";
-defparam \VME_D~68 .operation_mode = "normal";
-defparam \VME_D~68 .output_mode = "comb_only";
-defparam \VME_D~68 .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at LC7_A47
-flex10ke_lcell \VME_D~69 (
-// Equation(s):
-// \VME_D~69_combout  = !\R_REXST~regout  # !\I_VME_WR~dataout 
-
-	.dataa(vcc),
-	.datab(vcc),
-	.datac(\I_VME_WR~dataout ),
-	.datad(\R_REXST~regout ),
-	.aclr(gnd),
-	.aload(gnd),
-	.clk(gnd),
-	.cin(gnd),
-	.cascin(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.combout(\VME_D~69_combout ),
-	.regout(),
-	.cout(),
-	.cascout());
-// synopsys translate_off
-defparam \VME_D~69 .clock_enable_mode = "false";
-defparam \VME_D~69 .lut_mask = "0fff";
-defparam \VME_D~69 .operation_mode = "normal";
-defparam \VME_D~69 .output_mode = "comb_only";
-defparam \VME_D~69 .packed_mode = "false";
-// synopsys translate_on
-
-// atom is at PIN_90
+// atom is at PIN_211
 flex10ke_io \I_VME_A[2]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1395,16 +2829,16 @@ defparam \I_VME_A[2]~I .operation_mode = "input";
 defparam \I_VME_A[2]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at LC7_J1
+// atom is at LC3_F41
 flex10ke_lcell \R_ADDR[2] (
 // Equation(s):
-// R_ADDR[2] = DFFEA(\I_VME_A~dataout [2], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \always0~3_combout , , )
+// R_ADDR[2] = DFFEA(\I_VME_A~dataout [2], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
 
-	.dataa(\always0~3_combout ),
+	.dataa(\always0~9_combout ),
 	.datab(vcc),
 	.datac(vcc),
 	.datad(\I_VME_A~dataout [2]),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -1423,16 +2857,856 @@ defparam \R_ADDR[2] .output_mode = "reg_only";
 defparam \R_ADDR[2] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at LC5_J1
+// atom is at LC2_F44
+flex10ke_lcell \R_REXST~15 (
+// Equation(s):
+// \R_REXST~15_combout  = !R_ADDR[5] & !R_ADDR[3] & (R_ADDR[1] # R_ADDR[2])
+
+	.dataa(R_ADDR[1]),
+	.datab(R_ADDR[2]),
+	.datac(R_ADDR[5]),
+	.datad(R_ADDR[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\R_REXST~15_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_REXST~15 .clock_enable_mode = "false";
+defparam \R_REXST~15 .lut_mask = "000e";
+defparam \R_REXST~15 .operation_mode = "normal";
+defparam \R_REXST~15 .output_mode = "comb_only";
+defparam \R_REXST~15 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC1_F44
+flex10ke_lcell \R_REXST~16 (
+// Equation(s):
+// \R_REXST~16_combout  = !R_ADDR[4] & (!R_ADDR[5] & !R_ADDR[2] # !R_ADDR[3])
+
+	.dataa(R_ADDR[5]),
+	.datab(R_ADDR[2]),
+	.datac(R_ADDR[3]),
+	.datad(R_ADDR[4]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\R_REXST~16_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_REXST~16 .clock_enable_mode = "false";
+defparam \R_REXST~16 .lut_mask = "001f";
+defparam \R_REXST~16 .operation_mode = "normal";
+defparam \R_REXST~16 .output_mode = "comb_only";
+defparam \R_REXST~16 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC8_F41
+flex10ke_lcell \R_REXST~17 (
+// Equation(s):
+// \R_REXST~17_combout  = \vmeds|Equal0~5_combout  & \R_REXST~14_combout  & (\R_REXST~15_combout  # \R_REXST~16_combout )
+
+	.dataa(\vmeds|Equal0~5_combout ),
+	.datab(\R_REXST~14_combout ),
+	.datac(\R_REXST~15_combout ),
+	.datad(\R_REXST~16_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\R_REXST~17_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_REXST~17 .clock_enable_mode = "false";
+defparam \R_REXST~17 .lut_mask = "8880";
+defparam \R_REXST~17 .operation_mode = "normal";
+defparam \R_REXST~17 .output_mode = "comb_only";
+defparam \R_REXST~17 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC4_F41
+flex10ke_lcell R_REXST(
+// Equation(s):
+// \R_REXST~regout  = DFFEA(\R_REXST~17_combout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \always0~9_combout , , )
+
+	.dataa(\always0~9_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\R_REXST~17_combout ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\R_REXST~regout ),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam R_REXST.clock_enable_mode = "true";
+defparam R_REXST.lut_mask = "ff00";
+defparam R_REXST.operation_mode = "normal";
+defparam R_REXST.output_mode = "reg_only";
+defparam R_REXST.packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC1_F35
+flex10ke_lcell \VME_D~37 (
+// Equation(s):
+// \VME_D~37_combout  = \I_VME_WR~dataout  & \always0~9_combout  & \R_REXST~regout  & \vmeds|Equal0~5_combout 
+
+	.dataa(\I_VME_WR~dataout ),
+	.datab(\always0~9_combout ),
+	.datac(\R_REXST~regout ),
+	.datad(\vmeds|Equal0~5_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\VME_D~37_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \VME_D~37 .clock_enable_mode = "false";
+defparam \VME_D~37 .lut_mask = "8000";
+defparam \VME_D~37 .operation_mode = "normal";
+defparam \VME_D~37 .output_mode = "comb_only";
+defparam \VME_D~37 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC2_F41
+flex10ke_lcell \vmeds|Ram0~263 (
+// Equation(s):
+// \vmeds|Ram0~263_combout  = R_ADDR[7] & R_ADDR[2] & !R_ADDR[6] & !R_ADDR[0]
+
+	.dataa(R_ADDR[7]),
+	.datab(R_ADDR[2]),
+	.datac(R_ADDR[6]),
+	.datad(R_ADDR[0]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmeds|Ram0~263_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmeds|Ram0~263 .clock_enable_mode = "false";
+defparam \vmeds|Ram0~263 .lut_mask = "0008";
+defparam \vmeds|Ram0~263 .operation_mode = "normal";
+defparam \vmeds|Ram0~263 .output_mode = "comb_only";
+defparam \vmeds|Ram0~263 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC5_F44
+flex10ke_lcell \vmeds|Ram0~265 (
+// Equation(s):
+// \vmeds|Ram0~265_combout  = R_ADDR[4] & R_ADDR[1] & !R_ADDR[5]
+
+	.dataa(vcc),
+	.datab(R_ADDR[4]),
+	.datac(R_ADDR[1]),
+	.datad(R_ADDR[5]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmeds|Ram0~265_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmeds|Ram0~265 .clock_enable_mode = "false";
+defparam \vmeds|Ram0~265 .lut_mask = "00c0";
+defparam \vmeds|Ram0~265 .operation_mode = "normal";
+defparam \vmeds|Ram0~265 .output_mode = "comb_only";
+defparam \vmeds|Ram0~265 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC8_F31
+flex10ke_lcell \vmemux|Selector15~1 (
+// Equation(s):
+// \vmemux|Selector15~1_combout  = R_INTMSK[8] & \vmeds|Ram0~263_combout  & \vmeds|Ram0~265_combout  & !R_ADDR[3]
+
+	.dataa(R_INTMSK[8]),
+	.datab(\vmeds|Ram0~263_combout ),
+	.datac(\vmeds|Ram0~265_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmemux|Selector15~1_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmemux|Selector15~1 .clock_enable_mode = "false";
+defparam \vmemux|Selector15~1 .lut_mask = "0080";
+defparam \vmemux|Selector15~1 .operation_mode = "normal";
+defparam \vmemux|Selector15~1 .output_mode = "comb_only";
+defparam \vmemux|Selector15~1 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC5_F31
+flex10ke_lcell \R_DOUT[0] (
+// Equation(s):
+// R_DOUT[0] = DFFEA(\vmemux|Selector15~1_combout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
+
+	.dataa(\VME_D~37_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\vmemux|Selector15~1_combout ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_DOUT[0]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_DOUT[0] .clock_enable_mode = "true";
+defparam \R_DOUT[0] .lut_mask = "ff00";
+defparam \R_DOUT[0] .operation_mode = "normal";
+defparam \R_DOUT[0] .output_mode = "reg_only";
+defparam \R_DOUT[0] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC3_F29
+flex10ke_lcell \vmemux|Selector14~1 (
+// Equation(s):
+// \vmemux|Selector14~1_combout  = R_INTMSK[9] & \vmeds|Ram0~263_combout  & \vmeds|Ram0~265_combout  & !R_ADDR[3]
+
+	.dataa(R_INTMSK[9]),
+	.datab(\vmeds|Ram0~263_combout ),
+	.datac(\vmeds|Ram0~265_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmemux|Selector14~1_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmemux|Selector14~1 .clock_enable_mode = "false";
+defparam \vmemux|Selector14~1 .lut_mask = "0080";
+defparam \vmemux|Selector14~1 .operation_mode = "normal";
+defparam \vmemux|Selector14~1 .output_mode = "comb_only";
+defparam \vmemux|Selector14~1 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC2_F29
+flex10ke_lcell \R_DOUT[1] (
+// Equation(s):
+// R_DOUT[1] = DFFEA(\vmemux|Selector14~1_combout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
+
+	.dataa(\VME_D~37_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\vmemux|Selector14~1_combout ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_DOUT[1]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_DOUT[1] .clock_enable_mode = "true";
+defparam \R_DOUT[1] .lut_mask = "ff00";
+defparam \R_DOUT[1] .operation_mode = "normal";
+defparam \R_DOUT[1] .output_mode = "reg_only";
+defparam \R_DOUT[1] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC7_F29
+flex10ke_lcell \vmemux|Selector13~1 (
+// Equation(s):
+// \vmemux|Selector13~1_combout  = R_INTMSK[10] & \vmeds|Ram0~263_combout  & \vmeds|Ram0~265_combout  & !R_ADDR[3]
+
+	.dataa(R_INTMSK[10]),
+	.datab(\vmeds|Ram0~263_combout ),
+	.datac(\vmeds|Ram0~265_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmemux|Selector13~1_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmemux|Selector13~1 .clock_enable_mode = "false";
+defparam \vmemux|Selector13~1 .lut_mask = "0080";
+defparam \vmemux|Selector13~1 .operation_mode = "normal";
+defparam \vmemux|Selector13~1 .output_mode = "comb_only";
+defparam \vmemux|Selector13~1 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC5_F29
+flex10ke_lcell \R_DOUT[2] (
+// Equation(s):
+// R_DOUT[2] = DFFEA(\vmemux|Selector13~1_combout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
+
+	.dataa(\VME_D~37_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\vmemux|Selector13~1_combout ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_DOUT[2]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_DOUT[2] .clock_enable_mode = "true";
+defparam \R_DOUT[2] .lut_mask = "ff00";
+defparam \R_DOUT[2] .operation_mode = "normal";
+defparam \R_DOUT[2] .output_mode = "reg_only";
+defparam \R_DOUT[2] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC2_F27
+flex10ke_lcell \vmemux|Selector12~1 (
+// Equation(s):
+// \vmemux|Selector12~1_combout  = R_INTMSK[11] & \vmeds|Ram0~263_combout  & \vmeds|Ram0~265_combout  & !R_ADDR[3]
+
+	.dataa(R_INTMSK[11]),
+	.datab(\vmeds|Ram0~263_combout ),
+	.datac(\vmeds|Ram0~265_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmemux|Selector12~1_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmemux|Selector12~1 .clock_enable_mode = "false";
+defparam \vmemux|Selector12~1 .lut_mask = "0080";
+defparam \vmemux|Selector12~1 .operation_mode = "normal";
+defparam \vmemux|Selector12~1 .output_mode = "comb_only";
+defparam \vmemux|Selector12~1 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC5_F27
+flex10ke_lcell \R_DOUT[3] (
+// Equation(s):
+// R_DOUT[3] = DFFEA(\vmemux|Selector12~1_combout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
+
+	.dataa(\VME_D~37_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\vmemux|Selector12~1_combout ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_DOUT[3]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_DOUT[3] .clock_enable_mode = "true";
+defparam \R_DOUT[3] .lut_mask = "ff00";
+defparam \R_DOUT[3] .operation_mode = "normal";
+defparam \R_DOUT[3] .output_mode = "reg_only";
+defparam \R_DOUT[3] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC3_F28
+flex10ke_lcell \vmemux|Selector11~1 (
+// Equation(s):
+// \vmemux|Selector11~1_combout  = R_INTMSK[12] & \vmeds|Ram0~263_combout  & \vmeds|Ram0~265_combout  & !R_ADDR[3]
+
+	.dataa(R_INTMSK[12]),
+	.datab(\vmeds|Ram0~263_combout ),
+	.datac(\vmeds|Ram0~265_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmemux|Selector11~1_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmemux|Selector11~1 .clock_enable_mode = "false";
+defparam \vmemux|Selector11~1 .lut_mask = "0080";
+defparam \vmemux|Selector11~1 .operation_mode = "normal";
+defparam \vmemux|Selector11~1 .output_mode = "comb_only";
+defparam \vmemux|Selector11~1 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC4_F28
+flex10ke_lcell \R_DOUT[4] (
+// Equation(s):
+// R_DOUT[4] = DFFEA(\vmemux|Selector11~1_combout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
+
+	.dataa(\VME_D~37_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\vmemux|Selector11~1_combout ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_DOUT[4]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_DOUT[4] .clock_enable_mode = "true";
+defparam \R_DOUT[4] .lut_mask = "ff00";
+defparam \R_DOUT[4] .operation_mode = "normal";
+defparam \R_DOUT[4] .output_mode = "reg_only";
+defparam \R_DOUT[4] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC8_F29
+flex10ke_lcell \vmemux|Selector10~1 (
+// Equation(s):
+// \vmemux|Selector10~1_combout  = R_INTMSK[13] & \vmeds|Ram0~263_combout  & \vmeds|Ram0~265_combout  & !R_ADDR[3]
+
+	.dataa(R_INTMSK[13]),
+	.datab(\vmeds|Ram0~263_combout ),
+	.datac(\vmeds|Ram0~265_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmemux|Selector10~1_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmemux|Selector10~1 .clock_enable_mode = "false";
+defparam \vmemux|Selector10~1 .lut_mask = "0080";
+defparam \vmemux|Selector10~1 .operation_mode = "normal";
+defparam \vmemux|Selector10~1 .output_mode = "comb_only";
+defparam \vmemux|Selector10~1 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC6_F29
+flex10ke_lcell \R_DOUT[5] (
+// Equation(s):
+// R_DOUT[5] = DFFEA(\vmemux|Selector10~1_combout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
+
+	.dataa(\VME_D~37_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\vmemux|Selector10~1_combout ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_DOUT[5]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_DOUT[5] .clock_enable_mode = "true";
+defparam \R_DOUT[5] .lut_mask = "ff00";
+defparam \R_DOUT[5] .operation_mode = "normal";
+defparam \R_DOUT[5] .output_mode = "reg_only";
+defparam \R_DOUT[5] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC6_F27
+flex10ke_lcell \vmemux|Selector9~1 (
+// Equation(s):
+// \vmemux|Selector9~1_combout  = R_INTMSK[14] & \vmeds|Ram0~263_combout  & \vmeds|Ram0~265_combout  & !R_ADDR[3]
+
+	.dataa(R_INTMSK[14]),
+	.datab(\vmeds|Ram0~263_combout ),
+	.datac(\vmeds|Ram0~265_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmemux|Selector9~1_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmemux|Selector9~1 .clock_enable_mode = "false";
+defparam \vmemux|Selector9~1 .lut_mask = "0080";
+defparam \vmemux|Selector9~1 .operation_mode = "normal";
+defparam \vmemux|Selector9~1 .output_mode = "comb_only";
+defparam \vmemux|Selector9~1 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC8_F27
+flex10ke_lcell \R_DOUT[6] (
+// Equation(s):
+// R_DOUT[6] = DFFEA(\vmemux|Selector9~1_combout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
+
+	.dataa(\VME_D~37_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\vmemux|Selector9~1_combout ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_DOUT[6]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_DOUT[6] .clock_enable_mode = "true";
+defparam \R_DOUT[6] .lut_mask = "ff00";
+defparam \R_DOUT[6] .operation_mode = "normal";
+defparam \R_DOUT[6] .output_mode = "reg_only";
+defparam \R_DOUT[6] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC6_F28
+flex10ke_lcell \vmemux|Selector8~1 (
+// Equation(s):
+// \vmemux|Selector8~1_combout  = R_INTMSK[15] & \vmeds|Ram0~263_combout  & \vmeds|Ram0~265_combout  & !R_ADDR[3]
+
+	.dataa(R_INTMSK[15]),
+	.datab(\vmeds|Ram0~263_combout ),
+	.datac(\vmeds|Ram0~265_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmemux|Selector8~1_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmemux|Selector8~1 .clock_enable_mode = "false";
+defparam \vmemux|Selector8~1 .lut_mask = "0080";
+defparam \vmemux|Selector8~1 .operation_mode = "normal";
+defparam \vmemux|Selector8~1 .output_mode = "comb_only";
+defparam \vmemux|Selector8~1 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC1_F28
+flex10ke_lcell \R_DOUT[7] (
+// Equation(s):
+// R_DOUT[7] = DFFEA(\vmemux|Selector8~1_combout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
+
+	.dataa(\VME_D~37_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\vmemux|Selector8~1_combout ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_DOUT[7]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_DOUT[7] .clock_enable_mode = "true";
+defparam \R_DOUT[7] .lut_mask = "ff00";
+defparam \R_DOUT[7] .operation_mode = "normal";
+defparam \R_DOUT[7] .output_mode = "reg_only";
+defparam \R_DOUT[7] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC5_F30
+flex10ke_lcell \vmemux|Selector7~1 (
+// Equation(s):
+// \vmemux|Selector7~1_combout  = R_INTMSK[0] & \vmeds|Ram0~263_combout  & \vmeds|Ram0~265_combout  & !R_ADDR[3]
+
+	.dataa(R_INTMSK[0]),
+	.datab(\vmeds|Ram0~263_combout ),
+	.datac(\vmeds|Ram0~265_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmemux|Selector7~1_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmemux|Selector7~1 .clock_enable_mode = "false";
+defparam \vmemux|Selector7~1 .lut_mask = "0080";
+defparam \vmemux|Selector7~1 .operation_mode = "normal";
+defparam \vmemux|Selector7~1 .output_mode = "comb_only";
+defparam \vmemux|Selector7~1 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC3_F30
+flex10ke_lcell \R_DOUT[8] (
+// Equation(s):
+// R_DOUT[8] = DFFEA(\vmemux|Selector7~1_combout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
+
+	.dataa(\VME_D~37_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\vmemux|Selector7~1_combout ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_DOUT[8]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_DOUT[8] .clock_enable_mode = "true";
+defparam \R_DOUT[8] .lut_mask = "ff00";
+defparam \R_DOUT[8] .operation_mode = "normal";
+defparam \R_DOUT[8] .output_mode = "reg_only";
+defparam \R_DOUT[8] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC7_F30
+flex10ke_lcell \vmemux|Selector6~1 (
+// Equation(s):
+// \vmemux|Selector6~1_combout  = R_INTMSK[1] & \vmeds|Ram0~263_combout  & \vmeds|Ram0~265_combout  & !R_ADDR[3]
+
+	.dataa(R_INTMSK[1]),
+	.datab(\vmeds|Ram0~263_combout ),
+	.datac(\vmeds|Ram0~265_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmemux|Selector6~1_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmemux|Selector6~1 .clock_enable_mode = "false";
+defparam \vmemux|Selector6~1 .lut_mask = "0080";
+defparam \vmemux|Selector6~1 .operation_mode = "normal";
+defparam \vmemux|Selector6~1 .output_mode = "comb_only";
+defparam \vmemux|Selector6~1 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC1_F30
+flex10ke_lcell \R_DOUT[9] (
+// Equation(s):
+// R_DOUT[9] = DFFEA(\vmemux|Selector6~1_combout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
+
+	.dataa(\VME_D~37_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\vmemux|Selector6~1_combout ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_DOUT[9]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_DOUT[9] .clock_enable_mode = "true";
+defparam \R_DOUT[9] .lut_mask = "ff00";
+defparam \R_DOUT[9] .operation_mode = "normal";
+defparam \R_DOUT[9] .output_mode = "reg_only";
+defparam \R_DOUT[9] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC8_F30
+flex10ke_lcell \vmemux|Selector5~1 (
+// Equation(s):
+// \vmemux|Selector5~1_combout  = R_INTMSK[2] & \vmeds|Ram0~263_combout  & \vmeds|Ram0~265_combout  & !R_ADDR[3]
+
+	.dataa(R_INTMSK[2]),
+	.datab(\vmeds|Ram0~263_combout ),
+	.datac(\vmeds|Ram0~265_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmemux|Selector5~1_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmemux|Selector5~1 .clock_enable_mode = "false";
+defparam \vmemux|Selector5~1 .lut_mask = "0080";
+defparam \vmemux|Selector5~1 .operation_mode = "normal";
+defparam \vmemux|Selector5~1 .output_mode = "comb_only";
+defparam \vmemux|Selector5~1 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC2_F30
+flex10ke_lcell \R_DOUT[10] (
+// Equation(s):
+// R_DOUT[10] = DFFEA(\vmemux|Selector5~1_combout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
+
+	.dataa(\VME_D~37_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\vmemux|Selector5~1_combout ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_DOUT[10]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_DOUT[10] .clock_enable_mode = "true";
+defparam \R_DOUT[10] .lut_mask = "ff00";
+defparam \R_DOUT[10] .operation_mode = "normal";
+defparam \R_DOUT[10] .output_mode = "reg_only";
+defparam \R_DOUT[10] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC3_F32
+flex10ke_lcell \vmemux|Selector4~0 (
+// Equation(s):
+// \vmemux|Selector4~0_combout  = R_ADDR[4] & R_INTMSK[3] & R_ADDR[1] & !R_ADDR[5] # !R_ADDR[4] & (!R_ADDR[1] & R_ADDR[5])
+
+	.dataa(R_INTMSK[3]),
+	.datab(R_ADDR[4]),
+	.datac(R_ADDR[1]),
+	.datad(R_ADDR[5]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmemux|Selector4~0_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmemux|Selector4~0 .clock_enable_mode = "false";
+defparam \vmemux|Selector4~0 .lut_mask = "0380";
+defparam \vmemux|Selector4~0 .operation_mode = "normal";
+defparam \vmemux|Selector4~0 .output_mode = "comb_only";
+defparam \vmemux|Selector4~0 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC8_F32
 flex10ke_lcell \R_DOUT[11] (
 // Equation(s):
-// R_DOUT[11] = DFFEA(\vmeds|Ram0~268_combout  & R_ADDR[2], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \R_REXST~regout , , )
+// R_DOUT[11] = DFFEA(\vmemux|Selector4~0_combout  & \vmeds|Ram0~263_combout  & !R_ADDR[3], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
 
-	.dataa(\R_REXST~regout ),
-	.datab(vcc),
-	.datac(\vmeds|Ram0~268_combout ),
-	.datad(R_ADDR[2]),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.dataa(\VME_D~37_combout ),
+	.datab(\vmemux|Selector4~0_combout ),
+	.datac(\vmeds|Ram0~263_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -1445,21 +3719,21 @@ flex10ke_lcell \R_DOUT[11] (
 	.cascout());
 // synopsys translate_off
 defparam \R_DOUT[11] .clock_enable_mode = "true";
-defparam \R_DOUT[11] .lut_mask = "f000";
+defparam \R_DOUT[11] .lut_mask = "00c0";
 defparam \R_DOUT[11] .operation_mode = "normal";
 defparam \R_DOUT[11] .output_mode = "reg_only";
 defparam \R_DOUT[11] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at LC3_U44
-flex10ke_lcell \VME_D~70 (
+// atom is at LC5_F35
+flex10ke_lcell \vmemux|Selector3~1 (
 // Equation(s):
-// \VME_D~70_combout  = !\R_REXST~regout  # !\I_VME_WR~dataout 
+// \vmemux|Selector3~1_combout  = R_INTMSK[4] & \vmeds|Ram0~263_combout  & \vmeds|Ram0~265_combout  & !R_ADDR[3]
 
-	.dataa(vcc),
-	.datab(vcc),
-	.datac(\I_VME_WR~dataout ),
-	.datad(\R_REXST~regout ),
+	.dataa(R_INTMSK[4]),
+	.datab(\vmeds|Ram0~263_combout ),
+	.datac(\vmeds|Ram0~265_combout ),
+	.datad(R_ADDR[3]),
 	.aclr(gnd),
 	.aload(gnd),
 	.clk(gnd),
@@ -1467,28 +3741,84 @@ flex10ke_lcell \VME_D~70 (
 	.cascin(vcc),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.combout(\VME_D~70_combout ),
+	.combout(\vmemux|Selector3~1_combout ),
 	.regout(),
 	.cout(),
 	.cascout());
 // synopsys translate_off
-defparam \VME_D~70 .clock_enable_mode = "false";
-defparam \VME_D~70 .lut_mask = "0fff";
-defparam \VME_D~70 .operation_mode = "normal";
-defparam \VME_D~70 .output_mode = "comb_only";
-defparam \VME_D~70 .packed_mode = "false";
+defparam \vmemux|Selector3~1 .clock_enable_mode = "false";
+defparam \vmemux|Selector3~1 .lut_mask = "0080";
+defparam \vmemux|Selector3~1 .operation_mode = "normal";
+defparam \vmemux|Selector3~1 .output_mode = "comb_only";
+defparam \vmemux|Selector3~1 .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at LC8_J1
+// atom is at LC7_F35
+flex10ke_lcell \R_DOUT[12] (
+// Equation(s):
+// R_DOUT[12] = DFFEA(\vmemux|Selector3~1_combout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
+
+	.dataa(\VME_D~37_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\vmemux|Selector3~1_combout ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_DOUT[12]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_DOUT[12] .clock_enable_mode = "true";
+defparam \R_DOUT[12] .lut_mask = "ff00";
+defparam \R_DOUT[12] .operation_mode = "normal";
+defparam \R_DOUT[12] .output_mode = "reg_only";
+defparam \R_DOUT[12] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC1_F32
+flex10ke_lcell \vmemux|Selector2~0 (
+// Equation(s):
+// \vmemux|Selector2~0_combout  = R_ADDR[4] & R_INTMSK[5] & R_ADDR[1] & !R_ADDR[5] # !R_ADDR[4] & (!R_ADDR[1] & R_ADDR[5])
+
+	.dataa(R_INTMSK[5]),
+	.datab(R_ADDR[4]),
+	.datac(R_ADDR[1]),
+	.datad(R_ADDR[5]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmemux|Selector2~0_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmemux|Selector2~0 .clock_enable_mode = "false";
+defparam \vmemux|Selector2~0 .lut_mask = "0380";
+defparam \vmemux|Selector2~0 .operation_mode = "normal";
+defparam \vmemux|Selector2~0 .output_mode = "comb_only";
+defparam \vmemux|Selector2~0 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC4_F35
 flex10ke_lcell \R_DOUT[13] (
 // Equation(s):
-// R_DOUT[13] = DFFEA(\vmeds|Ram0~268_combout  & R_ADDR[2], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \R_REXST~regout , , )
+// R_DOUT[13] = DFFEA(\vmemux|Selector2~0_combout  & \vmeds|Ram0~263_combout  & !R_ADDR[3], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
 
-	.dataa(\R_REXST~regout ),
-	.datab(vcc),
-	.datac(\vmeds|Ram0~268_combout ),
-	.datad(R_ADDR[2]),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.dataa(\VME_D~37_combout ),
+	.datab(\vmemux|Selector2~0_combout ),
+	.datac(\vmeds|Ram0~263_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -1501,21 +3831,21 @@ flex10ke_lcell \R_DOUT[13] (
 	.cascout());
 // synopsys translate_off
 defparam \R_DOUT[13] .clock_enable_mode = "true";
-defparam \R_DOUT[13] .lut_mask = "f000";
+defparam \R_DOUT[13] .lut_mask = "00c0";
 defparam \R_DOUT[13] .operation_mode = "normal";
 defparam \R_DOUT[13] .output_mode = "reg_only";
 defparam \R_DOUT[13] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at LC8_U44
-flex10ke_lcell \VME_D~71 (
+// atom is at LC8_F35
+flex10ke_lcell \vmemux|Selector1~1 (
 // Equation(s):
-// \VME_D~71_combout  = !\R_REXST~regout  # !\I_VME_WR~dataout 
+// \vmemux|Selector1~1_combout  = R_INTMSK[6] & \vmeds|Ram0~263_combout  & \vmeds|Ram0~265_combout  & !R_ADDR[3]
 
-	.dataa(vcc),
-	.datab(vcc),
-	.datac(\I_VME_WR~dataout ),
-	.datad(\R_REXST~regout ),
+	.dataa(R_INTMSK[6]),
+	.datab(\vmeds|Ram0~263_combout ),
+	.datac(\vmeds|Ram0~265_combout ),
+	.datad(R_ADDR[3]),
 	.aclr(gnd),
 	.aload(gnd),
 	.clk(gnd),
@@ -1523,28 +3853,84 @@ flex10ke_lcell \VME_D~71 (
 	.cascin(vcc),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.combout(\VME_D~71_combout ),
+	.combout(\vmemux|Selector1~1_combout ),
 	.regout(),
 	.cout(),
 	.cascout());
 // synopsys translate_off
-defparam \VME_D~71 .clock_enable_mode = "false";
-defparam \VME_D~71 .lut_mask = "0fff";
-defparam \VME_D~71 .operation_mode = "normal";
-defparam \VME_D~71 .output_mode = "comb_only";
-defparam \VME_D~71 .packed_mode = "false";
+defparam \vmemux|Selector1~1 .clock_enable_mode = "false";
+defparam \vmemux|Selector1~1 .lut_mask = "0080";
+defparam \vmemux|Selector1~1 .operation_mode = "normal";
+defparam \vmemux|Selector1~1 .output_mode = "comb_only";
+defparam \vmemux|Selector1~1 .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at LC3_J1
+// atom is at LC6_F35
+flex10ke_lcell \R_DOUT[14] (
+// Equation(s):
+// R_DOUT[14] = DFFEA(\vmemux|Selector1~1_combout , GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
+
+	.dataa(\VME_D~37_combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\vmemux|Selector1~1_combout ),
+	.aclr(\sysres~combout ),
+	.aload(gnd),
+	.clk(\I_CLK_32M~dataout ),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(R_DOUT[14]),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \R_DOUT[14] .clock_enable_mode = "true";
+defparam \R_DOUT[14] .lut_mask = "ff00";
+defparam \R_DOUT[14] .operation_mode = "normal";
+defparam \R_DOUT[14] .output_mode = "reg_only";
+defparam \R_DOUT[14] .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC6_F32
+flex10ke_lcell \vmemux|Selector0~0 (
+// Equation(s):
+// \vmemux|Selector0~0_combout  = R_ADDR[4] & R_INTMSK[7] & R_ADDR[1] & !R_ADDR[5] # !R_ADDR[4] & (!R_ADDR[1] & R_ADDR[5])
+
+	.dataa(R_INTMSK[7]),
+	.datab(R_ADDR[4]),
+	.datac(R_ADDR[1]),
+	.datad(R_ADDR[5]),
+	.aclr(gnd),
+	.aload(gnd),
+	.clk(gnd),
+	.cin(gnd),
+	.cascin(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\vmemux|Selector0~0_combout ),
+	.regout(),
+	.cout(),
+	.cascout());
+// synopsys translate_off
+defparam \vmemux|Selector0~0 .clock_enable_mode = "false";
+defparam \vmemux|Selector0~0 .lut_mask = "0380";
+defparam \vmemux|Selector0~0 .operation_mode = "normal";
+defparam \vmemux|Selector0~0 .output_mode = "comb_only";
+defparam \vmemux|Selector0~0 .packed_mode = "false";
+// synopsys translate_on
+
+// atom is at LC7_F32
 flex10ke_lcell \R_DOUT[15] (
 // Equation(s):
-// R_DOUT[15] = DFFEA(\vmeds|Ram0~268_combout  & R_ADDR[2], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\I_VME_SYSRESET~dataout ), , \R_REXST~regout , , )
+// R_DOUT[15] = DFFEA(\vmemux|Selector0~0_combout  & \vmeds|Ram0~263_combout  & !R_ADDR[3], GLOBAL(\I_CLK_32M~dataout ), !GLOBAL(\sysres~combout ), , \VME_D~37_combout , , )
 
-	.dataa(\R_REXST~regout ),
-	.datab(vcc),
-	.datac(\vmeds|Ram0~268_combout ),
-	.datad(R_ADDR[2]),
-	.aclr(\I_VME_SYSRESET~dataout ),
+	.dataa(\VME_D~37_combout ),
+	.datab(\vmemux|Selector0~0_combout ),
+	.datac(\vmeds|Ram0~263_combout ),
+	.datad(R_ADDR[3]),
+	.aclr(\sysres~combout ),
 	.aload(gnd),
 	.clk(\I_CLK_32M~dataout ),
 	.cin(gnd),
@@ -1557,14 +3943,14 @@ flex10ke_lcell \R_DOUT[15] (
 	.cascout());
 // synopsys translate_off
 defparam \R_DOUT[15] .clock_enable_mode = "true";
-defparam \R_DOUT[15] .lut_mask = "f000";
+defparam \R_DOUT[15] .lut_mask = "00c0";
 defparam \R_DOUT[15] .operation_mode = "normal";
 defparam \R_DOUT[15] .output_mode = "reg_only";
 defparam \R_DOUT[15] .packed_mode = "false";
 // synopsys translate_on
 
-// atom is at PIN_167
-flex10ke_io \I_VME_AM[0]~I (
+// atom is at PIN_133
+flex10ke_io \I_VME_IACK~I (
 	.datain(gnd),
 	.clk(gnd),
 	.ena(vcc),
@@ -1574,15 +3960,15 @@ flex10ke_io \I_VME_AM[0]~I (
 	.devpor(devpor),
 	.devoe(devoe),
 	.dataout(),
-	.padio(I_VME_AM[0]));
+	.padio(I_VME_IACK));
 // synopsys translate_off
-defparam \I_VME_AM[0]~I .feedback_mode = "from_pin";
-defparam \I_VME_AM[0]~I .operation_mode = "input";
-defparam \I_VME_AM[0]~I .reg_source_mode = "none";
+defparam \I_VME_IACK~I .feedback_mode = "from_pin";
+defparam \I_VME_IACK~I .operation_mode = "input";
+defparam \I_VME_IACK~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_221
-flex10ke_io \I_VME_AM[1]~I (
+// atom is at PIN_142
+flex10ke_io \I_VME_IACK_IN~I (
 	.datain(gnd),
 	.clk(gnd),
 	.ena(vcc),
@@ -1592,15 +3978,15 @@ flex10ke_io \I_VME_AM[1]~I (
 	.devpor(devpor),
 	.devoe(devoe),
 	.dataout(),
-	.padio(I_VME_AM[1]));
+	.padio(I_VME_IACK_IN));
 // synopsys translate_off
-defparam \I_VME_AM[1]~I .feedback_mode = "from_pin";
-defparam \I_VME_AM[1]~I .operation_mode = "input";
-defparam \I_VME_AM[1]~I .reg_source_mode = "none";
+defparam \I_VME_IACK_IN~I .feedback_mode = "from_pin";
+defparam \I_VME_IACK_IN~I .operation_mode = "input";
+defparam \I_VME_IACK_IN~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_228
-flex10ke_io \I_VME_AM[2]~I (
+// atom is at PIN_204
+flex10ke_io \I_ADAPTER_NO~I (
 	.datain(gnd),
 	.clk(gnd),
 	.ena(vcc),
@@ -1610,15 +3996,15 @@ flex10ke_io \I_VME_AM[2]~I (
 	.devpor(devpor),
 	.devoe(devoe),
 	.dataout(),
-	.padio(I_VME_AM[2]));
+	.padio(I_ADAPTER_NO));
 // synopsys translate_off
-defparam \I_VME_AM[2]~I .feedback_mode = "from_pin";
-defparam \I_VME_AM[2]~I .operation_mode = "input";
-defparam \I_VME_AM[2]~I .reg_source_mode = "none";
+defparam \I_ADAPTER_NO~I .feedback_mode = "from_pin";
+defparam \I_ADAPTER_NO~I .operation_mode = "input";
+defparam \I_ADAPTER_NO~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_151
-flex10ke_io \I_VME_AM[3]~I (
+// atom is at PIN_168
+flex10ke_io \I_M_17_24_IN~I (
 	.datain(gnd),
 	.clk(gnd),
 	.ena(vcc),
@@ -1628,15 +4014,15 @@ flex10ke_io \I_VME_AM[3]~I (
 	.devpor(devpor),
 	.devoe(devoe),
 	.dataout(),
-	.padio(I_VME_AM[3]));
+	.padio(I_M_17_24_IN));
 // synopsys translate_off
-defparam \I_VME_AM[3]~I .feedback_mode = "from_pin";
-defparam \I_VME_AM[3]~I .operation_mode = "input";
-defparam \I_VME_AM[3]~I .reg_source_mode = "none";
+defparam \I_M_17_24_IN~I .feedback_mode = "from_pin";
+defparam \I_M_17_24_IN~I .operation_mode = "input";
+defparam \I_M_17_24_IN~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_75
-flex10ke_io \I_VME_AM[4]~I (
+// atom is at PIN_202
+flex10ke_io \I_M_9_16_IN~I (
 	.datain(gnd),
 	.clk(gnd),
 	.ena(vcc),
@@ -1646,15 +4032,15 @@ flex10ke_io \I_VME_AM[4]~I (
 	.devpor(devpor),
 	.devoe(devoe),
 	.dataout(),
-	.padio(I_VME_AM[4]));
+	.padio(I_M_9_16_IN));
 // synopsys translate_off
-defparam \I_VME_AM[4]~I .feedback_mode = "from_pin";
-defparam \I_VME_AM[4]~I .operation_mode = "input";
-defparam \I_VME_AM[4]~I .reg_source_mode = "none";
+defparam \I_M_9_16_IN~I .feedback_mode = "from_pin";
+defparam \I_M_9_16_IN~I .operation_mode = "input";
+defparam \I_M_9_16_IN~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_82
-flex10ke_io \I_VME_AM[5]~I (
+// atom is at PIN_195
+flex10ke_io \I_M_1_8_IN~I (
 	.datain(gnd),
 	.clk(gnd),
 	.ena(vcc),
@@ -1664,14 +4050,428 @@ flex10ke_io \I_VME_AM[5]~I (
 	.devpor(devpor),
 	.devoe(devoe),
 	.dataout(),
-	.padio(I_VME_AM[5]));
+	.padio(I_M_1_8_IN));
 // synopsys translate_off
-defparam \I_VME_AM[5]~I .feedback_mode = "from_pin";
-defparam \I_VME_AM[5]~I .operation_mode = "input";
-defparam \I_VME_AM[5]~I .reg_source_mode = "none";
+defparam \I_M_1_8_IN~I .feedback_mode = "from_pin";
+defparam \I_M_1_8_IN~I .operation_mode = "input";
+defparam \I_M_1_8_IN~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_203
+// atom is at PIN_14
+flex10ke_io \O_VME_IRQ~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_VME_IRQ));
+// synopsys translate_off
+defparam \O_VME_IRQ~I .feedback_mode = "none";
+defparam \O_VME_IRQ~I .operation_mode = "output";
+defparam \O_VME_IRQ~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_51
+flex10ke_io \O_VME_IACK_OUT~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_VME_IACK_OUT));
+// synopsys translate_off
+defparam \O_VME_IACK_OUT~I .feedback_mode = "none";
+defparam \O_VME_IACK_OUT~I .operation_mode = "output";
+defparam \O_VME_IACK_OUT~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_174
+flex10ke_io \O_VME_BERR~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_VME_BERR));
+// synopsys translate_off
+defparam \O_VME_BERR~I .feedback_mode = "none";
+defparam \O_VME_BERR~I .operation_mode = "output";
+defparam \O_VME_BERR~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_219
+flex10ke_io \O_KL_VME~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_KL_VME));
+// synopsys translate_off
+defparam \O_KL_VME~I .feedback_mode = "none";
+defparam \O_KL_VME~I .operation_mode = "output";
+defparam \O_KL_VME~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_119
+flex10ke_io \O_RD_BUF_EN~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_RD_BUF_EN));
+// synopsys translate_off
+defparam \O_RD_BUF_EN~I .feedback_mode = "none";
+defparam \O_RD_BUF_EN~I .operation_mode = "output";
+defparam \O_RD_BUF_EN~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_143
+flex10ke_io \O_WR_BUF_EN~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_WR_BUF_EN));
+// synopsys translate_off
+defparam \O_WR_BUF_EN~I .feedback_mode = "none";
+defparam \O_WR_BUF_EN~I .operation_mode = "output";
+defparam \O_WR_BUF_EN~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_101
+flex10ke_io \O_LED_DISABLE~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_LED_DISABLE));
+// synopsys translate_off
+defparam \O_LED_DISABLE~I .feedback_mode = "none";
+defparam \O_LED_DISABLE~I .operation_mode = "output";
+defparam \O_LED_DISABLE~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_127
+flex10ke_io \O_OUTPUTS_EN~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_OUTPUTS_EN));
+// synopsys translate_off
+defparam \O_OUTPUTS_EN~I .feedback_mode = "none";
+defparam \O_OUTPUTS_EN~I .operation_mode = "output";
+defparam \O_OUTPUTS_EN~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_114
+flex10ke_io \O_F_17_24_TTL~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_F_17_24_TTL));
+// synopsys translate_off
+defparam \O_F_17_24_TTL~I .feedback_mode = "none";
+defparam \O_F_17_24_TTL~I .operation_mode = "output";
+defparam \O_F_17_24_TTL~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_171
+flex10ke_io \O_F_17_24_KP~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_F_17_24_KP));
+// synopsys translate_off
+defparam \O_F_17_24_KP~I .feedback_mode = "none";
+defparam \O_F_17_24_KP~I .operation_mode = "output";
+defparam \O_F_17_24_KP~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_182
+flex10ke_io \O_F_17_24_27B~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_F_17_24_27B));
+// synopsys translate_off
+defparam \O_F_17_24_27B~I .feedback_mode = "none";
+defparam \O_F_17_24_27B~I .operation_mode = "output";
+defparam \O_F_17_24_27B~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_12
+flex10ke_io \O_MUX_1_8_EN~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_MUX_1_8_EN));
+// synopsys translate_off
+defparam \O_MUX_1_8_EN~I .feedback_mode = "none";
+defparam \O_MUX_1_8_EN~I .operation_mode = "output";
+defparam \O_MUX_1_8_EN~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_33
+flex10ke_io \O_MUX_9_16_EN~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_MUX_9_16_EN));
+// synopsys translate_off
+defparam \O_MUX_9_16_EN~I .feedback_mode = "none";
+defparam \O_MUX_9_16_EN~I .operation_mode = "output";
+defparam \O_MUX_9_16_EN~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_173
+flex10ke_io \O_MUX_17_24_EN~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_MUX_17_24_EN));
+// synopsys translate_off
+defparam \O_MUX_17_24_EN~I .feedback_mode = "none";
+defparam \O_MUX_17_24_EN~I .operation_mode = "output";
+defparam \O_MUX_17_24_EN~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_156
+flex10ke_io \O_MUX_A_0~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_MUX_A_0));
+// synopsys translate_off
+defparam \O_MUX_A_0~I .feedback_mode = "none";
+defparam \O_MUX_A_0~I .operation_mode = "output";
+defparam \O_MUX_A_0~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_39
+flex10ke_io \O_MUX_A_1~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_MUX_A_1));
+// synopsys translate_off
+defparam \O_MUX_A_1~I .feedback_mode = "none";
+defparam \O_MUX_A_1~I .operation_mode = "output";
+defparam \O_MUX_A_1~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_105
+flex10ke_io \O_MUX_A_2~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_MUX_A_2));
+// synopsys translate_off
+defparam \O_MUX_A_2~I .feedback_mode = "none";
+defparam \O_MUX_A_2~I .operation_mode = "output";
+defparam \O_MUX_A_2~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_41
+flex10ke_io \O_F_1_8_TTL~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_F_1_8_TTL));
+// synopsys translate_off
+defparam \O_F_1_8_TTL~I .feedback_mode = "none";
+defparam \O_F_1_8_TTL~I .operation_mode = "output";
+defparam \O_F_1_8_TTL~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_134
+flex10ke_io \O_F_1_8_KP~I (
+	.datain(!\eafmtdsin_1_8|R_FMTCH0 [1]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_F_1_8_KP));
+// synopsys translate_off
+defparam \O_F_1_8_KP~I .feedback_mode = "none";
+defparam \O_F_1_8_KP~I .operation_mode = "output";
+defparam \O_F_1_8_KP~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_29
+flex10ke_io \O_F_1_8_27B~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_F_1_8_27B));
+// synopsys translate_off
+defparam \O_F_1_8_27B~I .feedback_mode = "none";
+defparam \O_F_1_8_27B~I .operation_mode = "output";
+defparam \O_F_1_8_27B~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_56
+flex10ke_io \O_F_9_16_TTL~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_F_9_16_TTL));
+// synopsys translate_off
+defparam \O_F_9_16_TTL~I .feedback_mode = "none";
+defparam \O_F_9_16_TTL~I .operation_mode = "output";
+defparam \O_F_9_16_TTL~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_31
+flex10ke_io \O_F_9_16_KP~I (
+	.datain(!\eafmtdsin_9_16|R_FMTCH0 [1]),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_F_9_16_KP));
+// synopsys translate_off
+defparam \O_F_9_16_KP~I .feedback_mode = "none";
+defparam \O_F_9_16_KP~I .operation_mode = "output";
+defparam \O_F_9_16_KP~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_109
+flex10ke_io \O_F_9_16_27B~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_F_9_16_27B));
+// synopsys translate_off
+defparam \O_F_9_16_27B~I .feedback_mode = "none";
+defparam \O_F_9_16_27B~I .operation_mode = "output";
+defparam \O_F_9_16_27B~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_161
 flex10ke_io \O_VME_DTACK_D~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1689,7 +4489,7 @@ defparam \O_VME_DTACK_D~I .operation_mode = "output";
 defparam \O_VME_DTACK_D~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_201
+// atom is at PIN_188
 flex10ke_io \O_VME_DTACK_EN~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1707,7 +4507,7 @@ defparam \O_VME_DTACK_EN~I .operation_mode = "output";
 defparam \O_VME_DTACK_EN~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_74
+// atom is at PIN_111
 flex10ke_io \O_OUT_CCH_3[16]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1725,7 +4525,7 @@ defparam \O_OUT_CCH_3[16]~I .operation_mode = "output";
 defparam \O_OUT_CCH_3[16]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_222
+// atom is at PIN_169
 flex10ke_io \O_OUT_CCH_3[17]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1743,7 +4543,7 @@ defparam \O_OUT_CCH_3[17]~I .operation_mode = "output";
 defparam \O_OUT_CCH_3[17]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_87
+// atom is at PIN_238
 flex10ke_io \O_OUT_CCH_3[18]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1761,7 +4561,7 @@ defparam \O_OUT_CCH_3[18]~I .operation_mode = "output";
 defparam \O_OUT_CCH_3[18]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_113
+// atom is at PIN_8
 flex10ke_io \O_OUT_CCH_3[19]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1779,7 +4579,7 @@ defparam \O_OUT_CCH_3[19]~I .operation_mode = "output";
 defparam \O_OUT_CCH_3[19]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_236
+// atom is at PIN_194
 flex10ke_io \O_OUT_CCH_3[20]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1797,7 +4597,7 @@ defparam \O_OUT_CCH_3[20]~I .operation_mode = "output";
 defparam \O_OUT_CCH_3[20]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_110
+// atom is at PIN_21
 flex10ke_io \O_OUT_CCH_3[21]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1815,7 +4615,7 @@ defparam \O_OUT_CCH_3[21]~I .operation_mode = "output";
 defparam \O_OUT_CCH_3[21]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_61
+// atom is at PIN_7
 flex10ke_io \O_OUT_CCH_3[22]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1833,7 +4633,7 @@ defparam \O_OUT_CCH_3[22]~I .operation_mode = "output";
 defparam \O_OUT_CCH_3[22]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_33
+// atom is at PIN_94
 flex10ke_io \O_OUT_CCH_3[23]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1851,7 +4651,7 @@ defparam \O_OUT_CCH_3[23]~I .operation_mode = "output";
 defparam \O_OUT_CCH_3[23]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_196
+// atom is at PIN_230
 flex10ke_io \O_OUT_CH_1[0]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1869,7 +4669,7 @@ defparam \O_OUT_CH_1[0]~I .operation_mode = "output";
 defparam \O_OUT_CH_1[0]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_152
+// atom is at PIN_53
 flex10ke_io \O_OUT_CH_1[1]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1887,7 +4687,7 @@ defparam \O_OUT_CH_1[1]~I .operation_mode = "output";
 defparam \O_OUT_CH_1[1]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_24
+// atom is at PIN_226
 flex10ke_io \O_OUT_CH_1[2]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1905,7 +4705,7 @@ defparam \O_OUT_CH_1[2]~I .operation_mode = "output";
 defparam \O_OUT_CH_1[2]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_72
+// atom is at PIN_200
 flex10ke_io \O_OUT_CH_1[3]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1923,7 +4723,7 @@ defparam \O_OUT_CH_1[3]~I .operation_mode = "output";
 defparam \O_OUT_CH_1[3]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_136
+// atom is at PIN_186
 flex10ke_io \O_OUT_CH_1[4]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1941,7 +4741,7 @@ defparam \O_OUT_CH_1[4]~I .operation_mode = "output";
 defparam \O_OUT_CH_1[4]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_17
+// atom is at PIN_136
 flex10ke_io \O_OUT_CH_1[5]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1959,7 +4759,7 @@ defparam \O_OUT_CH_1[5]~I .operation_mode = "output";
 defparam \O_OUT_CH_1[5]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_190
+// atom is at PIN_38
 flex10ke_io \O_OUT_CH_1[6]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1977,7 +4777,7 @@ defparam \O_OUT_CH_1[6]~I .operation_mode = "output";
 defparam \O_OUT_CH_1[6]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_162
+// atom is at PIN_6
 flex10ke_io \O_OUT_CH_1[7]~I (
 	.datain(gnd),
 	.clk(gnd),
@@ -1995,8 +4795,8 @@ defparam \O_OUT_CH_1[7]~I .operation_mode = "output";
 defparam \O_OUT_CH_1[7]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_137
-flex10ke_io \O_OUT_CH_2[8]~I (
+// atom is at PIN_208
+flex10ke_io \O_OUT_CH_2[0]~I (
 	.datain(gnd),
 	.clk(gnd),
 	.ena(vcc),
@@ -2006,15 +4806,15 @@ flex10ke_io \O_OUT_CH_2[8]~I (
 	.devpor(devpor),
 	.devoe(devoe),
 	.dataout(),
-	.padio(O_OUT_CH_2[8]));
+	.padio(O_OUT_CH_2[0]));
 // synopsys translate_off
-defparam \O_OUT_CH_2[8]~I .feedback_mode = "none";
-defparam \O_OUT_CH_2[8]~I .operation_mode = "output";
-defparam \O_OUT_CH_2[8]~I .reg_source_mode = "none";
+defparam \O_OUT_CH_2[0]~I .feedback_mode = "none";
+defparam \O_OUT_CH_2[0]~I .operation_mode = "output";
+defparam \O_OUT_CH_2[0]~I .reg_source_mode = "none";
 // synopsys translate_on
 
-// atom is at PIN_175
-flex10ke_io \O_OUT_CH_2[9]~I (
+// atom is at PIN_147
+flex10ke_io \O_OUT_CH_2[1]~I (
 	.datain(gnd),
 	.clk(gnd),
 	.ena(vcc),
@@ -2024,420 +4824,137 @@ flex10ke_io \O_OUT_CH_2[9]~I (
 	.devpor(devpor),
 	.devoe(devoe),
 	.dataout(),
-	.padio(O_OUT_CH_2[9]));
+	.padio(O_OUT_CH_2[1]));
 // synopsys translate_off
-defparam \O_OUT_CH_2[9]~I .feedback_mode = "none";
-defparam \O_OUT_CH_2[9]~I .operation_mode = "output";
-defparam \O_OUT_CH_2[9]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_144
-flex10ke_io \O_OUT_CH_2[10]~I (
-	.datain(gnd),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(O_OUT_CH_2[10]));
-// synopsys translate_off
-defparam \O_OUT_CH_2[10]~I .feedback_mode = "none";
-defparam \O_OUT_CH_2[10]~I .operation_mode = "output";
-defparam \O_OUT_CH_2[10]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_56
-flex10ke_io \O_OUT_CH_2[11]~I (
-	.datain(gnd),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(O_OUT_CH_2[11]));
-// synopsys translate_off
-defparam \O_OUT_CH_2[11]~I .feedback_mode = "none";
-defparam \O_OUT_CH_2[11]~I .operation_mode = "output";
-defparam \O_OUT_CH_2[11]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_15
-flex10ke_io \O_OUT_CH_2[12]~I (
-	.datain(gnd),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(O_OUT_CH_2[12]));
-// synopsys translate_off
-defparam \O_OUT_CH_2[12]~I .feedback_mode = "none";
-defparam \O_OUT_CH_2[12]~I .operation_mode = "output";
-defparam \O_OUT_CH_2[12]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_43
-flex10ke_io \O_OUT_CH_2[13]~I (
-	.datain(gnd),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(O_OUT_CH_2[13]));
-// synopsys translate_off
-defparam \O_OUT_CH_2[13]~I .feedback_mode = "none";
-defparam \O_OUT_CH_2[13]~I .operation_mode = "output";
-defparam \O_OUT_CH_2[13]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_66
-flex10ke_io \O_OUT_CH_2[14]~I (
-	.datain(gnd),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(O_OUT_CH_2[14]));
-// synopsys translate_off
-defparam \O_OUT_CH_2[14]~I .feedback_mode = "none";
-defparam \O_OUT_CH_2[14]~I .operation_mode = "output";
-defparam \O_OUT_CH_2[14]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_41
-flex10ke_io \O_OUT_CH_2[15]~I (
-	.datain(gnd),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(O_OUT_CH_2[15]));
-// synopsys translate_off
-defparam \O_OUT_CH_2[15]~I .feedback_mode = "none";
-defparam \O_OUT_CH_2[15]~I .operation_mode = "output";
-defparam \O_OUT_CH_2[15]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_230
-flex10ke_io \VME_D[0]~I (
-	.datain(\VME_D~32_combout ),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(VME_D[0]));
-// synopsys translate_off
-defparam \VME_D[0]~I .feedback_mode = "none";
-defparam \VME_D[0]~I .open_drain_output = "true";
-defparam \VME_D[0]~I .operation_mode = "bidir";
-defparam \VME_D[0]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_6
-flex10ke_io \VME_D[1]~I (
-	.datain(\VME_D~60_combout ),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(VME_D[1]));
-// synopsys translate_off
-defparam \VME_D[1]~I .feedback_mode = "none";
-defparam \VME_D[1]~I .open_drain_output = "true";
-defparam \VME_D[1]~I .operation_mode = "bidir";
-defparam \VME_D[1]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_49
-flex10ke_io \VME_D[2]~I (
-	.datain(\VME_D~61_combout ),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(VME_D[2]));
-// synopsys translate_off
-defparam \VME_D[2]~I .feedback_mode = "none";
-defparam \VME_D[2]~I .open_drain_output = "true";
-defparam \VME_D[2]~I .operation_mode = "bidir";
-defparam \VME_D[2]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_11
-flex10ke_io \VME_D[3]~I (
-	.datain(\VME_D~62_combout ),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(VME_D[3]));
-// synopsys translate_off
-defparam \VME_D[3]~I .feedback_mode = "none";
-defparam \VME_D[3]~I .open_drain_output = "true";
-defparam \VME_D[3]~I .operation_mode = "bidir";
-defparam \VME_D[3]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_133
-flex10ke_io \VME_D[4]~I (
-	.datain(\VME_D~63_combout ),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(VME_D[4]));
-// synopsys translate_off
-defparam \VME_D[4]~I .feedback_mode = "none";
-defparam \VME_D[4]~I .open_drain_output = "true";
-defparam \VME_D[4]~I .operation_mode = "bidir";
-defparam \VME_D[4]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_229
-flex10ke_io \VME_D[5]~I (
-	.datain(\VME_D~64_combout ),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(VME_D[5]));
-// synopsys translate_off
-defparam \VME_D[5]~I .feedback_mode = "none";
-defparam \VME_D[5]~I .open_drain_output = "true";
-defparam \VME_D[5]~I .operation_mode = "bidir";
-defparam \VME_D[5]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_50
-flex10ke_io \VME_D[6]~I (
-	.datain(\VME_D~65_combout ),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(VME_D[6]));
-// synopsys translate_off
-defparam \VME_D[6]~I .feedback_mode = "none";
-defparam \VME_D[6]~I .open_drain_output = "true";
-defparam \VME_D[6]~I .operation_mode = "bidir";
-defparam \VME_D[6]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_234
-flex10ke_io \VME_D[7]~I (
-	.datain(\VME_D~66_combout ),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(VME_D[7]));
-// synopsys translate_off
-defparam \VME_D[7]~I .feedback_mode = "none";
-defparam \VME_D[7]~I .open_drain_output = "true";
-defparam \VME_D[7]~I .operation_mode = "bidir";
-defparam \VME_D[7]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_70
-flex10ke_io \VME_D[8]~I (
-	.datain(\VME_D~67_combout ),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(VME_D[8]));
-// synopsys translate_off
-defparam \VME_D[8]~I .feedback_mode = "none";
-defparam \VME_D[8]~I .open_drain_output = "true";
-defparam \VME_D[8]~I .operation_mode = "bidir";
-defparam \VME_D[8]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_44
-flex10ke_io \VME_D[9]~I (
-	.datain(\VME_D~68_combout ),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(VME_D[9]));
-// synopsys translate_off
-defparam \VME_D[9]~I .feedback_mode = "none";
-defparam \VME_D[9]~I .open_drain_output = "true";
-defparam \VME_D[9]~I .operation_mode = "bidir";
-defparam \VME_D[9]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_7
-flex10ke_io \VME_D[10]~I (
-	.datain(\VME_D~69_combout ),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(VME_D[10]));
-// synopsys translate_off
-defparam \VME_D[10]~I .feedback_mode = "none";
-defparam \VME_D[10]~I .open_drain_output = "true";
-defparam \VME_D[10]~I .operation_mode = "bidir";
-defparam \VME_D[10]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_157
-flex10ke_io \VME_D[11]~I (
-	.datain(R_DOUT[11]),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(!\VME_D~32_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(VME_D[11]));
-// synopsys translate_off
-defparam \VME_D[11]~I .feedback_mode = "none";
-defparam \VME_D[11]~I .operation_mode = "bidir";
-defparam \VME_D[11]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_68
-flex10ke_io \VME_D[12]~I (
-	.datain(\VME_D~70_combout ),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(VME_D[12]));
-// synopsys translate_off
-defparam \VME_D[12]~I .feedback_mode = "none";
-defparam \VME_D[12]~I .open_drain_output = "true";
-defparam \VME_D[12]~I .operation_mode = "bidir";
-defparam \VME_D[12]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_120
-flex10ke_io \VME_D[13]~I (
-	.datain(R_DOUT[13]),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(!\VME_D~32_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(VME_D[13]));
-// synopsys translate_off
-defparam \VME_D[13]~I .feedback_mode = "none";
-defparam \VME_D[13]~I .operation_mode = "bidir";
-defparam \VME_D[13]~I .reg_source_mode = "none";
-// synopsys translate_on
-
-// atom is at PIN_8
-flex10ke_io \VME_D[14]~I (
-	.datain(\VME_D~71_combout ),
-	.clk(gnd),
-	.ena(vcc),
-	.aclr(gnd),
-	.oe(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.devoe(devoe),
-	.dataout(),
-	.padio(VME_D[14]));
-// synopsys translate_off
-defparam \VME_D[14]~I .feedback_mode = "none";
-defparam \VME_D[14]~I .open_drain_output = "true";
-defparam \VME_D[14]~I .operation_mode = "bidir";
-defparam \VME_D[14]~I .reg_source_mode = "none";
+defparam \O_OUT_CH_2[1]~I .feedback_mode = "none";
+defparam \O_OUT_CH_2[1]~I .operation_mode = "output";
+defparam \O_OUT_CH_2[1]~I .reg_source_mode = "none";
 // synopsys translate_on
 
 // atom is at PIN_132
-flex10ke_io \VME_D[15]~I (
-	.datain(R_DOUT[15]),
+flex10ke_io \O_OUT_CH_2[2]~I (
+	.datain(gnd),
 	.clk(gnd),
 	.ena(vcc),
 	.aclr(gnd),
-	.oe(!\VME_D~32_combout ),
+	.oe(vcc),
 	.devclrn(devclrn),
 	.devpor(devpor),
 	.devoe(devoe),
 	.dataout(),
-	.padio(VME_D[15]));
+	.padio(O_OUT_CH_2[2]));
 // synopsys translate_off
-defparam \VME_D[15]~I .feedback_mode = "none";
-defparam \VME_D[15]~I .operation_mode = "bidir";
-defparam \VME_D[15]~I .reg_source_mode = "none";
+defparam \O_OUT_CH_2[2]~I .feedback_mode = "none";
+defparam \O_OUT_CH_2[2]~I .operation_mode = "output";
+defparam \O_OUT_CH_2[2]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_100
+flex10ke_io \O_OUT_CH_2[3]~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_OUT_CH_2[3]));
+// synopsys translate_off
+defparam \O_OUT_CH_2[3]~I .feedback_mode = "none";
+defparam \O_OUT_CH_2[3]~I .operation_mode = "output";
+defparam \O_OUT_CH_2[3]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_9
+flex10ke_io \O_OUT_CH_2[4]~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_OUT_CH_2[4]));
+// synopsys translate_off
+defparam \O_OUT_CH_2[4]~I .feedback_mode = "none";
+defparam \O_OUT_CH_2[4]~I .operation_mode = "output";
+defparam \O_OUT_CH_2[4]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_183
+flex10ke_io \O_OUT_CH_2[5]~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_OUT_CH_2[5]));
+// synopsys translate_off
+defparam \O_OUT_CH_2[5]~I .feedback_mode = "none";
+defparam \O_OUT_CH_2[5]~I .operation_mode = "output";
+defparam \O_OUT_CH_2[5]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_11
+flex10ke_io \O_OUT_CH_2[6]~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_OUT_CH_2[6]));
+// synopsys translate_off
+defparam \O_OUT_CH_2[6]~I .feedback_mode = "none";
+defparam \O_OUT_CH_2[6]~I .operation_mode = "output";
+defparam \O_OUT_CH_2[6]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_153
+flex10ke_io \O_OUT_CH_2[7]~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(O_OUT_CH_2[7]));
+// synopsys translate_off
+defparam \O_OUT_CH_2[7]~I .feedback_mode = "none";
+defparam \O_OUT_CH_2[7]~I .operation_mode = "output";
+defparam \O_OUT_CH_2[7]~I .reg_source_mode = "none";
+// synopsys translate_on
+
+// atom is at PIN_190
+flex10ke_io \I_VME_AM[2]~I (
+	.datain(gnd),
+	.clk(gnd),
+	.ena(vcc),
+	.aclr(gnd),
+	.oe(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.dataout(),
+	.padio(I_VME_AM[2]));
+// synopsys translate_off
+defparam \I_VME_AM[2]~I .feedback_mode = "from_pin";
+defparam \I_VME_AM[2]~I .operation_mode = "input";
+defparam \I_VME_AM[2]~I .reg_source_mode = "none";
 // synopsys translate_on
 
 endmodule

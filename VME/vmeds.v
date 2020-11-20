@@ -10,6 +10,7 @@ output addr7C8A,
 output addr7C8C,
 output addr7C8E,
 output addr7C90,
+output addr7C92,
 output addr7C94,
 output addr7C96,
 output addr7CA0,
@@ -32,7 +33,8 @@ assign addr7C8A = addrds[138] & addr7C;
 assign addr7C8C = addrds[140] & addr7C;
 assign addr7C8E = addrds[142] & addr7C;
 assign addr7C90 = addrds[144] & addr7C;
-assign addr7C94 = addrds[146] & addr7C;
+assign addr7C92 = addrds[146] & addr7C;
+assign addr7C94 = addrds[148] & addr7C;
 assign addr7C96 = addrds[150] & addr7C;
 assign addr7CA0 = addrds[160] & addr7C;
 assign addr7CA2 = addrds[162] & addr7C;

@@ -36,7 +36,7 @@
  ------------------------------------------------------------------------------
 
 
-File Generation Date & Time: Sat Oct 31 02:34:56 2020
+File Generation Date & Time: Sat Nov 21 01:35:23 2020
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 CHIP  "EA4163"  ASSIGNED TO AN: EPF10K200SRC240-1
 
@@ -47,238 +47,238 @@ CONF_DONE                    : 2         : bidir  :                   :         
 nCEO                         : 3         : output :                   :         :           :                
 TDO                          : 4         : output :                   :         :           :                
 VCC_INT                      : 5         : power  :                   : 2.5V    :           :                
-VME_D[1]                     : 6         : bidir  : LVTTL/LVCMOS      :         :           : N              
-VME_D[10]                    : 7         : bidir  : LVTTL/LVCMOS      :         :           : N              
-VME_D[14]                    : 8         : bidir  : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 9         :        :                   :         :           :                
+O_OUT_CH_1[7]                : 6         : output : LVTTL/LVCMOS      :         :           : N              
+O_OUT_CCH_3[22]              : 7         : output : LVTTL/LVCMOS      :         :           : N              
+O_OUT_CCH_3[19]              : 8         : output : LVTTL/LVCMOS      :         :           : N              
+O_OUT_CH_2[4]                : 9         : output : LVTTL/LVCMOS      :         :           : N              
 GND_INT                      : 10        : gnd    :                   :         :           :                
-VME_D[3]                     : 11        : bidir  : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 12        :        :                   :         :           :                
+O_OUT_CH_2[6]                : 11        : output : LVTTL/LVCMOS      :         :           : N              
+O_MUX_1_8_EN                 : 12        : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 13        :        :                   :         :           :                
-GND*                         : 14        :        :                   :         :           :                
-O_OUT_CH_2[12]               : 15        : output : LVTTL/LVCMOS      :         :           : N              
+O_VME_IRQ                    : 14        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 15        :        :                   :         :           :                
 VCC_IO                       : 16        : power  :                   : 3.3V    :           :                
-O_OUT_CH_1[5]                : 17        : output : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 18        :        :                   :         :           :                
-GND*                         : 19        :        :                   :         :           :                
+GND*                         : 17        :        :                   :         :           :                
+VME_D[1]                     : 18        : bidir  : LVTTL/LVCMOS      :         :           : N              
+VME_D[3]                     : 19        : bidir  : LVTTL/LVCMOS      :         :           : N              
 VCC_INT                      : 20        : power  :                   : 2.5V    :           :                
-GND*                         : 21        :        :                   :         :           :                
+O_OUT_CCH_3[21]              : 21        : output : LVTTL/LVCMOS      :         :           : N              
 GND_INT                      : 22        : gnd    :                   :         :           :                
 GND*                         : 23        :        :                   :         :           :                
-O_OUT_CH_1[2]                : 24        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 24        :        :                   :         :           :                
 GND*                         : 25        :        :                   :         :           :                
-I_VME_LWORD                  : 26        : input  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 26        :        :                   :         :           :                
 VCC_INT                      : 27        : power  :                   : 2.5V    :           :                
 GND*                         : 28        :        :                   :         :           :                
-GND*                         : 29        :        :                   :         :           :                
+O_F_1_8_27B                  : 29        : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 30        :        :                   :         :           :                
-GND*                         : 31        :        :                   :         :           :                
+O_F_9_16_KP                  : 31        : output : LVTTL/LVCMOS      :         :           : N              
 GND_INT                      : 32        : gnd    :                   :         :           :                
-O_OUT_CCH_3[23]              : 33        : output : LVTTL/LVCMOS      :         :           : N              
+O_MUX_9_16_EN                : 33        : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 34        :        :                   :         :           :                
-GND*                         : 35        :        :                   :         :           :                
-GND*                         : 36        :        :                   :         :           :                
+I_VME_AM[5]                  : 35        : input  : LVTTL/LVCMOS      :         :           : N              
+I_VME_AM[4]                  : 36        : input  : LVTTL/LVCMOS      :         :           : N              
 VCC_IO                       : 37        : power  :                   : 3.3V    :           :                
-GND*                         : 38        :        :                   :         :           :                
-GND*                         : 39        :        :                   :         :           :                
+O_OUT_CH_1[6]                : 38        : output : LVTTL/LVCMOS      :         :           : N              
+O_MUX_A_1                    : 39        : output : LVTTL/LVCMOS      :         :           : N              
 VCC_INT                      : 40        : power  :                   : 2.5V    :           :                
-O_OUT_CH_2[15]               : 41        : output : LVTTL/LVCMOS      :         :           : N              
+O_F_1_8_TTL                  : 41        : output : LVTTL/LVCMOS      :         :           : N              
 GND_INT                      : 42        : gnd    :                   :         :           :                
-O_OUT_CH_2[13]               : 43        : output : LVTTL/LVCMOS      :         :           : N              
-VME_D[9]                     : 44        : bidir  : LVTTL/LVCMOS      :         :           : N              
+VME_D[2]                     : 43        : bidir  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 44        :        :                   :         :           :                
 GND*                         : 45        :        :                   :         :           :                
 GND*                         : 46        :        :                   :         :           :                
 VCC_INT                      : 47        : power  :                   : 2.5V    :           :                
 GND*                         : 48        :        :                   :         :           :                
-VME_D[2]                     : 49        : bidir  : LVTTL/LVCMOS      :         :           : N              
-VME_D[6]                     : 50        : bidir  : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 51        :        :                   :         :           :                
+GND*                         : 49        :        :                   :         :           :                
+GND*                         : 50        :        :                   :         :           :                
+O_VME_IACK_OUT               : 51        : output : LVTTL/LVCMOS      :         :           : N              
 GND_INT                      : 52        : gnd    :                   :         :           :                
-GND*                         : 53        :        :                   :         :           :                
+O_OUT_CH_1[1]                : 53        : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 54        :        :                   :         :           :                
 GND*                         : 55        :        :                   :         :           :                
-O_OUT_CH_2[11]               : 56        : output : LVTTL/LVCMOS      :         :           : N              
+O_F_9_16_TTL                 : 56        : output : LVTTL/LVCMOS      :         :           : N              
 VCC_IO                       : 57        : power  :                   : 3.3V    :           :                
 TMS                          : 58        : input  :                   :         :           :                
 TRST                         : 59        : input  :                   :         :           :                
 nSTATUS                      : 60        : bidir  :                   :         :           :                
-O_OUT_CCH_3[22]              : 61        : output : LVTTL/LVCMOS      :         :           : N              
+I_VME_AM[0]                  : 61        : input  : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 62        :        :                   :         :           :                
-GND*                         : 63        :        :                   :         :           :                
-GND*                         : 64        :        :                   :         :           :                
-GND*                         : 65        :        :                   :         :           :                
-O_OUT_CH_2[14]               : 66        : output : LVTTL/LVCMOS      :         :           : N              
+I_VME_A[11]                  : 63        : input  : LVTTL/LVCMOS      :         :           : N              
+I_VME_DS1                    : 64        : input  : LVTTL/LVCMOS      :         :           : N              
+I_VME_AS                     : 65        : input  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 66        :        :                   :         :           :                
 GND*                         : 67        :        :                   :         :           :                
-VME_D[12]                    : 68        : bidir  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 68        :        :                   :         :           :                
 GND_INT                      : 69        : gnd    :                   :         :           :                
-VME_D[8]                     : 70        : bidir  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 70        :        :                   :         :           :                
 GND*                         : 71        :        :                   :         :           :                
-O_OUT_CH_1[3]                : 72        : output : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 73        :        :                   :         :           :                
-O_OUT_CCH_3[16]              : 74        : output : LVTTL/LVCMOS      :         :           : N              
-I_VME_AM[4]                  : 75        : input  : LVTTL/LVCMOS      :         :           : N              
+I_VME_A[12]                  : 72        : input  : LVTTL/LVCMOS      :         :           : N              
+I_VME_A[9]                   : 73        : input  : LVTTL/LVCMOS      :         :           : N              
+VME_D[12]                    : 74        : bidir  : LVTTL/LVCMOS      :         :           : N              
+I_VME_A[14]                  : 75        : input  : LVTTL/LVCMOS      :         :           : N              
 VCC_INT                      : 76        : power  :                   : 2.5V    :           :                
 VCC_IO                       : 77        : power  :                   : 3.3V    :           :                
-GND*                         : 78        :        :                   :         :           :                
-GND*                         : 79        :        :                   :         :           :                
+I_VME_A[6]                   : 78        : input  : LVTTL/LVCMOS      :         :           : N              
+I_VME_AM[1]                  : 79        : input  : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 80        :        :                   :         :           :                
-GND*                         : 81        :        :                   :         :           :                
-I_VME_AM[5]                  : 82        : input  : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 83        :        :                   :         :           :                
-GND*                         : 84        :        :                   :         :           :                
+VME_D[0]                     : 81        : bidir  : LVTTL/LVCMOS      :         :           : N              
+VME_D[9]                     : 82        : bidir  : LVTTL/LVCMOS      :         :           : N              
+VME_D[10]                    : 83        : bidir  : LVTTL/LVCMOS      :         :           : N              
+VME_D[8]                     : 84        : bidir  : LVTTL/LVCMOS      :         :           : N              
 GND_INT                      : 85        : gnd    :                   :         :           :                
-GND*                         : 86        :        :                   :         :           :                
-O_OUT_CCH_3[18]              : 87        : output : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 88        :        :                   :         :           :                
+VME_D[7]                     : 86        : bidir  : LVTTL/LVCMOS      :         :           : N              
+I_VME_LWORD                  : 87        : input  : LVTTL/LVCMOS      :         :           : N              
+VME_D[6]                     : 88        : bidir  : LVTTL/LVCMOS      :         :           : N              
 VCC_CKLK                     : 89        : power  :                   : 2.5V    :           :                
-I_VME_A[2]                   : 90        : input  : LVTTL/LVCMOS      :         :           : N              
+I_VME_SYSRESET               : 90        : input  : LVTTL/LVCMOS      :         :           : N              
 I_CLK_32M                    : 91        : input  : LVTTL/LVCMOS      :         :           : N              
-I_VME_AS                     : 92        : input  : LVTTL/LVCMOS      :         :           : N              
+I_VME_A[7]                   : 92        : input  : LVTTL/LVCMOS      :         :           : N              
 GND_CKLK                     : 93        : gnd    :                   :         :           :                
-I_VME_A[14]                  : 94        : input  : LVTTL/LVCMOS      :         :           : N              
+O_OUT_CCH_3[23]              : 94        : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 95        :        :                   :         :           :                
 VCC_INT                      : 96        : power  :                   : 2.5V    :           :                
-I_VME_A[7]                   : 97        : input  : LVTTL/LVCMOS      :         :           : N              
-I_VME_A[15]                  : 98        : input  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 97        :        :                   :         :           :                
+GND*                         : 98        :        :                   :         :           :                
 GND*                         : 99        :        :                   :         :           :                
-I_VME_A[13]                  : 100       : input  : LVTTL/LVCMOS      :         :           : N              
-I_VME_A[6]                   : 101       : input  : LVTTL/LVCMOS      :         :           : N              
+O_OUT_CH_2[3]                : 100       : output : LVTTL/LVCMOS      :         :           : N              
+O_LED_DISABLE                : 101       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 102       :        :                   :         :           :                
-I_VME_A[8]                   : 103       : input  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 103       :        :                   :         :           :                
 GND_INT                      : 104       : gnd    :                   :         :           :                
-GND*                         : 105       :        :                   :         :           :                
+O_MUX_A_2                    : 105       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 106       :        :                   :         :           :                
-I_VME_A[9]                   : 107       : input  : LVTTL/LVCMOS      :         :           : N              
-I_VME_A[4]                   : 108       : input  : LVTTL/LVCMOS      :         :           : N              
-I_VME_A[3]                   : 109       : input  : LVTTL/LVCMOS      :         :           : N              
-O_OUT_CCH_3[21]              : 110       : output : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 111       :        :                   :         :           :                
+GND*                         : 107       :        :                   :         :           :                
+GND*                         : 108       :        :                   :         :           :                
+O_F_9_16_27B                 : 109       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 110       :        :                   :         :           :                
+O_OUT_CCH_3[16]              : 111       : output : LVTTL/LVCMOS      :         :           : N              
 VCC_IO                       : 112       : power  :                   : 3.3V    :           :                
-O_OUT_CCH_3[19]              : 113       : output : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 114       :        :                   :         :           :                
+GND*                         : 113       :        :                   :         :           :                
+O_F_17_24_TTL                : 114       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 115       :        :                   :         :           :                
 GND*                         : 116       :        :                   :         :           :                
 GND*                         : 117       :        :                   :         :           :                
 GND*                         : 118       :        :                   :         :           :                
-GND*                         : 119       :        :                   :         :           :                
-VME_D[13]                    : 120       : bidir  : LVTTL/LVCMOS      :         :           : N              
+O_RD_BUF_EN                  : 119       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 120       :        :                   :         :           :                
 nCONFIG                      : 121       : input  :                   :         :           :                
 VCC_INT                      : 122       : power  :                   : 2.5V    :           :                
 MSEL1                        : 123       : input  :                   :         :           :                
 MSEL0                        : 124       : input  :                   :         :           :                
 GND_INT                      : 125       : gnd    :                   :         :           :                
 GND*                         : 126       :        :                   :         :           :                
-GND*                         : 127       :        :                   :         :           :                
+O_OUTPUTS_EN                 : 127       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 128       :        :                   :         :           :                
 GND*                         : 129       :        :                   :         :           :                
 VCC_INT                      : 130       : power  :                   : 2.5V    :           :                
 GND*                         : 131       :        :                   :         :           :                
-VME_D[15]                    : 132       : bidir  : LVTTL/LVCMOS      :         :           : N              
-VME_D[4]                     : 133       : bidir  : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 134       :        :                   :         :           :                
+O_OUT_CH_2[2]                : 132       : output : LVTTL/LVCMOS      :         :           : N              
+I_VME_IACK                   : 133       : input  : LVTTL/LVCMOS      :         :           : N              
+O_F_1_8_KP                   : 134       : output : LVTTL/LVCMOS      :         :           : N              
 GND_INT                      : 135       : gnd    :                   :         :           :                
-O_OUT_CH_1[4]                : 136       : output : LVTTL/LVCMOS      :         :           : N              
-O_OUT_CH_2[8]                : 137       : output : LVTTL/LVCMOS      :         :           : N              
+O_OUT_CH_1[5]                : 136       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 137       :        :                   :         :           :                
 GND*                         : 138       :        :                   :         :           :                
 VCC_INT                      : 139       : power  :                   : 2.5V    :           :                
 VCC_IO                       : 140       : power  :                   : 3.3V    :           :                
 GND*                         : 141       :        :                   :         :           :                
-GND*                         : 142       :        :                   :         :           :                
-GND*                         : 143       :        :                   :         :           :                
-O_OUT_CH_2[10]               : 144       : output : LVTTL/LVCMOS      :         :           : N              
+I_VME_IACK_IN                : 142       : input  : LVTTL/LVCMOS      :         :           : N              
+O_WR_BUF_EN                  : 143       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 144       :        :                   :         :           :                
 GND_INT                      : 145       : gnd    :                   :         :           :                
 GND*                         : 146       :        :                   :         :           :                
-GND*                         : 147       :        :                   :         :           :                
-GND*                         : 148       :        :                   :         :           :                
-GND*                         : 149       :        :                   :         :           :                
+O_OUT_CH_2[1]                : 147       : output : LVTTL/LVCMOS      :         :           : N              
+I_VME_DS0                    : 148       : input  : LVTTL/LVCMOS      :         :           : N              
+I_VME_AM[3]                  : 149       : input  : LVTTL/LVCMOS      :         :           : N              
 VCC_INT                      : 150       : power  :                   : 2.5V    :           :                
-I_VME_AM[3]                  : 151       : input  : LVTTL/LVCMOS      :         :           : N              
-O_OUT_CH_1[1]                : 152       : output : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 153       :        :                   :         :           :                
+GND*                         : 151       :        :                   :         :           :                
+GND*                         : 152       :        :                   :         :           :                
+O_OUT_CH_2[7]                : 153       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 154       :        :                   :         :           :                
 GND_INT                      : 155       : gnd    :                   :         :           :                
-I_VME_A[10]                  : 156       : input  : LVTTL/LVCMOS      :         :           : N              
-VME_D[11]                    : 157       : bidir  : LVTTL/LVCMOS      :         :           : N              
+O_MUX_A_0                    : 156       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 157       :        :                   :         :           :                
 GND*                         : 158       :        :                   :         :           :                
 VCC_INT                      : 159       : power  :                   : 2.5V    :           :                
 VCC_IO                       : 160       : power  :                   : 3.3V    :           :                
-GND*                         : 161       :        :                   :         :           :                
-O_OUT_CH_1[7]                : 162       : output : LVTTL/LVCMOS      :         :           : N              
+O_VME_DTACK_D                : 161       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 162       :        :                   :         :           :                
 GND*                         : 163       :        :                   :         :           :                
 GND*                         : 164       :        :                   :         :           :                
 GND_INT                      : 165       : gnd    :                   :         :           :                
-GND*                         : 166       :        :                   :         :           :                
-I_VME_AM[0]                  : 167       : input  : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 168       :        :                   :         :           :                
-GND*                         : 169       :        :                   :         :           :                
+I_VME_A[5]                   : 166       : input  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 167       :        :                   :         :           :                
+I_M_17_24_IN                 : 168       : input  : LVTTL/LVCMOS      :         :           : N              
+O_OUT_CCH_3[17]              : 169       : output : LVTTL/LVCMOS      :         :           : N              
 VCC_INT                      : 170       : power  :                   : 2.5V    :           :                
-GND*                         : 171       :        :                   :         :           :                
+O_F_17_24_KP                 : 171       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 172       :        :                   :         :           :                
-GND*                         : 173       :        :                   :         :           :                
-GND*                         : 174       :        :                   :         :           :                
-O_OUT_CH_2[9]                : 175       : output : LVTTL/LVCMOS      :         :           : N              
+O_MUX_17_24_EN               : 173       : output : LVTTL/LVCMOS      :         :           : N              
+O_VME_BERR                   : 174       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 175       :        :                   :         :           :                
 GND_INT                      : 176       : gnd    :                   :         :           :                
 TDI                          : 177       : input  :                   :         :           :                
 nCE                          : 178       : input  :                   :         :           :                
 DCLK                         : 179       : bidir  :                   :         :           :                
 DATA0                        : 180       : input  :                   :         :           :                
 GND*                         : 181       :        :                   :         :           :                
-I_VME_A[5]                   : 182       : input  : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 183       :        :                   :         :           :                
-I_VME_A[1]                   : 184       : input  : LVTTL/LVCMOS      :         :           : N              
+O_F_17_24_27B                : 182       : output : LVTTL/LVCMOS      :         :           : N              
+O_OUT_CH_2[5]                : 183       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 184       :        :                   :         :           :                
 GND*                         : 185       :        :                   :         :           :                
-GND*                         : 186       :        :                   :         :           :                
+O_OUT_CH_1[4]                : 186       : output : LVTTL/LVCMOS      :         :           : N              
 VCC_INT                      : 187       : power  :                   : 2.5V    :           :                
-I_VME_DS0                    : 188       : input  : LVTTL/LVCMOS      :         :           : N              
+O_VME_DTACK_EN               : 188       : output : LVTTL/LVCMOS      :         :           : N              
 VCC_IO                       : 189       : power  :                   : 3.3V    :           :                
-O_OUT_CH_1[6]                : 190       : output : LVTTL/LVCMOS      :         :           : N              
+I_VME_AM[2]                  : 190       : input  : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 191       :        :                   :         :           :                
 GND*                         : 192       :        :                   :         :           :                
-I_VME_A[12]                  : 193       : input  : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 194       :        :                   :         :           :                
-GND*                         : 195       :        :                   :         :           :                
-O_OUT_CH_1[0]                : 196       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 193       :        :                   :         :           :                
+O_OUT_CCH_3[20]              : 194       : output : LVTTL/LVCMOS      :         :           : N              
+I_M_1_8_IN                   : 195       : input  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 196       :        :                   :         :           :                
 GND_INT                      : 197       : gnd    :                   :         :           :                
 GND*                         : 198       :        :                   :         :           :                
 GND*                         : 199       :        :                   :         :           :                
-GND*                         : 200       :        :                   :         :           :                
-O_VME_DTACK_EN               : 201       : output : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 202       :        :                   :         :           :                
-O_VME_DTACK_D                : 203       : output : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 204       :        :                   :         :           :                
+O_OUT_CH_1[3]                : 200       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 201       :        :                   :         :           :                
+I_M_9_16_IN                  : 202       : input  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 203       :        :                   :         :           :                
+I_ADAPTER_NO                 : 204       : input  : LVTTL/LVCMOS      :         :           : N              
 VCC_IO                       : 205       : power  :                   : 3.3V    :           :                
 GND*                         : 206       :        :                   :         :           :                
 GND*                         : 207       :        :                   :         :           :                
-I_VME_A[11]                  : 208       : input  : LVTTL/LVCMOS      :         :           : N              
+O_OUT_CH_2[0]                : 208       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 209       :        :                   :         :           :                
 I_VME_WR                     : 210       : input  : LVTTL/LVCMOS      :         :           : N              
-I_VME_DS1                    : 211       : input  : LVTTL/LVCMOS      :         :           : N              
-I_VME_SYSRESET               : 212       : input  : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 213       :        :                   :         :           :                
-GND*                         : 214       :        :                   :         :           :                
-GND*                         : 215       :        :                   :         :           :                
+I_VME_A[2]                   : 211       : input  : LVTTL/LVCMOS      :         :           : N              
+GND+                         : 212       :        :                   :         :           :                
+VME_D[4]                     : 213       : bidir  : LVTTL/LVCMOS      :         :           : N              
+VME_D[5]                     : 214       : bidir  : LVTTL/LVCMOS      :         :           : N              
+VME_D[15]                    : 215       : bidir  : LVTTL/LVCMOS      :         :           : N              
 GND_INT                      : 216       : gnd    :                   :         :           :                
-GND*                         : 217       :        :                   :         :           :                
+VME_D[11]                    : 217       : bidir  : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 218       :        :                   :         :           :                
-GND*                         : 219       :        :                   :         :           :                
-GND*                         : 220       :        :                   :         :           :                
-I_VME_AM[1]                  : 221       : input  : LVTTL/LVCMOS      :         :           : N              
-O_OUT_CCH_3[17]              : 222       : output : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 223       :        :                   :         :           :                
+O_KL_VME                     : 219       : output : LVTTL/LVCMOS      :         :           : N              
+VME_D[13]                    : 220       : bidir  : LVTTL/LVCMOS      :         :           : N              
+VME_D[14]                    : 221       : bidir  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 222       :        :                   :         :           :                
+I_VME_A[3]                   : 223       : input  : LVTTL/LVCMOS      :         :           : N              
 VCC_IO                       : 224       : power  :                   : 3.3V    :           :                
 VCC_INT                      : 225       : power  :                   : 2.5V    :           :                
-GND*                         : 226       :        :                   :         :           :                
+O_OUT_CH_1[2]                : 226       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 227       :        :                   :         :           :                
-I_VME_AM[2]                  : 228       : input  : LVTTL/LVCMOS      :         :           : N              
-VME_D[5]                     : 229       : bidir  : LVTTL/LVCMOS      :         :           : N              
-VME_D[0]                     : 230       : bidir  : LVTTL/LVCMOS      :         :           : N              
+I_VME_A[1]                   : 228       : input  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 229       :        :                   :         :           :                
+O_OUT_CH_1[0]                : 230       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : 231       :        :                   :         :           :                
 GND_INT                      : 232       : gnd    :                   :         :           :                
-GND*                         : 233       :        :                   :         :           :                
-VME_D[7]                     : 234       : bidir  : LVTTL/LVCMOS      :         :           : N              
-GND*                         : 235       :        :                   :         :           :                
-O_OUT_CCH_3[20]              : 236       : output : LVTTL/LVCMOS      :         :           : N              
+I_VME_A[13]                  : 233       : input  : LVTTL/LVCMOS      :         :           : N              
+I_VME_A[10]                  : 234       : input  : LVTTL/LVCMOS      :         :           : N              
+I_VME_A[8]                   : 235       : input  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 236       :        :                   :         :           :                
 GND*                         : 237       :        :                   :         :           :                
-GND*                         : 238       :        :                   :         :           :                
-GND*                         : 239       :        :                   :         :           :                
-GND*                         : 240       :        :                   :         :           :                
+O_OUT_CCH_3[18]              : 238       : output : LVTTL/LVCMOS      :         :           : N              
+I_VME_A[15]                  : 239       : input  : LVTTL/LVCMOS      :         :           : N              
+I_VME_A[4]                   : 240       : input  : LVTTL/LVCMOS      :         :           : N              

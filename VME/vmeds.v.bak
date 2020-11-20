@@ -10,6 +10,7 @@ output addr7C8A,
 output addr7C8C,
 output addr7C8E,
 output addr7C90,
+output addr7C92,
 output addr7C94,
 output addr7C96,
 output addr7CA0,
@@ -18,8 +19,6 @@ output addr7CA4,
 output addr7CA6,
 output addr7C
 );
-
-wire addr7C;
 
 reg [255:0] addrds;
 
